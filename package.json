@@ -1,6 +1,6 @@
 {
   "name": "github-api-promise",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A node module for interfacing with the Github API using promises",
   "main": "src/app.js",
   "author": "Tim Smith",
