@@ -1,11 +1,7 @@
 var request = require('superagent-bluebird-promise');
 var Q = require('q');
-var mmm = require('mmmagic');
 var fs = require('fs');
 var config = require('../config');
-
-var Magic = mmm.Magic;
-var magic = new Magic(mmm.MAGIC_MIME_TYPE);
 
 function getRepoUrl(additionalPath) {
 	var url = config.host + '/repos/' + config.owner + '/' + config.repo + '/';
@@ -272,60 +268,51 @@ module.exports = {
 	 * @param  {string} assetName     	The file name of the asset
 	 * @param  {string} assetLabel    	An alternate short description of the asset. Used in place of the filename.
 	 * @param  {string} localFilePath 	The full path to the file to be uploaded
+	 * @param  {string} contentType 	The MIME type of the file (e.g. 'application/zip')
 	 * @return {JSON}               	The asset data
 	 */
-	uploadReleaseAsset: function(uploadUrl, assetName, assetLabel, localFilePath) {
+	uploadReleaseAsset: function(uploadUrl, assetName, assetLabel, localFilePath, contentType) {
 		var deferred = Q.defer();
 
 		try {
 			var token = config.token;
 
-			// Get MIME type
-			magic.detectFile(localFilePath, function(err, contentType) {
+			// Remove this from URL: {?name,label}
+			if (uploadUrl.substring(uploadUrl.length - 13) == '{?name,label}'){
+				uploadUrl = uploadUrl.substring(0, uploadUrl.length - 13);
+			}
+
+			// Add name and label to URL
+			uploadUrl += '?name=' + encodeURIComponent(assetName) + '&label=' + encodeURIComponent(assetLabel);
+
+			// Get file contents
+			fs.readFile(localFilePath, 'utf8', function(err, data) {
 				// Check for error
 				if (err) {
 					console.log(err);
-		            deferred.reject(err);
-		            return;
+					deferred.reject(err);
+					return;
 				}
 
-				// Remove this from URL: {?name,label}
-				if (uploadUrl.substring(uploadUrl.length - 13) == '{?name,label}'){
-					uploadUrl = uploadUrl.substring(0, uploadUrl.length - 13);
-				}
-
-				// Add name and label to URL
-				uploadUrl += '?name=' + encodeURIComponent(assetName) + '&label=' + encodeURIComponent(assetLabel);
-
-				// Get file contents
-				fs.readFile(localFilePath, 'utf8', function(err, data) {
-					// Check for error
-					if (err) {
-						console.log(err);
-						deferred.reject(err);
-						return;
-					}
-
-					// POST file to github
-					request
-						.post(uploadUrl)
-			            .set('Authorization', 'token ' + token)
-			            .set('Content-Type', contentType)
-			            .send(data)
-			            .then(function(res) {
-			            	logRequestSuccess(res);
-			            	deferred.resolve(res.body);
-			            }, 
-			            function(err) {
-			            	if (err.status == '422'){
-			            		console.log('Upload failed. Error body: ');
-			            		console.log(JSON.stringify(err.body, null, 2));
-			            	}
-			            	logRequestError(err);
-			            	deferred.reject(err.message);
-			            });
-		        });
-			});
+				// POST file to github
+				request
+					.post(uploadUrl)
+		            .set('Authorization', 'token ' + token)
+		            .set('Content-Type', contentType)
+		            .send(data)
+		            .then(function(res) {
+		            	logRequestSuccess(res);
+		            	deferred.resolve(res.body);
+		            }, 
+		            function(err) {
+		            	if (err.status == '422'){
+		            		console.log('Upload failed. Error body: ');
+		            		console.log(JSON.stringify(err.body, null, 2));
+		            	}
+		            	logRequestError(err);
+		            	deferred.reject(err.message);
+		            });
+	        });
         } catch(err) {
 		    console.log(err);
 	        deferred.reject(err.message);
