@@ -3,7 +3,7 @@ A node module for interfacing with the Github API using promises. The full GitHu
 
 # Installation
 ```bash
-npm install github-api
+npm install github-api-promise
 ````
 
 # Usage
