@@ -286,7 +286,7 @@ module.exports = {
 			uploadUrl += '?name=' + encodeURIComponent(assetName) + '&label=' + encodeURIComponent(assetLabel);
 
 			// Get file contents
-			fs.readFile(localFilePath, 'utf8', function(err, data) {
+			fs.readFile(localFilePath, function(err, data) {
 				// Check for error
 				if (err) {
 					console.log(err);
