@@ -28,8 +28,8 @@ api.config.debug = true; // Default is false. Logs request information via conso
 api.repos.releases.getRepositoryReleases()
 	.then(function(res) {
 		// Do your stuff here. res is the JSON object returned by the API
-	}, 
-	function(err) {
+	})
+	.catch(function(err) {
 		console.log('Request failed: ' + err);
 	});
 ````
