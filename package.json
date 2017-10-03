@@ -1,18 +1,19 @@
 {
   "name": "github-api-promise",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "A node module for interfacing with the Github API using promises",
   "main": "src/app.js",
   "author": "Tim Smith",
   "license": "MIT",
   "repository": {
-  	"type": "git",
-  	"url": "https://github.com/T-Boss/github-api-promise.git"
+    "type": "git",
+    "url": "https://github.com/princenebulon/github-api-promise.git"
   },
   "dependencies": {
-  	"superagent-bluebird-promise": "*",
-    "superagent": "*",
     "bluebird": "*",
-  	"q": "*"
+    "lognext": "0.0.3",
+    "q": "*",
+    "superagent": "*",
+    "superagent-bluebird-promise": "*"
   }
 }
