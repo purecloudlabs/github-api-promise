@@ -29,3 +29,6 @@ node_modules
 # Custom additions for NPM
 example.js
 stormtroopocat.png
+
+# User additions
+/local
