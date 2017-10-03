@@ -1,15 +1,18 @@
 # github-api
+
 A node module for interfacing with the Github API using promises. The full GitHub API documentation can be found at https://developer.github.com/v3/.
 
 # Installation
+
 ```bash
 npm install github-api-promise
 ````
 
 # Usage
+
 TLDR;
 
-1. Require _github-api_
+1. Require _github-api-promise_
 2. Set settings
 3. Make API calls
 
@@ -37,14 +40,18 @@ api.repos.releases.getRepositoryReleases()
 For help creating an access token, see the GitHub help article [Creating an Access Token for Command Line Use](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). This package only requires either the _repo_ scope for private repos or the _public_repo_ scope for public repos.
 
 # API Support
+
 The following APIs are supported. PRs welcome!
 
-* [Repositories > Releases](https://developer.github.com/v3/repos/releases/) (all resources)
+* [Repositories > Releases](https://developer.github.com/v3/repos/releases/)
+* [Activity > Events](https://developer.github.com/v3/activity/events/)
 
 # Documentation
+
 TODO: JSDoc on github pages
 
 # Thanks
+
 Special thanks to [jeejkang](https://github.com/jeejkang) for the [Stormtroopocat](https://octodex.github.com/stormtroopocat/) image!
 
 Thanks to [aktau/github-release](https://github.com/aktau/github-release) (a library for GO) for the inspiration for this project.
