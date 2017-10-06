@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "bluebird": "*",
+    "lodash": "^4.17.4",
     "lognext": "0.0.3",
     "q": "*",
     "superagent": "*",
-    "superagent-bluebird-promise": "*"
+    "superagent-bluebird-promise": "*",
+    "urlencode": "^1.1.0"
   }
 }

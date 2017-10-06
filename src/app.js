@@ -4,6 +4,7 @@ var githubApi = {};
 githubApi.config = require('./config');
 githubApi.repositories = {
 	releases: require('./repositories/releases'),
+	repositories: require('./repositories/repositories')
 };
 githubApi.repos = githubApi.repositories; // for backwards compatibility
 githubApi.activity = {
