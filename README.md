@@ -44,6 +44,7 @@ For help creating an access token, see the GitHub help article [Creating an Acce
 The following APIs are supported. PRs welcome!
 
 * [Repositories > Releases](https://developer.github.com/v3/repos/releases/)
+* [Repositories > Repositories](https://developer.github.com/v3/repos/)
 * [Activity > Events](https://developer.github.com/v3/activity/events/)
 
 # Documentation
