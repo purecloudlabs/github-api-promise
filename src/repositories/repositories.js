@@ -1,33 +1,5 @@
-const _ = require('lodash');
-const fs = require('fs');
-const log = new (require('lognext'))('events');
-const Q = require('q');
-const request = require('superagent-bluebird-promise');
-const urlencode = require('urlencode');
-
-var config = require('../config');
-
-
-
-function logRequestSuccess(res, message) {
-	if (config.debug !== true) {
-		return;
-	}
-
-	log.debug(
-		'[' + res.statusCode + ']' + 
-		'[' + res.req.method + ' ' + res.req.path + '] ' + 
-		(message ? message : ''));
-}
-
-function assembleQueryParams(params, paramNames) {
-	let s = '';
-	paramNames.forEach((paramName) => {
-		if (params[paramName])
-			s += `&${paramName}=${urlencode(params[paramName])}`;
-	});
-	return _.trimStart(s, '&');
-}
+const config = require('../config');
+const req = require('../request-helpers');
 
 
 
@@ -49,29 +21,8 @@ module.exports = {
 	 * @return {JSON}	repo data
 	 */
 	getMyRepos: function(params) {
-		var deferred = Q.defer();
-
-		try {
-			let url = `${config.host}/user/repos?${assembleQueryParams(params,
-				['visibility','affiliation','type','sort','direction','page'])}`;
-
-			request
-				.get(url)
-				.set('Authorization', 'token ' + config.token)
-				.then(function(res) {
-					logRequestSuccess(res);
-					deferred.resolve(res.body);
-				}, 
-				function(err) {
-					log.error(err);
-					deferred.reject(err.message);
-				});
-		} catch(err) {
-			log.error(err);
-			deferred.reject(err.message);
-		}
-
-		return deferred.promise;
+		return req.standardRequest(`${config.host}/user/repos?${req.assembleQueryParams(params,
+			['visibility','affiliation','type','sort','direction','page'])}`);
 	},
 	
 	/**
@@ -87,29 +38,8 @@ module.exports = {
 	 * @return {JSON}	repo data
 	 */
 	getUserRepos: function(username, params) {
-		var deferred = Q.defer();
-
-		try {
-			let url = `${config.host}/${username}?${assembleQueryParams(params,
-				['type','sort','direction','page'])}`;
-
-			request
-				.get(url)
-				.set('Authorization', 'token ' + config.token)
-				.then(function(res) {
-					logRequestSuccess(res);
-					deferred.resolve(res.body);
-				}, 
-				function(err) {
-					log.error(err);
-					deferred.reject(err.message);
-				});
-		} catch(err) {
-			log.error(err);
-			deferred.reject(err.message);
-		}
-
-		return deferred.promise;
+		return req.standardRequest(`${config.host}/users/${username}/repos?${req.assembleQueryParams(params,
+			['type','sort','direction','page'])}`);
 	},
 	
 	/**
@@ -123,28 +53,7 @@ module.exports = {
 	 * @return {JSON}	repo data
 	 */
 	getOrgRepos: function(org, params) {
-		var deferred = Q.defer();
-
-		try {
-			let url = `${config.host}/orgs/${org}/repos?${assembleQueryParams(params,
-				['type','page'])}`;
-
-			request
-				.get(url)
-				.set('Authorization', 'token ' + config.token)
-				.then(function(res) {
-					logRequestSuccess(res);
-					deferred.resolve(res.body);
-				}, 
-				function(err) {
-					log.error(err);
-					deferred.reject(err.message);
-				});
-		} catch(err) {
-			log.error(err);
-			deferred.reject(err.message);
-		}
-
-		return deferred.promise;
+		return req.standardRequest(`${config.host}/orgs/${org}/repos?${req.assembleQueryParams(params,
+			['type','page'])}`);
 	}
 };
