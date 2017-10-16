@@ -8,6 +8,7 @@ githubApi.activity = {
 };
 
 githubApi.issues = {
+	events: require('./issues/events'),
 	issues: require('./issues/issues')
 };
 
