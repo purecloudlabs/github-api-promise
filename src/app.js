@@ -13,7 +13,7 @@ githubApi.activity = {
 
 // Set to window object if there is a window
 if(typeof window !== 'undefined') {
-    window.githubApi = githubApi;
+	window.githubApi = githubApi;
 }
 
 // Export

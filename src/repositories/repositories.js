@@ -49,29 +49,29 @@ module.exports = {
 	 * @return {JSON}	repo data
 	 */
 	getMyRepos: function(params) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/user/repos?${assembleQueryParams(params,
-	 			['visibility','affiliation','type','sort','direction','page'])}`;
+		try {
+			let url = `${config.host}/user/repos?${assembleQueryParams(params,
+				['visibility','affiliation','type','sort','direction','page'])}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -87,29 +87,29 @@ module.exports = {
 	 * @return {JSON}	repo data
 	 */
 	getUserRepos: function(username, params) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/${username}?${assembleQueryParams(params,
-	 			['type','sort','direction','page'])}`;
+		try {
+			let url = `${config.host}/${username}?${assembleQueryParams(params,
+				['type','sort','direction','page'])}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -123,28 +123,28 @@ module.exports = {
 	 * @return {JSON}	repo data
 	 */
 	getOrgRepos: function(org, params) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/orgs/${org}/repos?${assembleQueryParams(params,
-	 			['type','page'])}`;
+		try {
+			let url = `${config.host}/orgs/${org}/repos?${assembleQueryParams(params,
+				['type','page'])}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	}
 };

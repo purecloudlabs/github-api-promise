@@ -44,21 +44,21 @@ module.exports = {
 		try {
 			request
 				.get(getRepoUrl('releases'))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
-        return deferred.promise;
+		return deferred.promise;
 	},
 
 	/**
@@ -72,18 +72,18 @@ module.exports = {
 		try {
 			request
 				.get(getRepoUrl('releases/' + releaseId))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -100,18 +100,18 @@ module.exports = {
 		try {
 			request
 				.get(getRepoUrl('releases/latest'))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -128,18 +128,18 @@ module.exports = {
 		try {
 			request
 				.get(getRepoUrl('releases/tags/' + tag))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -156,20 +156,20 @@ module.exports = {
 		try {
 			request
 				.post(getRepoUrl('releases'))
-	            .set('Authorization', 'token ' + config.token)
-	            .set('Content-Type', 'application/json')
-	            .send(body)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.set('Content-Type', 'application/json')
+				.send(body)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -187,20 +187,20 @@ module.exports = {
 		try {
 			request
 				.patch(getRepoUrl('releases/' + releaseId))
-	            .set('Authorization', 'token ' + config.token)
-	            .set('Content-Type', 'application/json')
-	            .send(body)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.set('Content-Type', 'application/json')
+				.send(body)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -217,18 +217,18 @@ module.exports = {
 		try {
 			request
 				.delete(getRepoUrl('releases/' + releaseId))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -245,18 +245,18 @@ module.exports = {
 		try {
 			request
 				.get(getRepoUrl('releases/' + releaseId + '/assets'))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -297,25 +297,25 @@ module.exports = {
 				// POST file to github
 				request
 					.post(uploadUrl)
-		            .set('Authorization', 'token ' + token)
-		            .set('Content-Type', contentType)
-		            .send(data)
-		            .then(function(res) {
-		            	logRequestSuccess(res);
-		            	deferred.resolve(res.body);
-		            }, 
-		            function(err) {
-		            	if (err.status == '422'){
-		            		console.log('Upload failed. Error body: ');
-		            		console.log(JSON.stringify(err.body, null, 2));
-		            	}
-		            	logRequestError(err);
-		            	deferred.reject(err.message);
-		            });
-	        });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+					.set('Authorization', 'token ' + token)
+					.set('Content-Type', contentType)
+					.send(data)
+					.then(function(res) {
+						logRequestSuccess(res);
+						deferred.resolve(res.body);
+					}, 
+					function(err) {
+						if (err.status == '422'){
+							console.log('Upload failed. Error body: ');
+							console.log(JSON.stringify(err.body, null, 2));
+						}
+						logRequestError(err);
+						deferred.reject(err.message);
+					});
+			});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -333,18 +333,18 @@ module.exports = {
 		try {
 			request
 				.get(getRepoUrl('releases/assets/' + assetId))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -362,20 +362,20 @@ module.exports = {
 		try {
 			request
 				.patch(getRepoUrl('releases/assets/' + assetId))
-	            .set('Authorization', 'token ' + config.token)
-	            .set('Content-Type', 'application/json')
-	            .send(body)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.set('Content-Type', 'application/json')
+				.send(body)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;
@@ -392,18 +392,18 @@ module.exports = {
 		try {
 			request
 				.delete(getRepoUrl('releases/assets/' + assetId))
-	            .set('Authorization', 'token ' + config.token)
-	            .then(function(res) {
-	            	logRequestSuccess(res);
-	            	deferred.resolve(res.body);
-	            }, 
-	            function(err) {
-	            	logRequestError(err);
-	            	deferred.reject(err.message);
-	            });
-        } catch(err) {
-		    console.log(err);
-	        deferred.reject(err.message);
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
 		}
 
 		return deferred.promise;

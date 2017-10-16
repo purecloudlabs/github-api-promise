@@ -27,30 +27,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getEvents: function(page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -59,30 +59,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getRepositoryEvents: function(owner, repo, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/repos/${owner}/${repo}/events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/repos/${owner}/${repo}/events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -92,30 +92,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getRepositoryIssueEvents: function(owner, repo, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/repos/${owner}/${repo}/issues/events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/repos/${owner}/${repo}/issues/events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -124,30 +124,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getNetworkRepositoryEvents: function(owner, repo, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/networks/${owner}/${repo}/events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/networks/${owner}/${repo}/events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -156,30 +156,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getOrganizationEvents: function(org, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/orgs/${org}/events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/orgs/${org}/events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -190,30 +190,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getUserEventsReceived: function(username, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/users/${username}/received_events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/users/${username}/received_events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -222,30 +222,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getUserPublicEventsReceived: function(username, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/users/${username}/received_events/public`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/users/${username}/received_events/public`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -254,30 +254,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getUserEvents: function(username, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/users/${username}/events`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/users/${username}/events`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -286,30 +286,30 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getUserPublicEvents: function(username, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/users/${username}/events/public`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/users/${username}/events/public`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	},
 	
 	/**
@@ -319,29 +319,29 @@ module.exports = {
 	 * @return {JSON}			Event data
 	 */
 	getUserOrganizationEvents: function(username, org, page) {
-	 	var deferred = Q.defer();
+		var deferred = Q.defer();
 
-	 	try {
-	 		let url = `${config.host}/users/${username}/events/orgs/${org}`;
-	 		if (page)
-	 			url += `?page=${page}`;
+		try {
+			let url = `${config.host}/users/${username}/events/orgs/${org}`;
+			if (page)
+				url += `?page=${page}`;
 
-	 		request
-		 		.get(url)
-		 		.set('Authorization', 'token ' + config.token)
-		 		.then(function(res) {
-		 			logRequestSuccess(res);
-		 			deferred.resolve(res.body);
-		 		}, 
-		 		function(err) {
-		 			log.error(err);
-		 			deferred.reject(err.message);
-		 		});
-	 	} catch(err) {
-	 		log.error(err);
-	 		deferred.reject(err.message);
-	 	}
+			request
+				.get(url)
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					log.error(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			log.error(err);
+			deferred.reject(err.message);
+		}
 
-	 	return deferred.promise;
+		return deferred.promise;
 	}
 };
