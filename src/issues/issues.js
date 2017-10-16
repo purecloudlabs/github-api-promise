@@ -9,7 +9,7 @@ module.exports = {
 	 * List issues
 	 * List all issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/#list-issues}
+	 * @see {@link https://developer.github.com/v3/issues/#list-issues}
 	 * 
 	 * @param {object} params           - An object of parameters for the request
 	 * @param {string} params.filter    - Indicates which sorts of issues to return. Can be one of: assigned, created, mentioned, subscribed, all. Default: assigned
@@ -31,7 +31,7 @@ module.exports = {
 	 * List issues
 	 * List all issues across owned and member repositories assigned to the authenticated user
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/#list-issues}
+	 * @see {@link https://developer.github.com/v3/issues/#list-issues}
 	 * 
 	 * @param {object} params           - An object of parameters for the request
 	 * @param {string} params.filter    - Indicates which sorts of issues to return. Can be one of: assigned, created, mentioned, subscribed, all. Default: assigned
@@ -53,7 +53,7 @@ module.exports = {
 	 * List issues
 	 * List all issues for a given organization assigned to the authenticated user
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/#list-issues}
+	 * @see {@link https://developer.github.com/v3/issues/#list-issues}
 	 * 
 	 * @param {string} org              - The organization
 	 * @param {object} params           - An object of parameters for the request
