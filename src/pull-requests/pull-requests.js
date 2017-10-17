@@ -140,11 +140,12 @@ module.exports = {
 	/**
 	 * Merge a pull request (Merge Button)
 	 * 
-	 * @see {@link https://developer.github.com/v3/pulls#}
+	 * @see {@link https://developer.github.com/v3/pulls#merge-a-pull-request-merge-button}
 	 * 
 	 * @param {string} owner                 - The repo's owner
 	 * @param {string} repo                  - The repo's name
-	 * @param {object} params                - An object of parameters for the request * @param {string} params.commit_title	 - Title for the automatic commit message.
+	 * @param {object} params                - An object of parameters for the request
+	 * @param {string} params.commit_title   - Title for the automatic commit message.
 	 * @param {string} params.commit_message - Extra detail to append to automatic commit message.
 	 * @param {string} params.sha            - SHA that pull request head must match to allow merge.
 	 * @param {string} params.merge_method   - Merge method to use. Possible values are merge, squash or rebase. Default is merge.
