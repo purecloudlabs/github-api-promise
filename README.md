@@ -2,11 +2,18 @@
 
 A node module for interfacing with the Github API using promises. The full GitHub API documentation can be found at https://developer.github.com/v3/.
 
+
 # Installation
 
 ```bash
 npm install github-api-promise
 ```
+
+
+# Documentation
+
+https://princenebulon.github.io/github-api-promise/
+
 
 # Usage
 
@@ -39,6 +46,7 @@ api.repos.releases.getRepositoryReleases()
 
 For help creating an access token, see the GitHub help article [Creating an Access Token for Command Line Use](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). This package only requires either the _repo_ scope for private repos or the _public_repo_ scope for public repos.
 
+
 # API Support
 
 The following APIs are supported. PRs welcome!
@@ -55,9 +63,6 @@ The following APIs are supported. PRs welcome!
 	* [Releases](https://developer.github.com/v3/repos/releases/)
 	* [Repositories](https://developer.github.com/v3/repos/)
 
-# Documentation
-
-TODO: JSDoc on github pages. For now, browse the module's source and read the JSDoc comments.
 
 # Thanks
 
