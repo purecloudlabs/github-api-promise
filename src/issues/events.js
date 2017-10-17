@@ -3,6 +3,9 @@ const req = require('../request-helpers');
 
 
 
+/**
+ * @module issues/events
+ */
 module.exports = {
 
 	/**

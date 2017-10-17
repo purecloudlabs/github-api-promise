@@ -2,7 +2,9 @@ const config = require('../config');
 const req = require('../request-helpers');
 
 
-
+/**
+ * @module activity/events
+ */
 module.exports = {
 	/**
 	 * List public events

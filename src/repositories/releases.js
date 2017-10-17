@@ -30,6 +30,9 @@ function logRequestError(err) {
 }
 
 
+/**
+ * @module repositories/releases
+ */
 module.exports = {
 	/**
 	 * This returns a list of releases, which does not include regular Git tags that have not been 

@@ -2,7 +2,9 @@ const config = require('../config');
 const req = require('../request-helpers');
 
 
-
+/**
+ * @module repositories/repositories
+ */
 module.exports = {
 	/**
 	 * List your repositories

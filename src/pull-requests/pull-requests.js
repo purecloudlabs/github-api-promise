@@ -2,7 +2,10 @@ const config = require('../config');
 const req = require('../request-helpers');
 
 
-
+/**
+ * Pull Requests module
+ * @module pullRequests/pullRequests
+ */
 module.exports = {
 
 	/**

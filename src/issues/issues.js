@@ -3,6 +3,9 @@ const req = require('../request-helpers');
 
 
 
+/**
+ * @module issues/issues
+ */
 module.exports = {
 
 	/**
@@ -121,6 +124,7 @@ module.exports = {
 	 *
 	 * @param {string}   owner          - The repo's owner
 	 * @param {string}   repo           - The repo's name
+	 * @param {object}   body           - The request body
 	 * @param {string}   body.title     - Required. The title of the issue.
 	 * @param {string}   body.body      - The contents of the issue.
 	 * @param {string}   body.assignee  - Login for the user that this issue should be assigned to. NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. This field is deprecated.
@@ -143,6 +147,7 @@ module.exports = {
 	 * @param {string}   owner          - The repo's owner
 	 * @param {string}   repo           - The repo's name
 	 * @param {string}   number         - The issue id
+	 * @param {object}   body           - The request body
 	 * @param {string}   body.title     - Required. The title of the issue.
 	 * @param {string}   body.body      - The contents of the issue.
 	 * @param {string}   body.assignee  - Login for the user that this issue should be assigned to. NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. This field is deprecated.
