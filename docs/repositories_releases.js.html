@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>repositories/releases.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-activity_events.html">activity/events</a><ul class='methods'><li data-type='method'><a href="module-activity_events.html#.getEvents">getEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getNetworkRepositoryEvents">getNetworkRepositoryEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getOrganizationEvents">getOrganizationEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getRepositoryEvents">getRepositoryEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getRepositoryIssueEvents">getRepositoryIssueEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserEvents">getUserEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserEventsReceived">getUserEventsReceived</a></li><li data-type='method'><a href="module-activity_events.html#.getUserOrganizationEvents">getUserOrganizationEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserPublicEvents">getUserPublicEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserPublicEventsReceived">getUserPublicEventsReceived</a></li></ul></li><li><a href="module-issues_comments.html">issues/comments</a><ul class='methods'><li data-type='method'><a href="module-issues_comments.html#.createComment">createComment</a></li><li data-type='method'><a href="module-issues_comments.html#.deleteComment">deleteComment</a></li><li data-type='method'><a href="module-issues_comments.html#.editComment">editComment</a></li><li data-type='method'><a href="module-issues_comments.html#.getComment">getComment</a></li><li data-type='method'><a href="module-issues_comments.html#.getIssueComments">getIssueComments</a></li><li data-type='method'><a href="module-issues_comments.html#.getRepositoryComments">getRepositoryComments</a></li></ul></li><li><a href="module-issues_events.html">issues/events</a><ul class='methods'><li data-type='method'><a href="module-issues_events.html#.getEvent">getEvent</a></li><li data-type='method'><a href="module-issues_events.html#.getIssueEvents">getIssueEvents</a></li><li data-type='method'><a href="module-issues_events.html#.getRepositoryIssueEvents">getRepositoryIssueEvents</a></li></ul></li><li><a href="module-issues_issues.html">issues/issues</a><ul class='methods'><li data-type='method'><a href="module-issues_issues.html#.createIssue">createIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getIssues">getIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getOrganizationIssues">getOrganizationIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssue">getRepositoryIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssues">getRepositoryIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getUserIssues">getUserIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.lockIssue">lockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.unlockIssue">unlockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.updateIssue">updateIssue</a></li></ul></li><li><a href="module-pullRequests_pullRequests.html">pullRequests/pullRequests</a><ul class='methods'><li data-type='method'><a href="module-pullRequests_pullRequests.html#.createPullRequest">createPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getIsMerged">getIsMerged</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequest">getPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestCommits">getPullRequestCommits</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestFiles">getPullRequestFiles</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequests">getPullRequests</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.merge">merge</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.updatePullRequest">updatePullRequest</a></li></ul></li><li><a href="module-repositories_releases.html">repositories/releases</a><ul class='methods'><li data-type='method'><a href="module-repositories_releases.html#.createRelease">createRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteRelease">deleteRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteReleaseAsset">deleteReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.getLatestRepositoryRelease">getLatestRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssetData">getReleaseAssetData</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssets">getReleaseAssets</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryRelease">getRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleaseByTagName">getRepositoryReleaseByTagName</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleases">getRepositoryReleases</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateRelease">updateRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateReleaseAsset">updateReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.uploadReleaseAsset">uploadReleaseAsset</a></li></ul></li><li><a href="module-repositories_repositories.html">repositories/repositories</a><ul class='methods'><li data-type='method'><a href="module-repositories_repositories.html#.createOrgRepository">createOrgRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.createUserRepository">createUserRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.deleteRepository">deleteRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getMyRepos">getMyRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getOrgRepos">getOrgRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getPublicRepositories">getPublicRepositories</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepository">getRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryContributors">getRepositoryContributors</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryLanguages">getRepositoryLanguages</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTags">getRepositoryTags</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTeams">getRepositoryTeams</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTopics">getRepositoryTopics</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getUserRepos">getUserRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepository">updateRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepositoryTopics">updateRepositoryTopics</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">repositories/releases.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var request = require('superagent-bluebird-promise');
+var Q = require('q');
+var fs = require('fs');
+var config = require('../config');
+
+function getRepoUrl(additionalPath) {
+	var url = config.host + '/repos/' + config.owner + '/' + config.repo + '/';
+	if (additionalPath)
+		url += additionalPath;
+	return url;
+}
+
+function logRequestSuccess(res, message) {
+	if (config.debug != true) {
+		return;
+	}
+
+	console.log(
+		'[INFO]' + 
+		'[' + res.statusCode + ']' + 
+		'[' + res.req.method + ' ' + res.req.path + '] ' + 
+		(message ? message : ''));
+}
+
+function logRequestError(err) {
+	console.log('[ERROR]' + 
+		'[' + err.res.statusCode + ']' + 
+		'[' + err.res.req.method + ' ' + err.res.req.path + '] ' + 
+		err.message);
+}
+
+
+/**
+ * @module repositories/releases
+ */
+module.exports = {
+	/**
+	 * This returns a list of releases, which does not include regular Git tags that have not been 
+	 * associated with a release. To get a list of Git tags, use the Repository Tags API. Information 
+	 * about published releases are available to everyone. Only users with push access will receive 
+	 * listings for draft releases.
+	 * @return {JSON}			A list of release data
+	 */
+	getRepositoryReleases: function() {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.get(getRepoUrl('releases'))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Gets data about a single release
+	 * @param  {string} releaseId 	The ID of the release
+	 * @return {JSON}           	The release data
+	 */
+	getRepositoryRelease: function(releaseId) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.get(getRepoUrl('releases/' + releaseId))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * View the latest published full release for the repository. Draft releases and prereleases 
+	 * are not returned by this endpoint.
+	 * @return {JSON}           	The release data
+	 */
+	getLatestRepositoryRelease: function() {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.get(getRepoUrl('releases/latest'))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Get a published release with the specified tag. This fails with a 404 if the tag isn't used by a release.
+	 * @param  {string} tag  		The tag of the release
+	 * @return {JSON}           	The release data
+	 */
+	getRepositoryReleaseByTagName: function(tag) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.get(getRepoUrl('releases/tags/' + tag))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Users with push access to the repository can create a release. Returns 422 if anything is wrong with the values in the body.
+	 * @param  {JSON} 	body  		A JSON document to send with the request
+	 * @return {JSON}           	The release data
+	 */
+	createRelease: function(body) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.post(getRepoUrl('releases'))
+				.set('Authorization', 'token ' + config.token)
+				.set('Content-Type', 'application/json')
+				.send(body)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Users with push access to the repository can edit a release.
+	 * @param  {string} releaseId 	The ID of the release
+	 * @param  {JSON} 	body  		A JSON document to send with the request
+	 * @return {JSON}           	The release data
+	 */
+	updateRelease: function(releaseId, body) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.patch(getRepoUrl('releases/' + releaseId))
+				.set('Authorization', 'token ' + config.token)
+				.set('Content-Type', 'application/json')
+				.send(body)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Users with push access to the repository can delete a release.
+	 * @param  {string} releaseId 	The ID of the release
+	 * @return {string}           	Undefined on success, otherwise an error message
+	 */
+	deleteRelease: function(releaseId) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.delete(getRepoUrl('releases/' + releaseId))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Gets a list of existing assets for a release.
+	 * @param  {string} releaseId 	The ID of the release
+	 * @return {JSON}           	A list of asset data
+	 */
+	getReleaseAssets: function(releaseId) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.get(getRepoUrl('releases/' + releaseId + '/assets'))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Upload an asset to a release. 422 if upload is rejected (dupe file name, etc.)
+	 * @param  {string} uploadUrl 		The upload_url value from the release's data
+	 * @param  {string} assetName     	The file name of the asset
+	 * @param  {string} assetLabel    	An alternate short description of the asset. Used in place of the filename.
+	 * @param  {string} localFilePath 	The full path to the file to be uploaded
+	 * @param  {string} contentType 	The MIME type of the file (e.g. 'application/zip')
+	 * @return {JSON}               	The asset data
+	 */
+	uploadReleaseAsset: function(uploadUrl, assetName, assetLabel, localFilePath, contentType) {
+		var deferred = Q.defer();
+
+		try {
+			var token = config.token;
+
+			// Remove this from URL: {?name,label}
+			if (uploadUrl.substring(uploadUrl.length - 13) == '{?name,label}'){
+				uploadUrl = uploadUrl.substring(0, uploadUrl.length - 13);
+			}
+
+			// Add name and label to URL
+			uploadUrl += '?name=' + encodeURIComponent(assetName) + '&amp;label=' + encodeURIComponent(assetLabel);
+
+			// Get file contents
+			fs.readFile(localFilePath, function(err, data) {
+				// Check for error
+				if (err) {
+					console.log(err);
+					deferred.reject(err);
+					return;
+				}
+
+				// POST file to github
+				request
+					.post(uploadUrl)
+					.set('Authorization', 'token ' + token)
+					.set('Content-Type', contentType)
+					.send(data)
+					.then(function(res) {
+						logRequestSuccess(res);
+						deferred.resolve(res.body);
+					}, 
+					function(err) {
+						if (err.status == '422'){
+							console.log('Upload failed. Error body: ');
+							console.log(JSON.stringify(err.body, null, 2));
+						}
+						logRequestError(err);
+						deferred.reject(err.message);
+					});
+			});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Get data about a single release asset. Download the file from the URL in the 
+	 * browser_download_url property.
+	 * @param  {string} assetId 	The ID of the asset
+	 * @return {JSON}         		The asset data
+	 */
+	getReleaseAssetData: function(assetId) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.get(getRepoUrl('releases/assets/' + assetId))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Users with push access to the repository can edit a release asset.
+	 * @param  {string} assetId 	The ID of the asset
+	 * @param  {JSON} 	body    	A JSON document to send with the request
+	 * @return {JSON}				The asset data
+	 */
+	updateReleaseAsset: function(assetId, body) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.patch(getRepoUrl('releases/assets/' + assetId))
+				.set('Authorization', 'token ' + config.token)
+				.set('Content-Type', 'application/json')
+				.send(body)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	},
+
+	/**
+	 * Deletes an asset from a release
+	 * @param  {string} assetId 	The ID of the asset
+	 * @return {string}           	Undefined on success, otherwise an error message
+	 */
+	deleteReleaseAsset: function(assetId) {
+		var deferred = Q.defer();
+
+		try {
+			request
+				.delete(getRepoUrl('releases/assets/' + assetId))
+				.set('Authorization', 'token ' + config.token)
+				.then(function(res) {
+					logRequestSuccess(res);
+					deferred.resolve(res.body);
+				}, 
+				function(err) {
+					logRequestError(err);
+					deferred.reject(err.message);
+				});
+		} catch(err) {
+			console.log(err);
+			deferred.reject(err.message);
+		}
+
+		return deferred.promise;
+	}
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 17 2017 10:58:15 GMT-0600 (MDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

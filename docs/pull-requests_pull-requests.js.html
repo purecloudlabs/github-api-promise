@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pull-requests/pull-requests.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-activity_events.html">activity/events</a><ul class='methods'><li data-type='method'><a href="module-activity_events.html#.getEvents">getEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getNetworkRepositoryEvents">getNetworkRepositoryEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getOrganizationEvents">getOrganizationEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getRepositoryEvents">getRepositoryEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getRepositoryIssueEvents">getRepositoryIssueEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserEvents">getUserEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserEventsReceived">getUserEventsReceived</a></li><li data-type='method'><a href="module-activity_events.html#.getUserOrganizationEvents">getUserOrganizationEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserPublicEvents">getUserPublicEvents</a></li><li data-type='method'><a href="module-activity_events.html#.getUserPublicEventsReceived">getUserPublicEventsReceived</a></li></ul></li><li><a href="module-issues_comments.html">issues/comments</a><ul class='methods'><li data-type='method'><a href="module-issues_comments.html#.createComment">createComment</a></li><li data-type='method'><a href="module-issues_comments.html#.deleteComment">deleteComment</a></li><li data-type='method'><a href="module-issues_comments.html#.editComment">editComment</a></li><li data-type='method'><a href="module-issues_comments.html#.getComment">getComment</a></li><li data-type='method'><a href="module-issues_comments.html#.getIssueComments">getIssueComments</a></li><li data-type='method'><a href="module-issues_comments.html#.getRepositoryComments">getRepositoryComments</a></li></ul></li><li><a href="module-issues_events.html">issues/events</a><ul class='methods'><li data-type='method'><a href="module-issues_events.html#.getEvent">getEvent</a></li><li data-type='method'><a href="module-issues_events.html#.getIssueEvents">getIssueEvents</a></li><li data-type='method'><a href="module-issues_events.html#.getRepositoryIssueEvents">getRepositoryIssueEvents</a></li></ul></li><li><a href="module-issues_issues.html">issues/issues</a><ul class='methods'><li data-type='method'><a href="module-issues_issues.html#.createIssue">createIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getIssues">getIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getOrganizationIssues">getOrganizationIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssue">getRepositoryIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssues">getRepositoryIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getUserIssues">getUserIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.lockIssue">lockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.unlockIssue">unlockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.updateIssue">updateIssue</a></li></ul></li><li><a href="module-pullRequests_pullRequests.html">pullRequests/pullRequests</a><ul class='methods'><li data-type='method'><a href="module-pullRequests_pullRequests.html#.createPullRequest">createPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getIsMerged">getIsMerged</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequest">getPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestCommits">getPullRequestCommits</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestFiles">getPullRequestFiles</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequests">getPullRequests</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.merge">merge</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.updatePullRequest">updatePullRequest</a></li></ul></li><li><a href="module-repositories_releases.html">repositories/releases</a><ul class='methods'><li data-type='method'><a href="module-repositories_releases.html#.createRelease">createRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteRelease">deleteRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteReleaseAsset">deleteReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.getLatestRepositoryRelease">getLatestRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssetData">getReleaseAssetData</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssets">getReleaseAssets</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryRelease">getRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleaseByTagName">getRepositoryReleaseByTagName</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleases">getRepositoryReleases</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateRelease">updateRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateReleaseAsset">updateReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.uploadReleaseAsset">uploadReleaseAsset</a></li></ul></li><li><a href="module-repositories_repositories.html">repositories/repositories</a><ul class='methods'><li data-type='method'><a href="module-repositories_repositories.html#.createOrgRepository">createOrgRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.createUserRepository">createUserRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.deleteRepository">deleteRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getMyRepos">getMyRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getOrgRepos">getOrgRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getPublicRepositories">getPublicRepositories</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepository">getRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryContributors">getRepositoryContributors</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryLanguages">getRepositoryLanguages</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTags">getRepositoryTags</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTeams">getRepositoryTeams</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTopics">getRepositoryTopics</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getUserRepos">getUserRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepository">updateRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepositoryTopics">updateRepositoryTopics</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">pull-requests/pull-requests.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const config = require('../config');
+const req = require('../request-helpers');
+
+
+/**
+ * Pull Requests module
+ * @module pullRequests/pullRequests
+ */
+module.exports = {
+
+	/**
+	 * List pull requests
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#list-pull-requests}
+	 * 
+	 * @param {string} owner            - The repo's owner
+	 * @param {string} repo             - The repo's name
+	 * @param {object} params           - An object of parameters for the request
+	 * @param {string} params.state     - Either open, closed, or all to filter by state. Default: open
+	 * @param {string} params.head      - Filter pulls by head user and branch name in the format of user:ref-name. Example: github:new-script-format.
+	 * @param {string} params.base      - Filter pulls by base branch name. Example: gh-pages.
+	 * @param {string} params.sort      - What to sort results by. Can be either created, updated, popularity (comment count) or long-running (age, filtering by pulls updated in the last month). Default: created
+	 * @param {string} params.direction - The direction of the sort. Can be either asc or desc. Default: desc when sort is created or sort is not specified, otherwise asc.
+	 * @param {int}    params.page      - The page of results to retrieve
+	 *
+	 * @return {object} Pull request data
+	 */
+	getPullRequests: function(owner, repo, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls?${req.assembleQueryParams(params,
+			['state', 'head', 'base', 'sort', 'direction', 'page'])}`);
+	},
+
+	/**
+	 * Get a single pull request
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#get-a-single-pull-request}
+	 *
+	 * @param {string} owner  - The repo's owner
+	 * @param {string} repo   - The repo's name
+	 * @param {string} number - The pull request's ID
+	 *
+	 * @return {object} Pull request data
+	 */
+	getPullRequest: function(owner, repo, number) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}`);
+	},
+
+	/**
+	 * Create a pull request
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#create-a-pull-request}
+	 * 
+	 * @param {string}  owner                      - The repo's owner
+	 * @param {string}  repo                       - The repo's name
+	 * @param {object}  body                       - The request body
+	 * @param {string}  body.title                 - Required. The title of the pull request.
+	 * @param {string}  body.head                  - Required. The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch.
+	 * @param {string}  body.base                  - Required. The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
+	 * @param {string}  body.body                  - The contents of the pull request.
+	 * @param {boolean} body.maintainer_can_modify - Indicates whether maintainers can modify the pull request.
+	 *
+	 * @return {object} Pull request data
+	 */
+	createPullRequest: function(owner, repo, body) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls`, 'post', body);
+	},
+
+	/**
+	 * Update a pull request
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#update-a-pull-request}
+	 * 
+	 * @param {string}  owner                      - The repo's owner
+	 * @param {string}  repo                       - The repo's name
+	 * @param {string}  number                     - The pull request ID
+	 * @param {object}  body                       - The request body
+	 * @param {string}  body.title                 - Required. The title of the pull request.
+	 * @param {string}  body.head                  - Required. The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch.
+	 * @param {string}  body.base                  - Required. The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
+	 * @param {string}  body.body                  - The contents of the pull request.
+	 * @param {boolean} body.maintainer_can_modify - Indicates whether maintainers can modify the pull request.
+	 *
+	 * @return {object} Pull request data
+	 */
+	updatePullRequest: function(owner, repo, number, body) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}`, 'patch', body);
+	},
+
+	/**
+	 * List commits on a pull request
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#list-commits-on-a-pull-request}
+	 *
+	 * @param {string} owner       - The repo's owner
+	 * @param {string} repo        - The repo's name
+	 * @param {string} number      - The pull request ID
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} Pull request data
+	 */
+	getPullRequestCommits: function(owner, repo, number, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}/commits?${req.assembleQueryParams(params,
+			['page'])}`);
+	},
+
+	/**
+	 * List pull requests files
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#list-pull-requests-files}
+	 * 
+	 * @param {string} owner       - The repo's owner
+	 * @param {string} repo        - The repo's name
+	 * @param {string} number      - The pull request ID
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} Pull request data
+	 */
+	getPullRequestFiles: function(owner, repo, number, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}/files?${req.assembleQueryParams(params,
+			[ 'page'])}`);
+	},
+
+	/**
+	 * Get if a pull request has been merged. 204=merged, 404=not merged
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#get-if-a-pull-request-has-been-merged}
+	 * 
+	 * @param {string} owner  - The repo's owner
+	 * @param {string} repo   - The repo's name
+	 * @param {string} number - The pull request ID
+	 *
+	 * @return {null} 204=merged / 404=not merged
+	 */
+	getIsMerged: function(owner, repo, number) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}/merge`);
+	},
+
+	/**
+	 * Merge a pull request (Merge Button)
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls#}
+	 * 
+	 * @param {string} owner                 - The repo's owner
+	 * @param {string} repo                  - The repo's name
+	 * @param {object} params                - An object of parameters for the request * @param {string} params.commit_title	 - Title for the automatic commit message.
+	 * @param {string} params.commit_message - Extra detail to append to automatic commit message.
+	 * @param {string} params.sha            - SHA that pull request head must match to allow merge.
+	 * @param {string} params.merge_method   - Merge method to use. Possible values are merge, squash or rebase. Default is merge.
+	 * @param {int}    params.page           - The page of results to retrieve
+	 *
+	 * @return {object} Pull request data
+	 */
+	merge: function(owner, repo, number, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}/merge?${req.assembleQueryParams(params,
+			['commit_message', 'sha', 'merge_method', 'page'])}`);
+	}
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 17 2017 10:58:15 GMT-0600 (MDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
