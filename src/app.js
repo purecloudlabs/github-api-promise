@@ -13,6 +13,10 @@ githubApi.issues = {
 	issues: require('./issues/issues')
 };
 
+githubApi.pullRequests = {
+	pullRequests: require('./pull-requests/pull-requests')
+};
+
 githubApi.repositories = {
 	releases: require('./repositories/releases'),
 	repositories: require('./repositories/repositories')
