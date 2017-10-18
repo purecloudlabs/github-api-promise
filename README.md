@@ -58,8 +58,10 @@ The following APIs are supported. PRs welcome!
 	* [Events](https://developer.github.com/v3/issues/events/)
 	* [Issues](https://developer.github.com/v3/issues/)
 * Pull Requests
+	* [Comments](https://developer.github.com/v3/pulls/comments/)
 	* [Pull Requests](https://developer.github.com/v3/pulls/)
 * Repositories
+	* [Commits](https://developer.github.com/v3/repos/commits/)
 	* [Releases](https://developer.github.com/v3/repos/releases/)
 	* [Repositories](https://developer.github.com/v3/repos/)
 
