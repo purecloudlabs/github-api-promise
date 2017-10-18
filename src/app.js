@@ -14,6 +14,7 @@ githubApi.issues = {
 };
 
 githubApi.pullRequests = {
+	comments: require('./pull-requests/comments'),
 	pullRequests: require('./pull-requests/pull-requests')
 };
 
