@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>activity/events - Documentation</title>
+    <title>pullRequests/comments - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">activity/events</h1>
+    <h1 class="page-title">pullRequests/comments</h1>
     
 
     
@@ -40,6 +40,8 @@
 <header>
     
         
+            
+        
     
 </header>
 
@@ -47,6 +49,82 @@
     <div class="container-overview">
     
         
+            <div class="description"><p>Comments module</p></div>
+        
+
+        
+            
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
     
@@ -72,7 +150,7 @@
 
     
 
-    <h4 class="name" id=".getEvents"><span class="type-signature">(static) </span>getEvents<span class="signature">(params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".createComment"><span class="type-signature">(static) </span>createComment<span class="signature">(owner, repo, number, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -84,7 +162,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line17">line 17</a>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -118,7 +196,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events">https://developer.github.com/v3/activity/events/#list-public-events</a></li>
+            <li><a href="https://developer.github.com/v3/pulls/comments/#create-a-comment">https://developer.github.com/v3/pulls/comments/#create-a-comment</a></li>
         </ul>
     </dd>
     
@@ -131,218 +209,8 @@
 
 
 <div class="description">
-    <p>List public events</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getNetworkRepositoryEvents"><span class="type-signature">(static) </span>getNetworkRepositoryEvents<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line63">line 63</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories">https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events for a network of repositories</p>
+    <p>Create a comment
+Alternative input: Instead of passing commit_id, path, and position, you can reply to an existing pull request comment like this:</p>
 </div>
 
 
@@ -386,7 +254,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -396,7 +264,7 @@
 
             
 
-            <td class="description last"><p>The repo's owner id</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
@@ -404,240 +272,6 @@
         <tr>
             
                 <td class="name"><code>repo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo id</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getOrganizationEvents"><span class="type-signature">(static) </span>getOrganizationEvents<span class="signature">(org, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line77">line 77</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization">https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events for an organization</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>org</code></td>
             
 
             <td class="type">
@@ -653,14 +287,37 @@
 
             
 
-            <td class="description last"><p>The organization</p></td>
+            <td class="description last"><p>The repo's name</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params</code></td>
+                <td class="name"><code>number</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The pull request number</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -676,7 +333,7 @@
 
             
 
-            <td class="description last"><p>An object of parameters for the request</p>
+            <td class="description last"><p>The request body</p>
                 <h6>Properties</h6>
                 
 
@@ -702,13 +359,13 @@
 
         <tr>
             
-                <td class="name"><code>page</code></td>
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -718,7 +375,99 @@
 
             
 
-            <td class="description last"><p>The page of results to retrieve</p></td>
+            <td class="description last"><p>Required. The text of the comment.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>commit_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the position.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The relative path to the file that necessitates a comment.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>in_reply_to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The comment ID to reply to. Note: This must be the ID of a top-level comment, not a reply to that comment. Replies to replies are not supported.</p></td>
         </tr>
 
     
@@ -749,7 +498,7 @@
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Pull request comment data</p>
 </div>
 
 
@@ -760,7 +509,7 @@
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -774,7 +523,7 @@
 
     
 
-    <h4 class="name" id=".getRepositoryEvents"><span class="type-signature">(static) </span>getRepositoryEvents<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".deleteComment"><span class="type-signature">(static) </span>deleteComment<span class="signature">(owner, repo, id)</span><span class="type-signature"> &rarr; {null}</span></h4>
 
     
 
@@ -786,7 +535,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line32">line 32</a>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line120">line 120</a>
     </li></ul></dd>
     
 
@@ -820,7 +569,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-repository-events">https://developer.github.com/v3/activity/events/#list-repository-events</a></li>
+            <li><a href="https://developer.github.com/v3/pulls/comments/#delete-a-comment">https://developer.github.com/v3/pulls/comments/#delete-a-comment</a></li>
         </ul>
     </dd>
     
@@ -833,7 +582,7 @@
 
 
 <div class="description">
-    <p>List repository events</p>
+    <p>Delete a comment</p>
 </div>
 
 
@@ -877,7 +626,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -887,7 +636,7 @@
 
             
 
-            <td class="description last"><p>The repo's owner id</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
@@ -900,7 +649,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -910,20 +659,20 @@
 
             
 
-            <td class="description last"><p>The repo id</p></td>
+            <td class="description last"><p>The repo's name</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -933,56 +682,7 @@
 
             
 
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>The comment's id</p></td>
         </tr>
 
     
@@ -1006,7 +706,7 @@
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>204 no content</p>
 </div>
 
 
@@ -1017,7 +717,7 @@
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">null</span>
 
 
     </dd>
@@ -1031,7 +731,7 @@
 
     
 
-    <h4 class="name" id=".getRepositoryIssueEvents"><span class="type-signature">(static) </span>getRepositoryIssueEvents<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".editComment"><span class="type-signature">(static) </span>editComment<span class="signature">(owner, repo, id, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1043,7 +743,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line48">line 48</a>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line105">line 105</a>
     </li></ul></dd>
     
 
@@ -1077,7 +777,283 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-issue-events-for-a-repository">https://developer.github.com/v3/activity/events/#list-issue-events-for-a-repository</a></li>
+            <li><a href="https://developer.github.com/v3/pulls/comments/#edit-a-comment">https://developer.github.com/v3/pulls/comments/#edit-a-comment</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>owner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo's owner</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo's name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The comment's id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The request body</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The text of the comment.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Pull request comment data</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getComment"><span class="type-signature">(static) </span>getComment<span class="signature">(owner, repo, id)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/pulls/comments/#get-a-single-comment">https://developer.github.com/v3/pulls/comments/#get-a-single-comment</a></li>
         </ul>
     </dd>
     
@@ -1090,8 +1066,7 @@
 
 
 <div class="description">
-    <p>List issue events for a repository
-Repository issue events have a different format than other events, as documented in the Issue Events API.</p>
+    <p>Get a single comment</p>
 </div>
 
 
@@ -1135,7 +1110,7 @@ Repository issue events have a different format than other events, as documented
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1145,7 +1120,7 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The repo's owner id</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
@@ -1158,7 +1133,7 @@ Repository issue events have a different format than other events, as documented
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1168,20 +1143,20 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The repo id</p></td>
+            <td class="description last"><p>The repo's name</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -1191,56 +1166,7 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>The comment's id</p></td>
         </tr>
 
     
@@ -1264,7 +1190,7 @@ Repository issue events have a different format than other events, as documented
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Pull request comment data</p>
 </div>
 
 
@@ -1275,7 +1201,7 @@ Repository issue events have a different format than other events, as documented
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -1289,7 +1215,7 @@ Repository issue events have a different format than other events, as documented
 
     
 
-    <h4 class="name" id=".getUserEvents"><span class="type-signature">(static) </span>getUserEvents<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".getPullRequestComments"><span class="type-signature">(static) </span>getPullRequestComments<span class="signature">(owner, repo, number, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1301,7 +1227,7 @@ Repository issue events have a different format than other events, as documented
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line121">line 121</a>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -1335,7 +1261,7 @@ Repository issue events have a different format than other events, as documented
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user">https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user</a></li>
+            <li><a href="https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request">https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request</a></li>
         </ul>
     </dd>
     
@@ -1348,7 +1274,8 @@ Repository issue events have a different format than other events, as documented
 
 
 <div class="description">
-    <p>List events performed by a user</p>
+    <p>List comments on a pull request
+By default, review comments are ordered by ascending ID.</p>
 </div>
 
 
@@ -1386,7 +1313,7 @@ Repository issue events have a different format than other events, as documented
 
         <tr>
             
-                <td class="name"><code>username</code></td>
+                <td class="name"><code>owner</code></td>
             
 
             <td class="type">
@@ -1402,7 +1329,53 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The username</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo's name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The pull request number</p></td>
         </tr>
 
     
@@ -1447,6 +1420,75 @@ Repository issue events have a different format than other events, as documented
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sort</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Can be either created or updated comments. Default: created</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>direction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Can be either asc or desc. Ignored without sort parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>since</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only returns comments updated at or after this time.</p></td>
+        </tr>
+
     
 
         <tr>
@@ -1498,7 +1540,7 @@ Repository issue events have a different format than other events, as documented
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Pull request comment data</p>
 </div>
 
 
@@ -1509,7 +1551,7 @@ Repository issue events have a different format than other events, as documented
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -1523,7 +1565,7 @@ Repository issue events have a different format than other events, as documented
 
     
 
-    <h4 class="name" id=".getUserEventsReceived"><span class="type-signature">(static) </span>getUserEventsReceived<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".getRepositoryComments"><span class="type-signature">(static) </span>getRepositoryComments<span class="signature">(owner, repo, number, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1535,7 +1577,7 @@ Repository issue events have a different format than other events, as documented
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line93">line 93</a>
+        <a href="pull-requests_comments.js.html">pull-requests/comments.js</a>, <a href="pull-requests_comments.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -1569,7 +1611,7 @@ Repository issue events have a different format than other events, as documented
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-that-a-user-has-received">https://developer.github.com/v3/activity/events/#list-events-that-a-user-has-received</a></li>
+            <li><a href="https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository">https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository</a></li>
         </ul>
     </dd>
     
@@ -1582,9 +1624,8 @@ Repository issue events have a different format than other events, as documented
 
 
 <div class="description">
-    <p>List events that a user has received
-These are events that you've received by watching repos and following users. If you are authenticated as 
-the given user, you will see private events. Otherwise, you'll only see public events.</p>
+    <p>List comments in a repository
+By default, review comments are ordered by ascending ID.</p>
 </div>
 
 
@@ -1622,7 +1663,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
         <tr>
             
-                <td class="name"><code>username</code></td>
+                <td class="name"><code>owner</code></td>
             
 
             <td class="type">
@@ -1638,7 +1679,53 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
             
 
-            <td class="description last"><p>The username</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo's name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The pull request number</p></td>
         </tr>
 
     
@@ -1683,6 +1770,75 @@ the given user, you will see private events. Otherwise, you'll only see public e
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sort</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Can be either created or updated comments. Default: created</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>direction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Can be either asc or desc. Ignored without sort parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>since</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only returns comments updated at or after this time.</p></td>
+        </tr>
+
     
 
         <tr>
@@ -1734,7 +1890,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Pull request comment data</p>
 </div>
 
 
@@ -1745,733 +1901,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserOrganizationEvents"><span class="type-signature">(static) </span>getUserOrganizationEvents<span class="signature">(username, org, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line151">line 151</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-for-an-organization">https://developer.github.com/v3/activity/events/#list-events-for-an-organization</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List events for an organization
-This is the user's organization dashboard. You must be authenticated as the user to view this.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>org</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The organization</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
 <span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserPublicEvents"><span class="type-signature">(static) </span>getUserPublicEvents<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line135">line 135</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user">https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events performed by a user</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserPublicEventsReceived"><span class="type-signature">(static) </span>getUserPublicEventsReceived<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line107">line 107</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events-that-a-user-has-received">https://developer.github.com/v3/activity/events/#list-public-events-that-a-user-has-received</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events that a user has received</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
 
 
     </dd>

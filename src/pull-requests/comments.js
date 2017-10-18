@@ -3,8 +3,8 @@ const req = require('../request-helpers');
 
 
 /**
- * Pull Requests module
- * @module pullRequests/pullRequests
+ * Comments module
+ * @module pullRequests/comments
  */
 module.exports = {
 
