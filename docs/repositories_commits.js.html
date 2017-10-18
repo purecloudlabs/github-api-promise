@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>repositories/commits.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,77 +27,122 @@
 
 <div id="main">
     
+    <h1 class="page-title">repositories/commits.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const config = require('../config');
+const req = require('../request-helpers');
 
 
+/**
+ * Commits module
+ * @module repositories/commits
+ */
+module.exports = {
 
+	/**
+	 * List commits on a repository
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository}
+	 * 
+	 * @param {string} owner         - The repo's owner
+	 * @param {string} repo          - The repo's name
+	 * @param {object} params        - An object of parameters for the request
+	 * @param {string} params.sha    - SHA or branch to start listing commits from. Default: the repository’s default branch (usually master).
+	 * @param {string} params.path   - Only commits containing this file path will be returned.
+	 * @param {string} params.author - GitHub login or email address by which to filter by commit author.
+	 * @param {string} params.since  - Only commits after this date will be returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
+	 * @param {string} params.until  - Only commits before this date will be returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
+	 * @param {int}    params.page   - The page of results to retrieve
+	 *
+	 * @return {object} Commit data
+	 */
+	getCommits: function(owner, repo, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits?${req.assembleQueryParams(params,
+			['sha', 'path', 'author', 'since', 'until', 'page'])}`);
+	},
 
+	/**
+	 * Get a single commit
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/commits/#get-a-single-commit}
+	 * 
+	 * @param {string} owner - The repo's owner
+	 * @param {string} repo  - The repo's name
+	 * @param {string} sha   - The commit's sha
+	 *
+	 * @return {object} Commit data
+	 */
+	getCommit: function(owner, repo, sha) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits/${sha}`);
+	},
 
+	/**
+	 * ***NOT IMPLEMENTED***
+	 * Get the SHA-1 of a commit reference
+	 * Users with read access can get the SHA-1 of a commit reference
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/commits/#get-the-sha-1-of-a-commit-reference}
+	 * 
+	 * @param {string} owner - The repo's owner
+	 * @param {string} repo  - The repo's name
+	 * @param {string} ref   - The commit's reference
+	 *
+	 * @return {string} SHA-1 value
+	 */
+	getSha1: function(owner, repo, ref) {
+		throw new Error('Operation not implemented');
 
+		/* To access the API you must provide a custom media type in the Accept header:
+		 * application/vnd.github.VERSION.sha
+		 */
 
+		//TODO: ability to pass custom headers to the request
+		//return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits/${ref}`);
+	},
 
+	/**
+	 * Compare two commits
+	 * Both :base and :head must be branch names in :repo. To compare branches across other repositories in the same network as :repo, use the format &lt;USERNAME>:branch. For example: base=hubot:branchname, head=octocat:branchname
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/commits/#compare-two-commits}
+	 * 
+	 * @param {string} owner - The repo's owner
+	 * @param {string} repo  - The repo's name
+	 * @param {string} base  - The branch to be used as the basis for comparison
+	 * @param {string} head  - The branch to compare against :base
+	 *
+	 * @return {object} comparison data
+	 */
+	compareCommits: function(owner, repo, base, head) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/compare/${base}...${head}`);
+	},
 
-    
-
-
-    <section class="readme">
-        <article><h1>github-api-promise</h1><p>A node module for interfacing with the Github API using promises. The full GitHub API documentation can be found at https://developer.github.com/v3/.</p>
-<h1>Installation</h1><pre class="prettyprint source lang-bash"><code>npm install github-api-promise</code></pre><h1>Documentation</h1><p>https://princenebulon.github.io/github-api-promise/</p>
-<h1>Usage</h1><p>TLDR;</p>
-<ol>
-<li>Require <em>github-api-promise</em></li>
-<li>Set settings</li>
-<li>Make API calls</li>
-</ol>
-<p>Basic example code:</p>
-<pre class="prettyprint source lang-JavaScript"><code>var api = require('github-api-promise');
-
-// Set settings
-api.config.owner = 'OwnersGithubUsername';
-api.config.repo = 'RepoName';
-api.config.token = 'YourAccessToken';
-api.config.debug = true; // Default is false. Logs request information via console.log when true.
-
-// Do stuff
-api.repos.releases.getRepositoryReleases()
-    .then(function(res) {
-        // Do your stuff here. res is the JSON object returned by the API
-    })
-    .catch(function(err) {
-        console.log('Request failed: ' + err);
-    });</code></pre><p>For help creating an access token, see the GitHub help article <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating an Access Token for Command Line Use</a>. This package only requires either the <em>repo</em> scope for private repos or the _public<em>repo</em> scope for public repos.</p>
-<h1>API Support</h1><p>The following APIs are supported. PRs welcome!</p>
-<ul>
-<li>Activity<ul>
-<li><a href="https://developer.github.com/v3/activity/events/">Events</a></li>
-</ul>
-</li>
-<li>Issues<ul>
-<li><a href="https://developer.github.com/v3/issues/comments/">Comments</a></li>
-<li><a href="https://developer.github.com/v3/issues/events/">Events</a></li>
-<li><a href="https://developer.github.com/v3/issues/">Issues</a></li>
-</ul>
-</li>
-<li>Pull Requests<ul>
-<li><a href="https://developer.github.com/v3/pulls/">Pull Requests</a></li>
-</ul>
-</li>
-<li>Repositories<ul>
-<li><a href="https://developer.github.com/v3/repos/releases/">Releases</a></li>
-<li><a href="https://developer.github.com/v3/repos/">Repositories</a></li>
-</ul>
-</li>
-</ul>
-<h1>Thanks</h1><p>Special thanks to <a href="https://github.com/jeejkang">jeejkang</a> for the <a href="https://octodex.github.com/stormtroopocat/">Stormtroopocat</a> image!</p>
-<p>Thanks to <a href="https://github.com/aktau/github-release">aktau/github-release</a> (a library for GO) for the inspiration for this project.</p></article>
+	/**
+	 * Commit signature verification
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/commits/#commit-signature-verification}
+	 * 
+	 * @param {string} owner - The repo's owner
+	 * @param {string} repo  - The repo's name
+	 * @param {string} sha   - The commit's sha
+	 *
+	 * @return {object} Commit data
+	 */
+	verifySignature: function(owner, repo, sha) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits/${sha}`);
+	}
+};
+</code></pre>
+        </article>
     </section>
-
-
 
 
 
