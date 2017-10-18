@@ -37,7 +37,7 @@ module.exports = {
 	 *
 	 * @param {string} owner  - The repo's owner
 	 * @param {string} repo   - The repo's name
-	 * @param {string} number - The pull request's ID
+	 * @param {string} number - The pull request number
 	 *
 	 * @return {object} Pull request data
 	 */
@@ -72,7 +72,7 @@ module.exports = {
 	 * 
 	 * @param {string}  owner                      - The repo's owner
 	 * @param {string}  repo                       - The repo's name
-	 * @param {string}  number                     - The pull request ID
+	 * @param {string}  number                     - The pull request number
 	 * @param {object}  body                       - The request body
 	 * @param {string}  body.title                 - Required. The title of the pull request.
 	 * @param {string}  body.head                  - Required. The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch.
@@ -93,7 +93,7 @@ module.exports = {
 	 *
 	 * @param {string} owner       - The repo's owner
 	 * @param {string} repo        - The repo's name
-	 * @param {string} number      - The pull request ID
+	 * @param {string} number      - The pull request number
 	 * @param {object} params      - An object of parameters for the request
 	 * @param {int}    params.page - The page of results to retrieve
 	 *
@@ -111,7 +111,7 @@ module.exports = {
 	 * 
 	 * @param {string} owner       - The repo's owner
 	 * @param {string} repo        - The repo's name
-	 * @param {string} number      - The pull request ID
+	 * @param {string} number      - The pull request number
 	 * @param {object} params      - An object of parameters for the request
 	 * @param {int}    params.page - The page of results to retrieve
 	 *
@@ -129,7 +129,7 @@ module.exports = {
 	 * 
 	 * @param {string} owner  - The repo's owner
 	 * @param {string} repo   - The repo's name
-	 * @param {string} number - The pull request ID
+	 * @param {string} number - The pull request number
 	 *
 	 * @return {null} 204=merged / 404=not merged
 	 */
