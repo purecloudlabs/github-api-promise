@@ -1,3 +1,5 @@
+const req = require('./request-helpers');
+
 var githubApi = {};
 
 // Submodules
@@ -24,6 +26,8 @@ githubApi.repositories = {
 	repositories: require('./repositories/repositories')
 };
 githubApi.repos = githubApi.repositories; // alias for backwards compatibility
+
+githubApi.getRequestCount = () => { return req.requestCount; };
 
 // Set to window object if there is a window
 if(typeof window !== 'undefined') {

@@ -7,6 +7,8 @@ const urlencode = require('urlencode');
 var config = require('./config');
 
 module.exports = {
+	requestCount: 0,
+
 	logRequestSuccess: function(res, message) {
 		if (config.debug !== true) {
 			return;
@@ -16,6 +18,7 @@ module.exports = {
 			'[' + res.statusCode + ']' + 
 			'[' + res.req.method + ' ' + res.req.path + '] ' + 
 			(message ? message : ''));
+		log.debug(`Requests remaining: ${res.headers['x-ratelimit-remaining']}/${res.headers['x-ratelimit-limit']}, reset at ${new Date(res.headers['x-ratelimit-reset']*1000)}`);
 	},
 
 	assembleQueryParams: function(params, paramNames) {
@@ -76,6 +79,8 @@ module.exports = {
 				}
 			}
 
+			self.requestCount++;
+
 			// Set standard stuff and handle response
 			req
 				.set('Authorization', 'token ' + config.token)
@@ -87,6 +92,8 @@ module.exports = {
 					});
 				}, 
 				function(err) {
+					// TODO: handle rate limiting (github sends a 403, not a 429)
+					// https://developer.github.com/v3/#rate-limiting
 					log.error(err);
 					deferred.reject(err.message);
 				});
