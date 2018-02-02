@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>repositories/commits.js - Documentation</title>
+    <title>repositories/collaborators.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">repositories/commits.js</h1>
+    <h1 class="page-title">repositories/collaborators.js</h1>
     
 
     
@@ -42,102 +42,109 @@ const req = require('../request-helpers');
 
 
 /**
- * Commits module
- * @module repositories/commits
+ * Collaborators module
+ * @module repositories/collaborators
  */
 module.exports = {
 
 	/**
-	 * List commits on a repository
+	 * List collaborators
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository}
+	 * For organization-owned repositories, the list of collaborators includes outside collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.
 	 * 
-	 * @param {string} owner         - The repo's owner
-	 * @param {string} repo          - The repo's name
-	 * @param {object} params        - An object of parameters for the request
-	 * @param {string} params.sha    - SHA or branch to start listing commits from. Default: the repository’s default branch (usually master).
-	 * @param {string} params.path   - Only commits containing this file path will be returned.
-	 * @param {string} params.author - GitHub login or email address by which to filter by commit author.
-	 * @param {string} params.since  - Only commits after this date will be returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
-	 * @param {string} params.until  - Only commits before this date will be returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
-	 * @param {int}    params.page   - The page of results to retrieve
+	 * If you pass the hellcat-preview media type, team members will include the members of child teams.
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/collaborators/#list-collaborators}
+	 * 
+	 * @param {string} owner              - The repo's owner
+	 * @param {string} repo               - The repo's name
+	 * @param {object} params             - An object of parameters for the request
+	 * @param {string} params.affiliation - Filter collaborators returned by their affiliation. Can be one of: "outside": All outside collaborators of an organization-owned repository; "direct": All collaborators with permissions to an organization-owned repository, regardless of organization membership status; "all": All collaborators the authenticated user can see; "Default": all
+	 * @param {int}    params.page        - The page of results to retrieve
 	 *
-	 * @return {object} Commit data
+	 * @return {object} Collaborator data
 	 */
-	getCommits: function(owner, repo, params) {
-		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits?${req.assembleQueryParams(params,
-			['sha', 'path', 'author', 'since', 'until', 'page'])}`);
+	getCollaborators: function(owner, repo, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/collaborators?${req.assembleQueryParams(params,
+			['affiliation', 'page'])}`);
 	},
 
 	/**
-	 * Get a single commit
+	 * Check if a user is a collaborator
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/commits/#get-a-single-commit}
+	 * For organization-owned repositories, the list of collaborators includes outside collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.
 	 * 
-	 * @param {string} owner - The repo's owner
-	 * @param {string} repo  - The repo's name
-	 * @param {string} sha   - The commit's sha
+	 * If you pass the hellcat-preview media type, team members will include the members of child teams.
+	 * 
+	 * Returns 204 if user is a collaborator, otherwise returns 404.
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator}
+	 * 
+	 * @param {string} owner    - The repo's owner
+	 * @param {string} repo     - The repo's name
+	 * @param {string} username - The username to check
 	 *
-	 * @return {object} Commit data
+	 * @return {null} Returns 204 if user is a collaborator, otherwise returns 404.
 	 */
-	getCommit: function(owner, repo, sha) {
-		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits/${sha}`);
+	getUserIsCollaborator: function(owner, repo, username) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/collaborators/${username}`);
 	},
 
 	/**
-	 * ***NOT IMPLEMENTED***
-	 * Get the SHA-1 of a commit reference
-	 * Users with read access can get the SHA-1 of a commit reference
+	 * Review a user's permission level
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/commits/#get-the-sha-1-of-a-commit-reference}
+	 * Possible values for the permission key: admin, write, read, none.
 	 * 
-	 * @param {string} owner - The repo's owner
-	 * @param {string} repo  - The repo's name
-	 * @param {string} ref   - The commit's reference
+	 * @see {@link https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level}
+	 * 
+	 * @param {string} owner    - The repo's owner
+	 * @param {string} repo     - The repo's name
+	 * @param {string} username - The username to check
 	 *
-	 * @return {string} SHA-1 value
+	 * @return {object} Collaborator data
 	 */
-	getSha1: function(owner, repo, ref) {
-		throw new Error('Operation not implemented');
-
-		/* To access the API you must provide a custom media type in the Accept header:
-		 * application/vnd.github.VERSION.sha
-		 */
-
-		//TODO: ability to pass custom headers to the request
-		//return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits/${ref}`);
+	getUserPermissionLevel: function(owner, repo, username) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/collaborators/${username}/permission`);
 	},
 
 	/**
-	 * Compare two commits
-	 * Both :base and :head must be branch names in :repo. To compare branches across other repositories in the same network as :repo, use the format &lt;USERNAME>:branch. For example: base=hubot:branchname, head=octocat:branchname
+	 * Add user as a collaborator
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/commits/#compare-two-commits}
+	 * Note that, if you choose not to pass any parameters, you'll need to set Content-Length to zero when calling out to this endpoint. For more information, see "HTTP verbs."
 	 * 
-	 * @param {string} owner - The repo's owner
-	 * @param {string} repo  - The repo's name
-	 * @param {string} base  - The branch to be used as the basis for comparison
-	 * @param {string} head  - The branch to compare against :base
+	 * To prevent abuse, you are limited to sending 50 invitations to a repository per 24 hour period. Note there is no limit if you are inviting organization members to an organization repository.
+	 * 
+	 * Returns 201 with data or 204
+	 * 
+	 * @see {@link https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator}
+	 * 
+	 * @param {string} owner             - The repo's owner
+	 * @param {string} repo              - The repo's name
+	 * @param {string} username          - The username to check
+	 * @param {object} params            - An object of parameters for the request
+	 * @param {int}    params.permission - The permission to grant the collaborator. Only valid on organization-owned repositories. Can be one of: "pull" - can pull, but not push to or administer this repository; "push" - can pull and push, but not administer this repository; "admin" - can pull, push and administer this repository
 	 *
-	 * @return {object} comparison data
+	 * @return {null} Returns 201 with data or 204
 	 */
-	compareCommits: function(owner, repo, base, head) {
-		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/compare/${base}...${head}`);
+	putUserCollaborator: function(owner, repo, username, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/collaborators/${username}?${req.assembleQueryParams(params,
+			['permission'])}`, 'put');
 	},
 
 	/**
-	 * Commit signature verification
+	 * Remove user as a collaborator
 	 * 
-	 * @see {@link https://developer.github.com/v3/repos/commits/#commit-signature-verification}
+	 * @see {@link https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator}
 	 * 
-	 * @param {string} owner - The repo's owner
-	 * @param {string} repo  - The repo's name
-	 * @param {string} sha   - The commit's sha
+	 * @param {string} owner              - The repo's owner
+	 * @param {string} repo               - The repo's name
+	 * @param {object} params             - An object of parameters for the request
+	 * @param {int}    params.page        - The page of results to retrieve
 	 *
-	 * @return {object} Commit data
+	 * @return {object} Collaborator data
 	 */
-	verifySignature: function(owner, repo, sha) {
-		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/commits/${sha}`);
+	deleteUserCollaborator: function(owner, repo, username) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/collaborators/${username}`, 'delete');
 	}
 };
 </code></pre>
