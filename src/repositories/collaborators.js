@@ -99,8 +99,7 @@ module.exports = {
 	 * 
 	 * @param {string} owner              - The repo's owner
 	 * @param {string} repo               - The repo's name
-	 * @param {object} params             - An object of parameters for the request
-	 * @param {int}    params.page        - The page of results to retrieve
+	 * @param {string} username          - The username to check
 	 *
 	 * @return {object} Collaborator data
 	 */
