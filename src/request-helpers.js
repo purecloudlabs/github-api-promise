@@ -95,11 +95,11 @@ module.exports = {
 					// TODO: handle rate limiting (github sends a 403, not a 429)
 					// https://developer.github.com/v3/#rate-limiting
 					log.error(err);
-					deferred.reject(err.message);
+					deferred.reject(err);
 				});
 		} catch(err) {
 			log.error(err);
-			deferred.reject(err.message);
+			deferred.reject(err);
 		}
 
 		return deferred.promise;
