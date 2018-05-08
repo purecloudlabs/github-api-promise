@@ -10,9 +10,10 @@ npm install github-api-promise
 ```
 
 
-# Documentation
+# Resources
 
-https://princenebulon.github.io/github-api-promise/
+* [Documentation](https://princenebulon.github.io/github-api-promise/)
+* [![npm](https://img.shields.io/npm/v/github-api-promise.svg)](https://www.npmjs.com/package/github-api-promise)
 
 
 # Usage
