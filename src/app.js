@@ -28,6 +28,10 @@ githubApi.repositories = {
 };
 githubApi.repos = githubApi.repositories; // alias for backwards compatibility
 
+githubApi.teams = {
+	teams: require('./teams/teams')
+};
+
 githubApi.getRequestCount = () => { return req.requestCount; };
 
 // Set to window object if there is a window
