@@ -26,7 +26,7 @@ TLDR;
 Basic example code:
 
 ```JavaScript
-var api = require('github-api-promise');
+const api = require('github-api-promise');
 
 // Set settings
 api.config.owner = 'OwnersGithubUsername';
@@ -36,11 +36,11 @@ api.config.debug = true; // Default is false. Logs request information via conso
 
 // Do stuff
 api.repos.releases.getRepositoryReleases()
-	.then(function(res) {
+	.then((res) => {
 		// Do your stuff here. res is the JSON object returned by the API
 	})
-	.catch(function(err) {
-		console.log('Request failed: ' + err);
+	.catch((err) => {
+		console.log(`Request failed: ${err}`);
 	});
 ```
 
