@@ -10,18 +10,18 @@
     "url": "https://github.com/princenebulon/github-api-promise.git"
   },
   "dependencies": {
-    "bluebird": "*",
-    "lodash": "^4.17.4",
-    "lognext": "0.0.3",
-    "q": "*",
-    "superagent": "*",
-    "superagent-bluebird-promise": "*",
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10",
+    "lognext": "0.0.4",
+    "q": "^1.5.1",
+    "superagent": "^3.8.3",
+    "superagent-bluebird-promise": "^4.2.0",
     "urlencode": "^1.1.0"
   },
   "devDependencies": {
     "docdash": "^0.4.0"
   },
   "scripts": {
-  	"generate-docs": "jsdoc -r -c jsdoc.json -R README.md"
+    "generate-docs": "jsdoc -r -c jsdoc.json -R README.md"
   }
 }
