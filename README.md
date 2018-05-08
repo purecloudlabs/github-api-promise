@@ -64,6 +64,8 @@ The following APIs are supported. PRs welcome!
 	* [Commits](https://developer.github.com/v3/repos/commits/)
 	* [Releases](https://developer.github.com/v3/repos/releases/)
 	* [Repositories](https://developer.github.com/v3/repos/)
+* Teams
+	* [Teams](https://developer.github.com/v3/teams/)
 
 
 # Thanks

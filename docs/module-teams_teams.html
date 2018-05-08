@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>issues/issues - Documentation</title>
+    <title>teams/teams - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">issues/issues</h1>
+    <h1 class="page-title">teams/teams</h1>
     
 
     
@@ -40,6 +40,8 @@
 <header>
     
         
+            
+        
     
 </header>
 
@@ -47,6 +49,83 @@
     <div class="container-overview">
     
         
+            <div class="description"><p>Teams module</p>
+<p>This API is only available to authenticated members of the team's organization. OAuth access tokens require the read:org scope.</p></div>
+        
+
+        
+            
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
     
@@ -72,7 +151,7 @@
 
     
 
-    <h4 class="name" id=".createIssue"><span class="type-signature">(static) </span>createIssue<span class="signature">(owner, repo, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".createTeam"><span class="type-signature">(static) </span>createTeam<span class="signature">(org, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -84,7 +163,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line137">line 137</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -118,7 +197,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#create-an-issue">https://developer.github.com/v3/issues/#create-an-issue</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#create-team">https://developer.github.com/v3/teams/#create-team</a></li>
         </ul>
     </dd>
     
@@ -131,8 +210,8 @@
 
 
 <div class="description">
-    <p>Create an issue
-Any user with pull access to a repository can create an issue.</p>
+    <p>Create team</p>
+<p>To create a team, the authenticated user must be a member of :org.</p>
 </div>
 
 
@@ -170,7 +249,7 @@ Any user with pull access to a repository can create an issue.</p>
 
         <tr>
             
-                <td class="name"><code>owner</code></td>
+                <td class="name"><code>org</code></td>
             
 
             <td class="type">
@@ -186,30 +265,7 @@ Any user with pull access to a repository can create an issue.</p>
 
             
 
-            <td class="description last"><p>The repo's owner</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>repo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo's name</p></td>
+            <td class="description last"><p>The organization</p></td>
         </tr>
 
     
@@ -258,7 +314,7 @@ Any user with pull access to a repository can create an issue.</p>
 
         <tr>
             
-                <td class="name"><code>title</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
@@ -274,14 +330,14 @@ Any user with pull access to a repository can create an issue.</p>
 
             
 
-            <td class="description last"><p>Required. The title of the issue.</p></td>
+            <td class="description last"><p>Required. The name of the team.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>body</code></td>
+                <td class="name"><code>description</code></td>
             
 
             <td class="type">
@@ -297,60 +353,14 @@ Any user with pull access to a repository can create an issue.</p>
 
             
 
-            <td class="description last"><p>The contents of the issue.</p></td>
+            <td class="description last"><p>The description of the team.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>assignee</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Login for the user that this issue should be assigned to. NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. This field is deprecated.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>milestone</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The number of the milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
+                <td class="name"><code>maintainers</code></td>
             
 
             <td class="type">
@@ -366,14 +376,14 @@ Any user with pull access to a repository can create an issue.</p>
 
             
 
-            <td class="description last"><p>Labels to associate with this issue. NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise.</p></td>
+            <td class="description last"><p>The logins of organization members to add as maintainers of the team.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>assignees</code></td>
+                <td class="name"><code>repo_names</code></td>
             
 
             <td class="type">
@@ -389,7 +399,94 @@ Any user with pull access to a repository can create an issue.</p>
 
             
 
-            <td class="description last"><p>Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise.</p></td>
+            <td class="description last"><p>The full name (e.g., &quot;organization-name/repository-name&quot;) of repositories to add the team to.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>privacy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The level of privacy this team should have. The options are:</p>
+<p><strong>For a non-nested team:</strong></p>
+<ul>
+<li><code>secret</code> - only visible to organization owners and members of this team. </li>
+<li><code>closed</code> - visible to all members of this organization. </li>
+</ul>
+<p>Default: <code>secret</code> </p>
+<p><strong>For a <code>parent</code> or child team:</strong></p>
+<ul>
+<li><code>closed</code> - visible to all members of this organization. </li>
+</ul>
+<p>Default for child team: <code>closed</code> </p>
+<p>Note: You must pass the hellcat-preview media type to set privacy default to <code>closed</code> for child teams.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>permission</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><strong>Deprecated.</strong> The permission that new repositories will be added to the team with when none is specified. Can be one of:</p>
+<ul>
+<li><code>pull</code> - team members can pull, but not push to or administer newly-added repositories.</li>
+<li><code>push</code> - team members can pull and push, but not administer newly-added repositories.</li>
+<li><code>admin</code> - team members can pull, push and administer newly-added repositories.</li>
+</ul>
+<p>Default: <code>pull</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parent_team_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of a team to set as the parent team. Note: You must pass the hellcat-preview media type to use this parameter.</p></td>
         </tr>
 
     
@@ -420,7 +517,7 @@ Any user with pull access to a repository can create an issue.</p>
 
         
 <div class="param-desc">
-    <p>Issue data</p>
+    <p>team data</p>
 </div>
 
 
@@ -445,7 +542,7 @@ Any user with pull access to a repository can create an issue.</p>
 
     
 
-    <h4 class="name" id=".getIssues"><span class="type-signature">(static) </span>getIssues<span class="signature">(params)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".deleteTeam"><span class="type-signature">(static) </span>deleteTeam<span class="signature">(id)</span><span class="type-signature"> &rarr; {nothing}</span></h4>
 
     
 
@@ -457,7 +554,7 @@ Any user with pull access to a repository can create an issue.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line28">line 28</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -491,7 +588,7 @@ Any user with pull access to a repository can create an issue.</p>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#list-issues">https://developer.github.com/v3/issues/#list-issues</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#delete-team">https://developer.github.com/v3/teams/#delete-team</a></li>
         </ul>
     </dd>
     
@@ -504,8 +601,8 @@ Any user with pull access to a repository can create an issue.</p>
 
 
 <div class="description">
-    <p>List issues
-List all issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories</p>
+    <p>Delete team</p>
+<p>To delete a team, the authenticated user must be a team maintainer or an owner of the org associated with the team. If you are an organization owner and you pass the hellcat-preview media type, deleting a parent team will delete all of its child teams as well.</p>
 </div>
 
 
@@ -539,6 +636,530 @@ List all issues assigned to the authenticated user across all visible repositori
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">nothing</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".editTeam"><span class="type-signature">(static) </span>editTeam<span class="signature">(id, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line115">line 115</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#edit-team">https://developer.github.com/v3/teams/#edit-team</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Edit team</p>
+<p>To edit a team, the authenticated user must either be an owner of the org that the team is associated with, or a maintainer of the team.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The request body</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The name of the team.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The description of the team.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>privacy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The level of privacy this team should have. The options are:</p>
+<p><strong>For a non-nested team:</strong></p>
+<ul>
+<li><code>secret</code> - only visible to organization owners and members of this team. </li>
+<li><code>closed</code> - visible to all members of this organization. </li>
+</ul>
+<p><strong>For a <code>parent</code> or child team:</strong></p>
+<ul>
+<li><code>closed</code> - visible to all members of this organization.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>permission</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><strong>Deprecated.</strong> The permission that new repositories will be added to the team with when none is specified. Can be one of:</p>
+<ul>
+<li><code>pull</code> - team members can pull, but not push to or administer newly-added repositories.</li>
+<li><code>push</code> - team members can pull and push, but not administer newly-added repositories.</li>
+<li><code>admin</code> - team members can pull, push and administer newly-added repositories.</li>
+</ul>
+<p>Default: <code>pull</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parent_team_id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of a team to set as the parent team. Note: You must pass the hellcat-preview media type to use this parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>team data</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getChildTeams"><span class="type-signature">(static) </span>getChildTeams<span class="signature">(id, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line147">line 147</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#list-child-teams">https://developer.github.com/v3/teams/#list-child-teams</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>List child teams</p>
+<p>At this time, the hellcat-preview media type is required to use this endpoint.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
     
 
         <tr>
@@ -581,144 +1202,6 @@ List all issues assigned to the authenticated user across all visible repositori
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>filter</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Indicates which sorts of issues to return. Can be one of: assigned, created, mentioned, subscribed, all. Default: assigned</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>state</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Indicates the state of the issues to return. Can be either open, closed, or all. Default: open</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A list of comma separated label names. Example: bug,ui,@high</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sort</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>What to sort results by. Can be either created, updated, comments. Default: created</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>direction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The direction of the sort. Can be either asc or desc. Default: desc</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>since</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Only issues updated at or after this time are returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.</p></td>
-        </tr>
-
     
 
         <tr>
@@ -770,7 +1253,7 @@ List all issues assigned to the authenticated user across all visible repositori
 
         
 <div class="param-desc">
-    <p>Issue data</p>
+    <p>team data</p>
 </div>
 
 
@@ -795,7 +1278,7 @@ List all issues assigned to the authenticated user across all visible repositori
 
     
 
-    <h4 class="name" id=".getOrganizationIssues"><span class="type-signature">(static) </span>getOrganizationIssues<span class="signature">(org, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".getIsRepoManagedByTeam"><span class="type-signature">(static) </span>getIsRepoManagedByTeam<span class="signature">(id, owner, repo)</span><span class="type-signature"> &rarr; {nothing}</span></h4>
 
     
 
@@ -807,7 +1290,7 @@ List all issues assigned to the authenticated user across all visible repositori
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line73">line 73</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line183">line 183</a>
     </li></ul></dd>
     
 
@@ -841,7 +1324,7 @@ List all issues assigned to the authenticated user across all visible repositori
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#list-issues">https://developer.github.com/v3/issues/#list-issues</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository">https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository</a></li>
         </ul>
     </dd>
     
@@ -854,8 +1337,799 @@ List all issues assigned to the authenticated user across all visible repositori
 
 
 <div class="description">
-    <p>List issues
-List all issues for a given organization assigned to the authenticated user</p>
+    <p>Check if a team manages a repository</p>
+<p>Note: If you pass the hellcat-preview media type, repositories inherited through a parent team will be checked.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>owner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The owner name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo name</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>204 if is managed, 404 if not</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">nothing</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getTeam"><span class="type-signature">(static) </span>getTeam<span class="signature">(id)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#get-team">https://developer.github.com/v3/teams/#get-team</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Get team</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team id</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>team data</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getTeamProject"><span class="type-signature">(static) </span>getTeamProject<span class="signature">(id, projectId)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line277">line 277</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#review-a-team-project">https://developer.github.com/v3/teams/#review-a-team-project</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Review a team project</p>
+<p>Checks whether a team has read, write, or admin permissions for an organization project. If you pass the hellcat-preview media type, the response will include projects inherited from a parent team.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The project ID</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>team data</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getTeamRepos"><span class="type-signature">(static) </span>getTeamRepos<span class="signature">(id, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line165">line 165</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#list-team-repos">https://developer.github.com/v3/teams/#list-team-repos</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>List team repos</p>
+<p>Note: If you pass the hellcat-preview media type, the response will include any repositories inherited through a parent team.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An object of parameters for the request</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>page</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The page of results to retrieve</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>team data</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getTeams"><span class="type-signature">(static) </span>getTeams<span class="signature">(org, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#list-teams">https://developer.github.com/v3/teams/#list-teams</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>List teams</p>
 </div>
 
 
@@ -958,144 +2232,6 @@ List all issues for a given organization assigned to the authenticated user</p>
 
         <tr>
             
-                <td class="name"><code>filter</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Indicates which sorts of issues to return. Can be one of: assigned, created, mentioned, subscribed, all. Default: assigned</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>state</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Indicates the state of the issues to return. Can be either open, closed, or all. Default: open</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A list of comma separated label names. Example: bug,ui,@high</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sort</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>What to sort results by. Can be either created, updated, comments. Default: created</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>direction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The direction of the sort. Can be either asc or desc. Default: desc</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>since</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Only issues updated at or after this time are returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>page</code></td>
             
 
@@ -1143,7 +2279,7 @@ List all issues for a given organization assigned to the authenticated user</p>
 
         
 <div class="param-desc">
-    <p>Issue data</p>
+    <p>team data</p>
 </div>
 
 
@@ -1168,7 +2304,7 @@ List all issues for a given organization assigned to the authenticated user</p>
 
     
 
-    <h4 class="name" id=".getRepositoryIssue"><span class="type-signature">(static) </span>getRepositoryIssue<span class="signature">(owner, repo, number)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".getUserTeams"><span class="type-signature">(static) </span>getUserTeams<span class="signature">(params)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1180,7 +2316,7 @@ List all issues for a given organization assigned to the authenticated user</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line115">line 115</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line242">line 242</a>
     </li></ul></dd>
     
 
@@ -1214,7 +2350,7 @@ List all issues for a given organization assigned to the authenticated user</p>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#get-a-single-issue">https://developer.github.com/v3/issues/#get-a-single-issue</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#">https://developer.github.com/v3/teams/#</a></li>
         </ul>
     </dd>
     
@@ -1227,683 +2363,8 @@ List all issues for a given organization assigned to the authenticated user</p>
 
 
 <div class="description">
-    <p>Get a single issue</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>owner</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo's owner</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>repo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo's name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>number</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The issue id</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Issue data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getRepositoryIssues"><span class="type-signature">(static) </span>getRepositoryIssues<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line99">line 99</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/issues/#list-issues-for-a-repository">https://developer.github.com/v3/issues/#list-issues-for-a-repository</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List issues for a repository</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>owner</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo's owner</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>repo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo's name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>milestone</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>If an integer is passed, it should refer to a milestone by its number field. If the string * is passed, issues with any milestone are accepted. If the string none is passed, issues without milestones are returned.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>state</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Indicates the state of the issues to return. Can be either open, closed, or all. Default: open</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>assignee</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Can be the name of a user. Pass in none for issues with no assigned user, and * for issues assigned to any user.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>creator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The user that created the issue.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>mentioned</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A user that's mentioned in the issue.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A list of comma separated label names. Example: bug,ui,@high</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sort</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>What to sort results by. Can be either created, updated, comments. Default: created</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>direction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The direction of the sort. Can be either asc or desc. Default: desc</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>since</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Only issues updated at or after this time are returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Issue data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserIssues"><span class="type-signature">(static) </span>getUserIssues<span class="signature">(params)</span><span class="type-signature"> &rarr; {object}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line50">line 50</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/issues/#list-issues">https://developer.github.com/v3/issues/#list-issues</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List issues
-List all issues across owned and member repositories assigned to the authenticated user</p>
+    <p>List user teams</p>
+<p>List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user, repo, or read:org scope when authenticating via OAuth.</p>
 </div>
 
 
@@ -1983,7 +2444,177 @@ List all issues across owned and member repositories assigned to the authenticat
 
         <tr>
             
-                <td class="name"><code>filter</code></td>
+                <td class="name"><code>page</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The page of results to retrieve</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>team data</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getXXX"><span class="type-signature">(static) </span>getXXX<span class="signature">(id, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line260">line 260</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#list-team-projects">https://developer.github.com/v3/teams/#list-team-projects</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>List team projects</p>
+<p>Lists the organization projects for a team. If you pass the hellcat-preview media type, the response will include projects inherited from a parent team.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
@@ -1999,20 +2630,20 @@ List all issues across owned and member repositories assigned to the authenticat
 
             
 
-            <td class="description last"><p>Indicates which sorts of issues to return. Can be one of: assigned, created, mentioned, subscribed, all. Default: assigned</p></td>
+            <td class="description last"><p>The team ID</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>state</code></td>
+                <td class="name"><code>params</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -2022,101 +2653,28 @@ List all issues across owned and member repositories assigned to the authenticat
 
             
 
-            <td class="description last"><p>Indicates the state of the issues to return. Can be either open, closed, or all. Default: open</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
-            
-
-            <td class="type">
-            
+            <td class="description last"><p>An object of parameters for the request</p>
+                <h6>Properties</h6>
                 
-<span class="param-type">string</span>
 
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-            
-            </td>
+        <th>Type</th>
 
-            
+        
 
-            
+        
 
-            <td class="description last"><p>A list of comma separated label names. Example: bug,ui,@high</p></td>
-        </tr>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>sort</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>What to sort results by. Can be either created, updated, comments. Default: created</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>direction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The direction of the sort. Can be either asc or desc. Default: desc</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>since</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Only issues updated at or after this time are returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.</p></td>
-        </tr>
-
+    <tbody>
     
 
         <tr>
@@ -2168,7 +2726,7 @@ List all issues across owned and member repositories assigned to the authenticat
 
         
 <div class="param-desc">
-    <p>Issue data</p>
+    <p>project data</p>
 </div>
 
 
@@ -2193,7 +2751,7 @@ List all issues across owned and member repositories assigned to the authenticat
 
     
 
-    <h4 class="name" id=".lockIssue"><span class="type-signature">(static) </span>lockIssue<span class="signature">(owner, repo, number)</span><span class="type-signature"> &rarr; {null}</span></h4>
+    <h4 class="name" id=".removeTeamProject"><span class="type-signature">(static) </span>removeTeamProject<span class="signature">(id, projectId)</span><span class="type-signature"> &rarr; {nothing}</span></h4>
 
     
 
@@ -2205,7 +2763,7 @@ List all issues across owned and member repositories assigned to the authenticat
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line177">line 177</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line318">line 318</a>
     </li></ul></dd>
     
 
@@ -2239,7 +2797,7 @@ List all issues across owned and member repositories assigned to the authenticat
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#lock-an-issue">https://developer.github.com/v3/issues/#lock-an-issue</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#remove-team-project">https://developer.github.com/v3/teams/#remove-team-project</a></li>
         </ul>
     </dd>
     
@@ -2252,8 +2810,8 @@ List all issues across owned and member repositories assigned to the authenticat
 
 
 <div class="description">
-    <p>Lock an issue
-Users with push access can lock an issue's conversation.</p>
+    <p>Remove team project</p>
+<p>Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have read access to both the team and project, or admin access to the team or project. Note: This endpoint removes the project from the team, but does not delete it.</p>
 </div>
 
 
@@ -2291,7 +2849,7 @@ Users with push access can lock an issue's conversation.</p>
 
         <tr>
             
-                <td class="name"><code>owner</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
@@ -2307,14 +2865,14 @@ Users with push access can lock an issue's conversation.</p>
 
             
 
-            <td class="description last"><p>The repo's owner</p></td>
+            <td class="description last"><p>The team ID</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>repo</code></td>
+                <td class="name"><code>projectId</code></td>
             
 
             <td class="type">
@@ -2330,30 +2888,7 @@ Users with push access can lock an issue's conversation.</p>
 
             
 
-            <td class="description last"><p>The repo's name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>number</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The issue id</p></td>
+            <td class="description last"><p>The project ID</p></td>
         </tr>
 
     
@@ -2376,10 +2911,6 @@ Users with push access can lock an issue's conversation.</p>
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>204 no content</p>
-</div>
-
 
 
 <dl class="param-type">
@@ -2388,7 +2919,7 @@ Users with push access can lock an issue's conversation.</p>
     </dt>
     <dd>
         
-<span class="param-type">null</span>
+<span class="param-type">nothing</span>
 
 
     </dd>
@@ -2402,7 +2933,7 @@ Users with push access can lock an issue's conversation.</p>
 
     
 
-    <h4 class="name" id=".unlockIssue"><span class="type-signature">(static) </span>unlockIssue<span class="signature">(owner, repo, number)</span><span class="type-signature"> &rarr; {null}</span></h4>
+    <h4 class="name" id=".removeTeamRepository"><span class="type-signature">(static) </span>removeTeamRepository<span class="signature">(id, owner, repo)</span><span class="type-signature"> &rarr; {nothing}</span></h4>
 
     
 
@@ -2414,7 +2945,7 @@ Users with push access can lock an issue's conversation.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line193">line 193</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line226">line 226</a>
     </li></ul></dd>
     
 
@@ -2448,7 +2979,7 @@ Users with push access can lock an issue's conversation.</p>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#lock-an-issue">https://developer.github.com/v3/issues/#lock-an-issue</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#remove-team-repository">https://developer.github.com/v3/teams/#remove-team-repository</a></li>
         </ul>
     </dd>
     
@@ -2461,8 +2992,8 @@ Users with push access can lock an issue's conversation.</p>
 
 
 <div class="description">
-    <p>Lock an issue
-Users with push access can lock an issue's conversation.</p>
+    <p>Remove team repository</p>
+<p>If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.</p>
 </div>
 
 
@@ -2500,6 +3031,29 @@ Users with push access can lock an issue's conversation.</p>
 
         <tr>
             
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>owner</code></td>
             
 
@@ -2516,7 +3070,7 @@ Users with push access can lock an issue's conversation.</p>
 
             
 
-            <td class="description last"><p>The repo's owner</p></td>
+            <td class="description last"><p>The owner name</p></td>
         </tr>
 
     
@@ -2539,30 +3093,7 @@ Users with push access can lock an issue's conversation.</p>
 
             
 
-            <td class="description last"><p>The repo's name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>number</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The issue id</p></td>
+            <td class="description last"><p>The repo name</p></td>
         </tr>
 
     
@@ -2585,10 +3116,6 @@ Users with push access can lock an issue's conversation.</p>
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>204 no content</p>
-</div>
-
 
 
 <dl class="param-type">
@@ -2597,7 +3124,7 @@ Users with push access can lock an issue's conversation.</p>
     </dt>
     <dd>
         
-<span class="param-type">null</span>
+<span class="param-type">nothing</span>
 
 
     </dd>
@@ -2611,7 +3138,7 @@ Users with push access can lock an issue's conversation.</p>
 
     
 
-    <h4 class="name" id=".updateIssue"><span class="type-signature">(static) </span>updateIssue<span class="signature">(owner, repo, number, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".updateTeamProject"><span class="type-signature">(static) </span>updateTeamProject<span class="signature">(id, projectId, body)</span><span class="type-signature"> &rarr; {nothing}</span></h4>
 
     
 
@@ -2623,7 +3150,7 @@ Users with push access can lock an issue's conversation.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="issues_issues.js.html">issues/issues.js</a>, <a href="issues_issues.js.html#line161">line 161</a>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -2657,7 +3184,7 @@ Users with push access can lock an issue's conversation.</p>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/issues/#edit-an-issue">https://developer.github.com/v3/issues/#edit-an-issue</a></li>
+            <li><a href="https://developer.github.com/v3/teams/#add-or-update-team-project">https://developer.github.com/v3/teams/#add-or-update-team-project</a></li>
         </ul>
     </dd>
     
@@ -2670,8 +3197,8 @@ Users with push access can lock an issue's conversation.</p>
 
 
 <div class="description">
-    <p>Edit an issue
-Issue owners and users with push access can edit an issue.</p>
+    <p>Add or update team project</p>
+<p>Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have admin permissions for the project. The project and team must be part of the same organization.</p>
 </div>
 
 
@@ -2709,7 +3236,7 @@ Issue owners and users with push access can edit an issue.</p>
 
         <tr>
             
-                <td class="name"><code>owner</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
@@ -2725,14 +3252,14 @@ Issue owners and users with push access can edit an issue.</p>
 
             
 
-            <td class="description last"><p>The repo's owner</p></td>
+            <td class="description last"><p>The team ID</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>repo</code></td>
+                <td class="name"><code>projectId</code></td>
             
 
             <td class="type">
@@ -2748,30 +3275,7 @@ Issue owners and users with push access can edit an issue.</p>
 
             
 
-            <td class="description last"><p>The repo's name</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>number</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The issue id</p></td>
+            <td class="description last"><p>The project ID</p></td>
         </tr>
 
     
@@ -2820,7 +3324,7 @@ Issue owners and users with push access can edit an issue.</p>
 
         <tr>
             
-                <td class="name"><code>title</code></td>
+                <td class="name"><code>permission</code></td>
             
 
             <td class="type">
@@ -2836,145 +3340,14 @@ Issue owners and users with push access can edit an issue.</p>
 
             
 
-            <td class="description last"><p>Required. The title of the issue.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>body</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The contents of the issue.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>assignee</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Login for the user that this issue should be assigned to. NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. This field is deprecated.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>state</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>State of the issue. Either open or closed.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>milestone</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">integer</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The number of the milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>labels</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Labels to associate with this issue. NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>assignees</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise.</p></td>
+            <td class="description last"><p>The permission to grant to the team for this project. Can be one of:</p>
+<ul>
+<li><code>read</code> - team members can read, but not write to or administer this project.</li>
+<li><code>write</code> - team members can read and write, but not administer this project.</li>
+<li><code>admin</code> - team members can read, write and administer this project.</li>
+</ul>
+<p>Default: the team's <code>permission</code> attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set <code>Content-Length</code> to zero when calling out to this endpoint. For more information, see &quot;HTTP verbs.&quot;</p>
+<p><strong>Note</strong>: If you pass the <code>hellcat-preview</code> media type, you can promote—but not demote—a <code>permission</code> attribute inherited from a parent team.</p></td>
         </tr>
 
     
@@ -3004,10 +3377,6 @@ Issue owners and users with push access can edit an issue.</p>
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Issue data</p>
-</div>
-
 
 
 <dl class="param-type">
@@ -3016,7 +3385,291 @@ Issue owners and users with push access can edit an issue.</p>
     </dt>
     <dd>
         
+<span class="param-type">nothing</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updateTeamRepository"><span class="type-signature">(static) </span>updateTeamRepository<span class="signature">(id, owner, repo, body)</span><span class="type-signature"> &rarr; {nothing}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="teams_teams.js.html">teams/teams.js</a>, <a href="teams_teams.js.html#line209">line 209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.github.com/v3/teams/#add-or-update-team-repository">https://developer.github.com/v3/teams/#add-or-update-team-repository</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Add or update team repository</p>
+<p>To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. If you pass the hellcat-preview media type, you can modify repository permissions of child teams.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The team ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>owner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The owner name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The request body</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>permission</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The permission to grant the team on this repository. Can be one of:</p>
+<ul>
+<li><code>pull</code> - team members can pull, but not push to or administer this repository.</li>
+<li><code>push</code> - team members can pull and push, but not administer this repository.</li>
+<li><code>admin</code> - team members can pull, push and administer this repository.</li>
+</ul>
+<p>If no permission is specified, the team's <code>permission</code> attribute will be used to determine what permission to grant the team on this repository.</p>
+<p><strong>Note</strong>: If you pass the <code>hellcat-preview</code> media type, you can promote—but not demote—a <code>permission</code> attribute inherited through a parent team.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">nothing</span>
 
 
     </dd>
