@@ -257,7 +257,7 @@ module.exports = {
 	 *
 	 * @return {object} project data
 	 */
-	getXXX: function(id, params) {
+	getTeamProjects: function(id, params) {
 		return req.standardRequest(`${config.host}/teams/${id}/projects?${req.assembleQueryParams(params,
 			['page'])}`);
 	},
