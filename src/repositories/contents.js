@@ -3,8 +3,8 @@ const req = require('../request-helpers');
 
 
 /**
- * Commits module
- * @module repositories/commits
+ * Contents module
+ * @module repositories/contents
  */
 module.exports = {
 

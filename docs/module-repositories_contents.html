@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>activity/events - Documentation</title>
+    <title>repositories/contents - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">activity/events</h1>
+    <h1 class="page-title">repositories/contents</h1>
     
 
     
@@ -40,6 +40,8 @@
 <header>
     
         
+            
+        
     
 </header>
 
@@ -47,6 +49,82 @@
     <div class="container-overview">
     
         
+            <div class="description"><p>Contents module</p></div>
+        
+
+        
+            
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="repositories_contents.js.html">repositories/contents.js</a>, <a href="repositories_contents.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
     
@@ -72,7 +150,7 @@
 
     
 
-    <h4 class="name" id=".getEvents"><span class="type-signature">(static) </span>getEvents<span class="signature">(params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".deleteContents"><span class="type-signature">(static) </span>deleteContents<span class="signature">(owner, repo, path, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -84,7 +162,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line17">line 17</a>
+        <a href="repositories_contents.js.html">repositories/contents.js</a>, <a href="repositories_contents.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -118,7 +196,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events">https://developer.github.com/v3/activity/events/#list-public-events</a></li>
+            <li><a href="https://developer.github.com/v3/repos/contents/#delete-a-file">https://developer.github.com/v3/repos/contents/#delete-a-file</a></li>
         </ul>
     </dd>
     
@@ -131,218 +209,7 @@
 
 
 <div class="description">
-    <p>List public events</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getNetworkRepositoryEvents"><span class="type-signature">(static) </span>getNetworkRepositoryEvents<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line63">line 63</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories">https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events for a network of repositories</p>
+    <p>Deletes a file in a repository.</p>
 </div>
 
 
@@ -386,7 +253,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -396,7 +263,7 @@
 
             
 
-            <td class="description last"><p>The repo's owner id</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
@@ -404,240 +271,6 @@
         <tr>
             
                 <td class="name"><code>repo</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The repo id</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getOrganizationEvents"><span class="type-signature">(static) </span>getOrganizationEvents<span class="signature">(org, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line77">line 77</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization">https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events for an organization</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>org</code></td>
             
 
             <td class="type">
@@ -653,14 +286,37 @@
 
             
 
-            <td class="description last"><p>The organization</p></td>
+            <td class="description last"><p>The repo's name</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params</code></td>
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The content path</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -676,7 +332,7 @@
 
             
 
-            <td class="description last"><p>An object of parameters for the request</p>
+            <td class="description last"><p>The request body</p>
                 <h6>Properties</h6>
                 
 
@@ -702,13 +358,13 @@
 
         <tr>
             
-                <td class="name"><code>page</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -718,7 +374,243 @@
 
             
 
-            <td class="description last"><p>The page of results to retrieve</p></td>
+            <td class="description last"><p>Required. The commit message.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sha</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The blob SHA of the file being replaced.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>branch</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The branch name. Default: the repository’s default branch (usually master)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>committer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The person that committed the file. Default: the authenticated user.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The name of the author or committer of the commit. You'll receive a 422 status code if name is omitted.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The email of the author or committer of the commit. You'll receive a 422 status code if email is omitted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>author</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The author of the file. Default: The committer or the authenticated user if you omit committer.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The name of the author or committer of the commit. You'll receive a 422 status code if name is omitted.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The email of the author or committer of the commit. You'll receive a 422 status code if email is omitted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -749,7 +641,7 @@
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Commit data</p>
 </div>
 
 
@@ -760,7 +652,7 @@
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -774,7 +666,7 @@
 
     
 
-    <h4 class="name" id=".getRepositoryEvents"><span class="type-signature">(static) </span>getRepositoryEvents<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".getArchiveLink"><span class="type-signature">(static) </span>getArchiveLink<span class="signature">(owner, repo, archiveFormat, ref)</span><span class="type-signature"> &rarr; {null}</span></h4>
 
     
 
@@ -786,7 +678,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line32">line 32</a>
+        <a href="repositories_contents.js.html">repositories/contents.js</a>, <a href="repositories_contents.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -820,7 +712,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-repository-events">https://developer.github.com/v3/activity/events/#list-repository-events</a></li>
+            <li><a href="https://developer.github.com/v3/repos/contents/#get-archive-link">https://developer.github.com/v3/repos/contents/#get-archive-link</a></li>
         </ul>
     </dd>
     
@@ -833,7 +725,7 @@
 
 
 <div class="description">
-    <p>List repository events</p>
+    <p>Gets a redirect URL to download an archive for a repository. The :archive_format can be either tarball or zipball. The :ref must be a valid Git reference. If you omit :ref, the repository’s default branch (usually master) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire after five minutes.</p>
 </div>
 
 
@@ -877,7 +769,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -887,7 +779,7 @@
 
             
 
-            <td class="description last"><p>The repo's owner id</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
@@ -900,7 +792,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -910,14 +802,37 @@
 
             
 
-            <td class="description last"><p>The repo id</p></td>
+            <td class="description last"><p>The repo's name</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params</code></td>
+                <td class="name"><code>archiveFormat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Either tarball or zipball</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ref</code></td>
             
 
             <td class="type">
@@ -933,56 +848,7 @@
 
             
 
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>A valid Git reference. If you omit :ref, the repository’s default branch (usually master) will be used</p></td>
         </tr>
 
     
@@ -1006,7 +872,7 @@
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>302</p>
 </div>
 
 
@@ -1017,7 +883,7 @@
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">null</span>
 
 
     </dd>
@@ -1031,7 +897,7 @@
 
     
 
-    <h4 class="name" id=".getRepositoryIssueEvents"><span class="type-signature">(static) </span>getRepositoryIssueEvents<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".getContents"><span class="type-signature">(static) </span>getContents<span class="signature">(owner, repo, path, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1043,7 +909,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line48">line 48</a>
+        <a href="repositories_contents.js.html">repositories/contents.js</a>, <a href="repositories_contents.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -1077,7 +943,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-issue-events-for-a-repository">https://developer.github.com/v3/activity/events/#list-issue-events-for-a-repository</a></li>
+            <li><a href="https://developer.github.com/v3/repos/contents/#get-contents">https://developer.github.com/v3/repos/contents/#get-contents</a></li>
         </ul>
     </dd>
     
@@ -1090,8 +956,7 @@
 
 
 <div class="description">
-    <p>List issue events for a repository
-Repository issue events have a different format than other events, as documented in the Issue Events API.</p>
+    <p>Gets the contents of a file or directory in a repository. Specify the file path or directory in :path. If you omit :path, you will receive the contents of all files in the repository.</p>
 </div>
 
 
@@ -1135,7 +1000,7 @@ Repository issue events have a different format than other events, as documented
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1145,7 +1010,7 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The repo's owner id</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
@@ -1158,7 +1023,7 @@ Repository issue events have a different format than other events, as documented
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1168,7 +1033,30 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The repo id</p></td>
+            <td class="description last"><p>The repo's name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The content path</p></td>
         </tr>
 
     
@@ -1217,13 +1105,13 @@ Repository issue events have a different format than other events, as documented
 
         <tr>
             
-                <td class="name"><code>page</code></td>
+                <td class="name"><code>ref</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1233,7 +1121,7 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The page of results to retrieve</p></td>
+            <td class="description last"><p>The name of the commit/branch/tag. Default: the repository’s default branch (usually master)</p></td>
         </tr>
 
     
@@ -1264,7 +1152,7 @@ Repository issue events have a different format than other events, as documented
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Content data object</p>
 </div>
 
 
@@ -1275,7 +1163,7 @@ Repository issue events have a different format than other events, as documented
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -1289,7 +1177,7 @@ Repository issue events have a different format than other events, as documented
 
     
 
-    <h4 class="name" id=".getUserEvents"><span class="type-signature">(static) </span>getUserEvents<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".getReadme"><span class="type-signature">(static) </span>getReadme<span class="signature">(owner, repo, params)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1301,7 +1189,7 @@ Repository issue events have a different format than other events, as documented
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line121">line 121</a>
+        <a href="repositories_contents.js.html">repositories/contents.js</a>, <a href="repositories_contents.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -1335,7 +1223,7 @@ Repository issue events have a different format than other events, as documented
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user">https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user</a></li>
+            <li><a href="https://developer.github.com/v3/repos/contents/#get-the-readme">https://developer.github.com/v3/repos/contents/#get-the-readme</a></li>
         </ul>
     </dd>
     
@@ -1348,7 +1236,7 @@ Repository issue events have a different format than other events, as documented
 
 
 <div class="description">
-    <p>List events performed by a user</p>
+    <p>Gets the preferred README for a repository.</p>
 </div>
 
 
@@ -1386,7 +1274,7 @@ Repository issue events have a different format than other events, as documented
 
         <tr>
             
-                <td class="name"><code>username</code></td>
+                <td class="name"><code>owner</code></td>
             
 
             <td class="type">
@@ -1402,7 +1290,30 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The username</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo's name</p></td>
         </tr>
 
     
@@ -1451,13 +1362,13 @@ Repository issue events have a different format than other events, as documented
 
         <tr>
             
-                <td class="name"><code>page</code></td>
+                <td class="name"><code>ref</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1467,7 +1378,7 @@ Repository issue events have a different format than other events, as documented
 
             
 
-            <td class="description last"><p>The page of results to retrieve</p></td>
+            <td class="description last"><p>The name of the commit/branch/tag. Default: the repository’s default branch (usually master)</p></td>
         </tr>
 
     
@@ -1498,7 +1409,7 @@ Repository issue events have a different format than other events, as documented
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>README data object</p>
 </div>
 
 
@@ -1509,7 +1420,7 @@ Repository issue events have a different format than other events, as documented
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -1523,7 +1434,7 @@ Repository issue events have a different format than other events, as documented
 
     
 
-    <h4 class="name" id=".getUserEventsReceived"><span class="type-signature">(static) </span>getUserEventsReceived<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
+    <h4 class="name" id=".putContents"><span class="type-signature">(static) </span>putContents<span class="signature">(owner, repo, path, body)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -1535,7 +1446,7 @@ Repository issue events have a different format than other events, as documented
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line93">line 93</a>
+        <a href="repositories_contents.js.html">repositories/contents.js</a>, <a href="repositories_contents.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -1569,7 +1480,7 @@ Repository issue events have a different format than other events, as documented
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-that-a-user-has-received">https://developer.github.com/v3/activity/events/#list-events-that-a-user-has-received</a></li>
+            <li><a href="https://developer.github.com/v3/repos/contents/#create-or-update-a-file">https://developer.github.com/v3/repos/contents/#create-or-update-a-file</a></li>
         </ul>
     </dd>
     
@@ -1582,9 +1493,7 @@ Repository issue events have a different format than other events, as documented
 
 
 <div class="description">
-    <p>List events that a user has received
-These are events that you've received by watching repos and following users. If you are authenticated as
-the given user, you will see private events. Otherwise, you'll only see public events.</p>
+    <p>Creates a new file or updates an existing file in a repository.</p>
 </div>
 
 
@@ -1622,7 +1531,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
         <tr>
             
-                <td class="name"><code>username</code></td>
+                <td class="name"><code>owner</code></td>
             
 
             <td class="type">
@@ -1638,14 +1547,60 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
             
 
-            <td class="description last"><p>The username</p></td>
+            <td class="description last"><p>The repo's owner</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>params</code></td>
+                <td class="name"><code>repo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The repo's name</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The content path</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -1661,7 +1616,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
             
 
-            <td class="description last"><p>An object of parameters for the request</p>
+            <td class="description last"><p>The request body</p>
                 <h6>Properties</h6>
                 
 
@@ -1687,13 +1642,13 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
         <tr>
             
-                <td class="name"><code>page</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">string</span>
 
 
             
@@ -1703,7 +1658,266 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
             
 
-            <td class="description last"><p>The page of results to retrieve</p></td>
+            <td class="description last"><p>Required. The commit message.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The new file content, using Base64 encoding.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sha</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required if you are updating a file. The blob SHA of the file being replaced.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>branch</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The branch name. Default: the repository’s default branch (usually master)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>committer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The person that committed the file. Default: the authenticated user.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The name of the author or committer of the commit. You'll receive a 422 status code if name is omitted.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The email of the author or committer of the commit. You'll receive a 422 status code if email is omitted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>author</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The author of the file. Default: The committer or the authenticated user if you omit committer.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The name of the author or committer of the commit. You'll receive a 422 status code if name is omitted.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Required. The email of the author or committer of the commit. You'll receive a 422 status code if email is omitted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1734,7 +1948,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
 
         
 <div class="param-desc">
-    <p>Event data</p>
+    <p>Commit data</p>
 </div>
 
 
@@ -1745,733 +1959,7 @@ the given user, you will see private events. Otherwise, you'll only see public e
     </dt>
     <dd>
         
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserOrganizationEvents"><span class="type-signature">(static) </span>getUserOrganizationEvents<span class="signature">(username, org, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line151">line 151</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-for-an-organization">https://developer.github.com/v3/activity/events/#list-events-for-an-organization</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List events for an organization
-This is the user's organization dashboard. You must be authenticated as the user to view this.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>org</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The organization</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
 <span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserPublicEvents"><span class="type-signature">(static) </span>getUserPublicEvents<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line135">line 135</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user">https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events performed by a user</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getUserPublicEventsReceived"><span class="type-signature">(static) </span>getUserPublicEventsReceived<span class="signature">(username, params)</span><span class="type-signature"> &rarr; {JSON}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="activity_events.js.html">activity/events.js</a>, <a href="activity_events.js.html#line107">line 107</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.github.com/v3/activity/events/#list-public-events-that-a-user-has-received">https://developer.github.com/v3/activity/events/#list-public-events-that-a-user-has-received</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>List public events that a user has received</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>username</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The username</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An object of parameters for the request</p>
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>page</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">int</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The page of results to retrieve</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Event data</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">JSON</span>
 
 
     </dd>
