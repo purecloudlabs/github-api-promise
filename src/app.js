@@ -23,6 +23,7 @@ githubApi.pullRequests = {
 githubApi.repositories = {
 	collaborators: require('./repositories/collaborators'),
 	commits: require('./repositories/commits'),
+	contents: require('./repositories/contents'),
 	releases: require('./repositories/releases'),
 	repositories: require('./repositories/repositories')
 };
