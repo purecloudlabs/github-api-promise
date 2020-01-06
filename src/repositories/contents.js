@@ -66,7 +66,7 @@ module.exports = {
 	 * @return {object} Commit data
 	 */
 	putContents: function(owner, repo, path, body) {
-		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/contents/${path}`, 'post', body);
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/contents/${path}`, 'put', body);
 	},
 
 	/**
