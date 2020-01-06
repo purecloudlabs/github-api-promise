@@ -63,6 +63,7 @@ The following APIs are supported. PRs welcome!
 	* [Pull Requests](https://developer.github.com/v3/pulls/)
 * Repositories
 	* [Commits](https://developer.github.com/v3/repos/commits/)
+	* [Contents](https://developer.github.com/v3/repos/contents/)
 	* [Releases](https://developer.github.com/v3/repos/releases/)
 	* [Repositories](https://developer.github.com/v3/repos/)
 * Teams
