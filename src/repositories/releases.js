@@ -48,6 +48,7 @@ module.exports = {
 			request
 				.get(getRepoUrl('releases'))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -76,6 +77,7 @@ module.exports = {
 			request
 				.get(getRepoUrl('releases/' + releaseId))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -104,6 +106,7 @@ module.exports = {
 			request
 				.get(getRepoUrl('releases/latest'))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -132,6 +135,7 @@ module.exports = {
 			request
 				.get(getRepoUrl('releases/tags/' + tag))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -160,6 +164,7 @@ module.exports = {
 			request
 				.post(getRepoUrl('releases'))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.set('Content-Type', 'application/json')
 				.send(body)
 				.then(function(res) {
@@ -191,6 +196,7 @@ module.exports = {
 			request
 				.patch(getRepoUrl('releases/' + releaseId))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.set('Content-Type', 'application/json')
 				.send(body)
 				.then(function(res) {
@@ -221,6 +227,7 @@ module.exports = {
 			request
 				.delete(getRepoUrl('releases/' + releaseId))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -249,6 +256,7 @@ module.exports = {
 			request
 				.get(getRepoUrl('releases/' + releaseId + '/assets'))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -337,6 +345,7 @@ module.exports = {
 			request
 				.get(getRepoUrl('releases/assets/' + assetId))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
@@ -366,6 +375,7 @@ module.exports = {
 			request
 				.patch(getRepoUrl('releases/assets/' + assetId))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.set('Content-Type', 'application/json')
 				.send(body)
 				.then(function(res) {
@@ -396,6 +406,7 @@ module.exports = {
 			request
 				.delete(getRepoUrl('releases/assets/' + assetId))
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					logRequestSuccess(res);
 					deferred.resolve(res.body);
