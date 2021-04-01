@@ -84,6 +84,7 @@ module.exports = {
 			// Set standard stuff and handle response
 			req
 				.set('Authorization', 'token ' + config.token)
+				.set('User-Agent', 'github-api-promise')
 				.then(function(res) {
 					self.logRequestSuccess(res);
 					deferred.resolve({
