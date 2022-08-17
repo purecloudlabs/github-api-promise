@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LoggingEvent$2 - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_.html">_</a><ul class='methods'><li data-type='method'><a href="-_.html#.after">after</a></li><li data-type='method'><a href="-_.html#.ary">ary</a></li><li data-type='method'><a href="-_.html#.before">before</a></li><li data-type='method'><a href="-_.html#.capitalize">capitalize</a></li><li data-type='method'><a href="-_.html#.castArray">castArray</a></li><li data-type='method'><a href="-_.html#.chain">chain</a></li><li data-type='method'><a href="-_.html#.chunk">chunk</a></li><li data-type='method'><a href="-_.html#.clamp">clamp</a></li><li data-type='method'><a href="-_.html#.clone">clone</a></li><li data-type='method'><a href="-_.html#.cloneDeep">cloneDeep</a></li><li data-type='method'><a href="-_.html#.cloneDeepWith">cloneDeepWith</a></li><li data-type='method'><a href="-_.html#.cloneWith">cloneWith</a></li><li data-type='method'><a href="-_.html#.compact">compact</a></li><li data-type='method'><a href="-_.html#.concat">concat</a></li><li data-type='method'><a href="-_.html#.cond">cond</a></li><li data-type='method'><a href="-_.html#.conforms">conforms</a></li><li data-type='method'><a href="-_.html#.conformsTo">conformsTo</a></li><li data-type='method'><a href="-_.html#.constant">constant</a></li><li data-type='method'><a href="-_.html#.create">create</a></li><li data-type='method'><a href="-_.html#.curry">curry</a></li><li data-type='method'><a href="-_.html#.curryRight">curryRight</a></li><li data-type='method'><a href="-_.html#.debounce">debounce</a></li><li data-type='method'><a href="-_.html#.deburr">deburr</a></li><li data-type='method'><a href="-_.html#.defaultTo">defaultTo</a></li><li data-type='method'><a href="-_.html#.drop">drop</a></li><li data-type='method'><a href="-_.html#.dropRight">dropRight</a></li><li data-type='method'><a href="-_.html#.dropRightWhile">dropRightWhile</a></li><li data-type='method'><a href="-_.html#.dropWhile">dropWhile</a></li><li data-type='method'><a href="-_.html#.each">each</a></li><li data-type='method'><a href="-_.html#.eachRight">eachRight</a></li><li data-type='method'><a href="-_.html#.endsWith">endsWith</a></li><li data-type='method'><a href="-_.html#.eq">eq</a></li><li data-type='method'><a href="-_.html#.escape">escape</a></li><li data-type='method'><a href="-_.html#.escapeRegExp">escapeRegExp</a></li><li data-type='method'><a href="-_.html#.every">every</a></li><li data-type='method'><a href="-_.html#.fill">fill</a></li><li data-type='method'><a href="-_.html#.filter">filter</a></li><li data-type='method'><a href="-_.html#.findIndex">findIndex</a></li><li data-type='method'><a href="-_.html#.findKey">findKey</a></li><li data-type='method'><a href="-_.html#.findLastIndex">findLastIndex</a></li><li data-type='method'><a href="-_.html#.findLastKey">findLastKey</a></li><li data-type='method'><a href="-_.html#.first">first</a></li><li data-type='method'><a href="-_.html#.flatMap">flatMap</a></li><li data-type='method'><a href="-_.html#.flatMapDeep">flatMapDeep</a></li><li data-type='method'><a href="-_.html#.flatMapDepth">flatMapDepth</a></li><li data-type='method'><a href="-_.html#.flatten">flatten</a></li><li data-type='method'><a href="-_.html#.flattenDeep">flattenDeep</a></li><li data-type='method'><a href="-_.html#.flattenDepth">flattenDepth</a></li><li data-type='method'><a href="-_.html#.flip">flip</a></li><li data-type='method'><a href="-_.html#.forIn">forIn</a></li><li data-type='method'><a href="-_.html#.forInRight">forInRight</a></li><li data-type='method'><a href="-_.html#.forOwn">forOwn</a></li><li data-type='method'><a href="-_.html#.forOwnRight">forOwnRight</a></li><li data-type='method'><a href="-_.html#.fromPairs">fromPairs</a></li><li data-type='method'><a href="-_.html#.functions">functions</a></li><li data-type='method'><a href="-_.html#.functionsIn">functionsIn</a></li><li data-type='method'><a href="-_.html#.get">get</a></li><li data-type='method'><a href="-_.html#.has">has</a></li><li data-type='method'><a href="-_.html#.hasIn">hasIn</a></li><li data-type='method'><a href="-_.html#.identity">identity</a></li><li data-type='method'><a href="-_.html#.includes">includes</a></li><li data-type='method'><a href="-_.html#.indexOf">indexOf</a></li><li data-type='method'><a href="-_.html#.initial">initial</a></li><li data-type='method'><a href="-_.html#.inRange">inRange</a></li><li data-type='method'><a href="-_.html#.isArrayLike">isArrayLike</a></li><li data-type='method'><a href="-_.html#.isArrayLikeObject">isArrayLikeObject</a></li><li data-type='method'><a href="-_.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="-_.html#.isElement">isElement</a></li><li data-type='method'><a href="-_.html#.isEmpty">isEmpty</a></li><li data-type='method'><a href="-_.html#.isEqual">isEqual</a></li><li data-type='method'><a href="-_.html#.isEqualWith">isEqualWith</a></li><li data-type='method'><a href="-_.html#.isError">isError</a></li><li data-type='method'><a href="-_.html#.isFinite">isFinite</a></li><li data-type='method'><a href="-_.html#.isFunction">isFunction</a></li><li data-type='method'><a href="-_.html#.isInteger">isInteger</a></li><li data-type='method'><a href="-_.html#.isLength">isLength</a></li><li data-type='method'><a href="-_.html#.isMatch">isMatch</a></li><li data-type='method'><a href="-_.html#.isMatchWith">isMatchWith</a></li><li data-type='method'><a href="-_.html#.isNaN">isNaN</a></li><li data-type='method'><a href="-_.html#.isNative">isNative</a></li><li data-type='method'><a href="-_.html#.isNil">isNil</a></li><li data-type='method'><a href="-_.html#.isNull">isNull</a></li><li data-type='method'><a href="-_.html#.isNumber">isNumber</a></li><li data-type='method'><a href="-_.html#.isObject">isObject</a></li><li data-type='method'><a href="-_.html#.isObjectLike">isObjectLike</a></li><li data-type='method'><a href="-_.html#.isPlainObject">isPlainObject</a></li><li data-type='method'><a href="-_.html#.isSafeInteger">isSafeInteger</a></li><li data-type='method'><a href="-_.html#.isString">isString</a></li><li data-type='method'><a href="-_.html#.isSymbol">isSymbol</a></li><li data-type='method'><a href="-_.html#.isUndefined">isUndefined</a></li><li data-type='method'><a href="-_.html#.isWeakMap">isWeakMap</a></li><li data-type='method'><a href="-_.html#.isWeakSet">isWeakSet</a></li><li data-type='method'><a href="-_.html#.iteratee">iteratee</a></li><li data-type='method'><a href="-_.html#.join">join</a></li><li data-type='method'><a href="-_.html#.keys">keys</a></li><li data-type='method'><a href="-_.html#.keysIn">keysIn</a></li><li data-type='method'><a href="-_.html#.last">last</a></li><li data-type='method'><a href="-_.html#.lastIndexOf">lastIndexOf</a></li><li data-type='method'><a href="-_.html#.map">map</a></li><li data-type='method'><a href="-_.html#.mapKeys">mapKeys</a></li><li data-type='method'><a href="-_.html#.mapValues">mapValues</a></li><li data-type='method'><a href="-_.html#.matches">matches</a></li><li data-type='method'><a href="-_.html#.matchesProperty">matchesProperty</a></li><li data-type='method'><a href="-_.html#.max">max</a></li><li data-type='method'><a href="-_.html#.maxBy">maxBy</a></li><li data-type='method'><a href="-_.html#.mean">mean</a></li><li data-type='method'><a href="-_.html#.meanBy">meanBy</a></li><li data-type='method'><a href="-_.html#.memoize">memoize</a></li><li data-type='method'><a href="-_.html#.min">min</a></li><li data-type='method'><a href="-_.html#.minBy">minBy</a></li><li data-type='method'><a href="-_.html#.mixin">mixin</a></li><li data-type='method'><a href="-_.html#.negate">negate</a></li><li data-type='method'><a href="-_.html#.noConflict">noConflict</a></li><li data-type='method'><a href="-_.html#.noop">noop</a></li><li data-type='method'><a href="-_.html#.nth">nth</a></li><li data-type='method'><a href="-_.html#.nthArg">nthArg</a></li><li data-type='method'><a href="-_.html#.omitBy">omitBy</a></li><li data-type='method'><a href="-_.html#.once">once</a></li><li data-type='method'><a href="-_.html#.orderBy">orderBy</a></li><li data-type='method'><a href="-_.html#.pad">pad</a></li><li data-type='method'><a href="-_.html#.padEnd">padEnd</a></li><li data-type='method'><a href="-_.html#.padStart">padStart</a></li><li data-type='method'><a href="-_.html#.parseInt">parseInt</a></li><li data-type='method'><a href="-_.html#.pickBy">pickBy</a></li><li data-type='method'><a href="-_.html#.property">property</a></li><li data-type='method'><a href="-_.html#.propertyOf">propertyOf</a></li><li data-type='method'><a href="-_.html#.pullAll">pullAll</a></li><li data-type='method'><a href="-_.html#.pullAllBy">pullAllBy</a></li><li data-type='method'><a href="-_.html#.pullAllWith">pullAllWith</a></li><li data-type='method'><a href="-_.html#.random">random</a></li><li data-type='method'><a href="-_.html#.reduce">reduce</a></li><li data-type='method'><a href="-_.html#.reduceRight">reduceRight</a></li><li data-type='method'><a href="-_.html#.reject">reject</a></li><li data-type='method'><a href="-_.html#.remove">remove</a></li><li data-type='method'><a href="-_.html#.repeat">repeat</a></li><li data-type='method'><a href="-_.html#.replace">replace</a></li><li data-type='method'><a href="-_.html#.rest">rest</a></li><li data-type='method'><a href="-_.html#.result">result</a></li><li data-type='method'><a href="-_.html#.reverse">reverse</a></li><li data-type='method'><a href="-_.html#.runInContext">runInContext</a></li><li data-type='method'><a href="-_.html#.sample">sample</a></li><li data-type='method'><a href="-_.html#.sampleSize">sampleSize</a></li><li data-type='method'><a href="-_.html#.set">set</a></li><li data-type='method'><a href="-_.html#.setWith">setWith</a></li><li data-type='method'><a href="-_.html#.shuffle">shuffle</a></li><li data-type='method'><a href="-_.html#.size">size</a></li><li data-type='method'><a href="-_.html#.slice">slice</a></li><li data-type='method'><a href="-_.html#.some">some</a></li><li data-type='method'><a href="-_.html#.sortedIndex">sortedIndex</a></li><li data-type='method'><a href="-_.html#.sortedIndexBy">sortedIndexBy</a></li><li data-type='method'><a href="-_.html#.sortedIndexOf">sortedIndexOf</a></li><li data-type='method'><a href="-_.html#.sortedLastIndex">sortedLastIndex</a></li><li data-type='method'><a href="-_.html#.sortedLastIndexBy">sortedLastIndexBy</a></li><li data-type='method'><a href="-_.html#.sortedLastIndexOf">sortedLastIndexOf</a></li><li data-type='method'><a href="-_.html#.sortedUniq">sortedUniq</a></li><li data-type='method'><a href="-_.html#.sortedUniqBy">sortedUniqBy</a></li><li data-type='method'><a href="-_.html#.split">split</a></li><li data-type='method'><a href="-_.html#.spread">spread</a></li><li data-type='method'><a href="-_.html#.startsWith">startsWith</a></li><li data-type='method'><a href="-_.html#.stubArray">stubArray</a></li><li data-type='method'><a href="-_.html#.stubFalse">stubFalse</a></li><li data-type='method'><a href="-_.html#.stubObject">stubObject</a></li><li data-type='method'><a href="-_.html#.stubString">stubString</a></li><li data-type='method'><a href="-_.html#.stubTrue">stubTrue</a></li><li data-type='method'><a href="-_.html#.sum">sum</a></li><li data-type='method'><a href="-_.html#.sumBy">sumBy</a></li><li data-type='method'><a href="-_.html#.tail">tail</a></li><li data-type='method'><a href="-_.html#.take">take</a></li><li data-type='method'><a href="-_.html#.takeRight">takeRight</a></li><li data-type='method'><a href="-_.html#.takeRightWhile">takeRightWhile</a></li><li data-type='method'><a href="-_.html#.takeWhile">takeWhile</a></li><li data-type='method'><a href="-_.html#.tap">tap</a></li><li data-type='method'><a href="-_.html#.template">template</a></li><li data-type='method'><a href="-_.html#.throttle">throttle</a></li><li data-type='method'><a href="-_.html#.thru">thru</a></li><li data-type='method'><a href="-_.html#.times">times</a></li><li data-type='method'><a href="-_.html#.toArray">toArray</a></li><li data-type='method'><a href="-_.html#.toFinite">toFinite</a></li><li data-type='method'><a href="-_.html#.toInteger">toInteger</a></li><li data-type='method'><a href="-_.html#.toLength">toLength</a></li><li data-type='method'><a href="-_.html#.toLower">toLower</a></li><li data-type='method'><a href="-_.html#.toNumber">toNumber</a></li><li data-type='method'><a href="-_.html#.toPath">toPath</a></li><li data-type='method'><a href="-_.html#.toPlainObject">toPlainObject</a></li><li data-type='method'><a href="-_.html#.toSafeInteger">toSafeInteger</a></li><li data-type='method'><a href="-_.html#.toString">toString</a></li><li data-type='method'><a href="-_.html#.toUpper">toUpper</a></li><li data-type='method'><a href="-_.html#.transform">transform</a></li><li data-type='method'><a href="-_.html#.trim">trim</a></li><li data-type='method'><a href="-_.html#.trimEnd">trimEnd</a></li><li data-type='method'><a href="-_.html#.trimStart">trimStart</a></li><li data-type='method'><a href="-_.html#.truncate">truncate</a></li><li data-type='method'><a href="-_.html#.unary">unary</a></li><li data-type='method'><a href="-_.html#.unescape">unescape</a></li><li data-type='method'><a href="-_.html#.uniq">uniq</a></li><li data-type='method'><a href="-_.html#.uniqBy">uniqBy</a></li><li data-type='method'><a href="-_.html#.uniqueId">uniqueId</a></li><li data-type='method'><a href="-_.html#.uniqWith">uniqWith</a></li><li data-type='method'><a href="-_.html#.unset">unset</a></li><li data-type='method'><a href="-_.html#.unzip">unzip</a></li><li data-type='method'><a href="-_.html#.unzipWith">unzipWith</a></li><li data-type='method'><a href="-_.html#.update">update</a></li><li data-type='method'><a href="-_.html#.updateWith">updateWith</a></li><li data-type='method'><a href="-_.html#.values">values</a></li><li data-type='method'><a href="-_.html#.valuesIn">valuesIn</a></li><li data-type='method'><a href="-_.html#.words">words</a></li><li data-type='method'><a href="-_.html#.wrap">wrap</a></li><li data-type='method'><a href="-_.html#.zipObject">zipObject</a></li><li data-type='method'><a href="-_.html#.zipObjectDeep">zipObjectDeep</a></li></ul></li><li><a href="CanceledError$4.html">CanceledError$4</a></li><li><a href="CancelToken.html">CancelToken</a><ul class='methods'><li data-type='method'><a href="CancelToken.html#.source">source</a></li><li data-type='method'><a href="CancelToken.html#subscribe">subscribe</a></li><li data-type='method'><a href="CancelToken.html#throwIfRequested">throwIfRequested</a></li><li data-type='method'><a href="CancelToken.html#unsubscribe">unsubscribe</a></li></ul></li><li><a href="FormData$2.html">FormData$2</a></li><li><a href="LoggingEvent$2.html">LoggingEvent$2</a></li><li><a href="RollingFileWriteStream$2.html">RollingFileWriteStream$2</a></li></ul><h3>Modules</h3><ul><li><a href="module-activity_events.html">activity/events</a></li><li><a href="module-issues_comments.html">issues/comments</a></li><li><a href="module-issues_events.html">issues/events</a></li><li><a href="module-issues_issues.html">issues/issues</a></li><li><a href="module-pullRequests_comments.html">pullRequests/comments</a></li><li><a href="module-pullRequests_pullRequests.html">pullRequests/pullRequests</a></li><li><a href="module-repositories_collaborators.html">repositories/collaborators</a></li><li><a href="module-repositories_commits.html">repositories/commits</a></li><li><a href="module-repositories_contents.html">repositories/contents</a></li><li><a href="module-repositories_releases.html">repositories/releases</a></li><li><a href="module-repositories_repositories.html">repositories/repositories</a></li><li><a href="module-teams_teams.html">teams/teams</a></li></ul><h3>Namespaces</h3><ul><li><a href="Log4js.html">Log4js</a></li></ul><h3>Global</h3><ul><li><a href="global.html#abort$2">abort$2</a></li><li><a href="global.html#appender$1">appender$1</a></li><li><a href="global.html#ascending">ascending</a></li><li><a href="global.html#assembleTokens">assembleTokens</a></li><li><a href="global.html#assertOptions">assertOptions</a></li><li><a href="global.html#async$2">async$2</a></li><li><a href="global.html#Axios$1">Axios$1</a></li><li><a href="global.html#AxiosError$6">AxiosError$6</a></li><li><a href="global.html#basicLayout">basicLayout</a></li><li><a href="global.html#buildFullPath$3">buildFullPath$3</a></li><li><a href="global.html#buildURL$3">buildURL$3</a></li><li><a href="global.html#charset">charset</a></li><li><a href="global.html#clean">clean</a></li><li><a href="global.html#colorize">colorize</a></li><li><a href="global.html#colors">colors</a></li><li><a href="global.html#colouredLayout">colouredLayout</a></li><li><a href="global.html#combineURLs$1">combineURLs$1</a></li><li><a href="global.html#connectLogger$1">connectLogger$1</a></li><li><a href="global.html#createInstance">createInstance</a></li><li><a href="global.html#createNoLogCondition">createNoLogCondition</a></li><li><a href="global.html#defer$1">defer$1</a></li><li><a href="global.html#descending">descending</a></li><li><a href="global.html#dispatchRequest$1">dispatchRequest$1</a></li><li><a href="global.html#extend">extend</a></li><li><a href="global.html#fileAppender">fileAppender</a></li><li><a href="global.html#fileAppender$1">fileAppender$1</a></li><li><a href="global.html#fmtLong">fmtLong</a></li><li><a href="global.html#fmtShort">fmtShort</a></li><li><a href="global.html#forEach$3">forEach$3</a></li><li><a href="global.html#format">format</a></li><li><a href="global.html#formatArgs">formatArgs</a></li><li><a href="global.html#getLogger">getLogger</a></li><li><a href="global.html#getUrl">getUrl</a></li><li><a href="global.html#inherits">inherits</a></li><li><a href="global.html#inherits$1">inherits$1</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#inspectOpts">inspectOpts</a></li><li><a href="global.html#isAbsoluteURL$1">isAbsoluteURL$1</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isArrayBuffer">isArrayBuffer</a></li><li><a href="global.html#isArrayBufferView">isArrayBufferView</a></li><li><a href="global.html#isAxiosError">isAxiosError</a></li><li><a href="global.html#isBlob">isBlob</a></li><li><a href="global.html#isBuffer$1">isBuffer$1</a></li><li><a href="global.html#isDate">isDate</a></li><li><a href="global.html#isFile">isFile</a></li><li><a href="global.html#isFileList">isFileList</a></li><li><a href="global.html#isFormData">isFormData</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject$1">isObject$1</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#isStandardBrowserEnv">isStandardBrowserEnv</a></li><li><a href="global.html#isStream">isStream</a></li><li><a href="global.html#isString$1">isString$1</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#isURLSearchParams">isURLSearchParams</a></li><li><a href="global.html#iterate$2">iterate$2</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#matchRules">matchRules</a></li><li><a href="global.html#merge">merge</a></li><li><a href="global.html#mergeConfig$2">mergeConfig$2</a></li><li><a href="global.html#mimeDb">mimeDb</a></li><li><a href="global.html#ms">ms</a></li><li><a href="global.html#noLogFilter">noLogFilter</a></li><li><a href="global.html#parallel">parallel</a></li><li><a href="global.html#parse$1">parse$1</a></li><li><a href="global.html#parseHeaders$1">parseHeaders$1</a></li><li><a href="global.html#patternLayout">patternLayout</a></li><li><a href="global.html#plural">plural</a></li><li><a href="global.html#punycode">punycode</a></li><li><a href="global.html#removeNullOrEmptyRegexp">removeNullOrEmptyRegexp</a></li><li><a href="global.html#runJob">runJob</a></li><li><a href="global.html#s">s</a></li><li><a href="global.html#serial">serial</a></li><li><a href="global.html#serialOrdered$1">serialOrdered$1</a></li><li><a href="global.html#setProxy">setProxy</a></li><li><a href="global.html#settle$2">settle$2</a></li><li><a href="global.html#setup$1">setup$1</a></li><li><a href="global.html#shutdown">shutdown</a></li><li><a href="global.html#spread">spread</a></li><li><a href="global.html#state">state</a></li><li><a href="global.html#stringToPath">stringToPath</a></li><li><a href="global.html#stripBOM">stripBOM</a></li><li><a href="global.html#symlinkPaths$1">symlinkPaths$1</a></li><li><a href="global.html#terminator$2">terminator$2</a></li><li><a href="global.html#throwIfCancellationRequested">throwIfCancellationRequested</a></li><li><a href="global.html#toArray">toArray</a></li><li><a href="global.html#toFlatObject">toFlatObject</a></li><li><a href="global.html#toFormData$1">toFormData$1</a></li><li><a href="global.html#transformData$1">transformData$1</a></li><li><a href="global.html#trim">trim</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">LoggingEvent$2</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        LoggingEvent$2
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    <h4 class="name" id="LoggingEvent$2"><span class="type-signature"></span>new LoggingEvent$2<span class="signature">(categoryName, level, data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line38029">line 38029</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Chisamore</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Models a logging event.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>categoryName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>name of category</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Log4js.Level</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>level of message</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>objects to log</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Wed Aug 17 2022 16:35:03 GMT-0400 (Eastern Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
