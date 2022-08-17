@@ -35810,7 +35810,7 @@ var _ = lodash.exports;
 let config = {
     owner: "github_username",
     repo: "repo_name",
-    token: "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",
+    token: "your_github_token",
     host: "https://api.github.com",
     debug: false,
 };
@@ -43840,49 +43840,6 @@ class Request {
 }
 let req = new Request();
 
-// export interface Events {
-//   getEvents(params?: Params): Promise<Endpoints["GET /events"]["response"]>;
-//   getRepositoryEvents(
-//     owner: number,
-//     repo: number,
-//     params?: Params
-//   ): Promise<Endpoints["GET /repos/{owner}/{repo}/events"]["response"]>;
-//   getRepositoryIssueEvents(
-//     owner: number,
-//     repo: number,
-//     params?: Params
-//   ): Promise<Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]>;
-//   getNetworkRepositoryEvents(
-//     owner: number,
-//     repo: number,
-//     params?: Params
-//   ): Promise<Endpoints["GET /networks/{owner}/{repo}/events"]["response"]>;
-//   getOrganizationEvents(
-//     org: string,
-//     params?: Params
-//   ): Promise<Endpoints["GET /orgs/{org}/events"]["response"]>;
-//   getUserEventsReceived(
-//     username: string,
-//     params?: Params
-//   ): Promise<Endpoints["GET /users/{username}/received_events"]["response"]>;
-//   getUserPublicEventsReceived(
-//     username: string,
-//     params?: Params
-//   ): Promise<Endpoints["GET /users/{username}/events/public"]["response"]>;
-//   getUserEvents(
-//     username: string,
-//     params?: Params
-//   ): Promise<Endpoints["GET /users/{username}/events"]["response"]>;
-//   getUserPublicEvents(
-//     username: string,
-//     params?: Params
-//   ): Promise<Endpoints["GET /users/{username}/events/public"]["response"]>;
-//   getUserOrganizationEvents(
-//     username: string,
-//     org: string,
-//     params?: Params
-//   ): Promise<Endpoints["GET /users/{username}/events/orgs/{org}"]["response"]>;
-// }
 /**
  * @module activity/events
  */
@@ -44026,53 +43983,6 @@ var activityEvents = {
     },
 };
 
-// export interface Comments {
-//   getIssueComments(
-//     owner: string,
-//     repo: string,
-//     number: number,
-//     params?: Params
-//   ): Promise<
-//     Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/comments"]["response"]
-//   >;
-//   getRepositoryComments(
-//     owner: string,
-//     repo: string,
-//     params?: Params
-//   ): Promise<
-//     Endpoints["GET /repos/{owner}/{repo}/issues/comments"]["response"]
-//   >;
-//   getComment(
-//     owner: string,
-//     repo: string,
-//     id: string
-//   ): Promise<
-//     Endpoints["GET /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"]
-//   >;
-//   createComment(
-//     owner: string,
-//     repo: string,
-//     number: string,
-//     body: string
-//   ): Promise<
-//     Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/comments"]["response"]
-//   >;
-//   editComment(
-//     owner: string,
-//     repo: string,
-//     id: string,
-//     body: string
-//   ): Promise<
-//     Endpoints["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"]
-//   >;
-//   deleteComment(
-//     owner: string,
-//     repo: string,
-//     id: string
-//   ): Promise<
-//     Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"]
-//   >;
-// }
 /**
  * @module issues/comments
  */

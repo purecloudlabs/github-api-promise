@@ -1,21 +1,22 @@
 {
   "name": "github-api-promise",
-  "version": "1.13.5",
+  "version": "1.13.6",
   "description": "A node module for interfacing with the Github API using promises",
   "main": "build/app.js",
   "module": "build/app.js",
   "author": "Tim Smith",
-  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/princenebulon/github-api-promise.git"
+    "url": "https://github.com/purecloudlabs/github-api-promise.git"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "lodash": "^4.17.10",
-    "log4js": "^6.6.1",
-    "lognext": "0.0.4"
+    "log4js": "^6.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/purecloudlabs/github-api-promise/issues"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",

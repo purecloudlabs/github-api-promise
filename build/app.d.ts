@@ -17483,7 +17483,7 @@ declare let githubApi: {
                     self: string;
                 };
             }, 200>>;
-            putContents: (owner: string, repo: string, path: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            putContents: (owner: string, repo: string, path: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
                 content: {
                     name?: string;
                     path?: string;
@@ -17582,7 +17582,7 @@ declare let githubApi: {
                     };
                 };
             }, 201>>;
-            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
                 content: {
                     name?: string;
                     path?: string;
@@ -22186,7 +22186,7 @@ declare let githubApi: {
             getRepositoryTopics: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
                 names: string[];
             }, 200>>;
-            updateRepositoryTopics: (owner: string, repo: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            updateRepositoryTopics: (owner: string, repo: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
                 names: string[];
             }, 200>>;
             getRepositoryContributors: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
@@ -23425,7 +23425,7 @@ declare let githubApi: {
                     self: string;
                 };
             }, 200>>;
-            putContents: (owner: string, repo: string, path: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            putContents: (owner: string, repo: string, path: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
                 content: {
                     name?: string;
                     path?: string;
@@ -23524,7 +23524,7 @@ declare let githubApi: {
                     };
                 };
             }, 201>>;
-            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
                 content: {
                     name?: string;
                     path?: string;
@@ -28128,7 +28128,7 @@ declare let githubApi: {
             getRepositoryTopics: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
                 names: string[];
             }, 200>>;
-            updateRepositoryTopics: (owner: string, repo: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            updateRepositoryTopics: (owner: string, repo: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
                 names: string[];
             }, 200>>;
             getRepositoryContributors: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{

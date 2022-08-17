@@ -1,4 +1,4 @@
-import { Params, RepoParams, RepoBody } from "../types";
+import { Params, RepoParams, RepoBody, Body } from "../types";
 /**
  * @module repositories/repositories
  */

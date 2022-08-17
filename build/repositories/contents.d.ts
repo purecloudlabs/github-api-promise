@@ -1,4 +1,4 @@
-import { Params } from "../types";
+import { Params, Body } from "../types";
 /**
  * Contents module
  * @module repositories/contents
