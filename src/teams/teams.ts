@@ -27,7 +27,7 @@ export default {
       `${config.host}/orgs/${org}/teams?${req.assembleQueryParams(params, [
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /orgs/{org}/teams"]["response"]>;
+    ) as Promise<Endpoints["GET /orgs/{org}/teams"]["response"]["data"]>;
   },
 
   /**
@@ -41,7 +41,7 @@ export default {
    */
   getTeam: function (id: string) {
     return req.standardRequest(`${config.host}/teams/${id}`) as Promise<
-      Endpoints["GET /teams/{team_id}"]["response"]
+      Endpoints["GET /teams/{team_id}"]["response"]["data"]
     >;
   },
 
@@ -89,7 +89,7 @@ export default {
       `${config.host}/orgs/${org}/teams`,
       "post",
       body
-    ) as Promise<Endpoints["POST /orgs/{org}/teams"]["response"]>;
+    ) as Promise<Endpoints["POST /orgs/{org}/teams"]["response"]["data"]>;
   },
 
   /**
@@ -126,7 +126,7 @@ export default {
       `${config.host}/teams/${id}`,
       "patch",
       body
-    ) as Promise<Endpoints["PATCH /teams/{team_id}"]["response"]>;
+    ) as Promise<Endpoints["PATCH /teams/{team_id}"]["response"]["data"]>;
   },
 
   /**
@@ -144,7 +144,7 @@ export default {
     return req.standardRequest(
       `${config.host}/teams/${id}`,
       "delete"
-    ) as Promise<Endpoints["DELETE /teams/{team_id}"]["response"]>;
+    ) as Promise<Endpoints["DELETE /teams/{team_id}"]["response"]["data"]>;
   },
 
   /**
@@ -165,7 +165,7 @@ export default {
       `${config.host}/teams/${id}/teams?${req.assembleQueryParams(params, [
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /teams/{team_id}/teams"]["response"]>;
+    ) as Promise<Endpoints["GET /teams/{team_id}/teams"]["response"]["data"]>;
   },
 
   /**
@@ -186,7 +186,7 @@ export default {
       `${config.host}/teams/${id}/repos?${req.assembleQueryParams(params, [
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /teams/{team_id}/repos"]["response"]>;
+    ) as Promise<Endpoints["GET /teams/{team_id}/repos"]["response"]["data"]>;
   },
 
   /**
@@ -206,7 +206,7 @@ export default {
     return req.standardRequest(
       `${config.host}/teams/${id}/repos/${owner}/${repo}`
     ) as Promise<
-      Endpoints["GET /teams/{team_id}/repos/{owner}/{repo}"]["response"]
+      Endpoints["GET /teams/{team_id}/repos/{owner}/{repo}"]["response"]["data"]
     >;
   },
 
@@ -243,7 +243,7 @@ export default {
       "put",
       body
     ) as Promise<
-      Endpoints["PUT /teams/{team_id}/repos/{owner}/{repo}"]["response"]
+      Endpoints["PUT /teams/{team_id}/repos/{owner}/{repo}"]["response"]["data"]
     >;
   },
 
@@ -265,7 +265,7 @@ export default {
       `${config.host}/teams/${id}/repos/${owner}/${repo}`,
       "delete"
     ) as Promise<
-      Endpoints["DELETE /teams/{team_id}/repos/{owner}/{repo}"]["response"]
+      Endpoints["DELETE /teams/{team_id}/repos/{owner}/{repo}"]["response"]["data"]
     >;
   },
 
@@ -284,7 +284,7 @@ export default {
   getUserTeams: function (params?: Params) {
     return req.standardRequest(
       `${config.host}/user/teams?${req.assembleQueryParams(params, ["page"])}`
-    ) as Promise<Endpoints["GET /user/teams"]["response"]>;
+    ) as Promise<Endpoints["GET /user/teams"]["response"]["data"]>;
   },
 
   /**
@@ -305,7 +305,9 @@ export default {
       `${config.host}/teams/${id}/projects?${req.assembleQueryParams(params, [
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /teams/{team_id}/projects"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /teams/{team_id}/projects"]["response"]["data"]
+    >;
   },
 
   /**
@@ -324,7 +326,7 @@ export default {
     return req.standardRequest(
       `${config.host}/teams/${id}/projects/${projectId}`
     ) as Promise<
-      Endpoints["GET /teams/{team_id}/projects/{project_id}"]["response"]
+      Endpoints["GET /teams/{team_id}/projects/{project_id}"]["response"]["data"]
     >;
   },
 
@@ -355,7 +357,7 @@ export default {
       "put",
       body
     ) as Promise<
-      Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["response"]
+      Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["response"]["data"]
     >;
   },
 
@@ -376,7 +378,7 @@ export default {
       `${config.host}/teams/${id}/projects/${projectId}`,
       "delete"
     ) as Promise<
-      Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["response"]
+      Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["response"]["data"]
     >;
   },
 };

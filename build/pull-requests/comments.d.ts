@@ -21,7 +21,7 @@ declare const _default: {
      *
      * @return {object} Pull request comment data
      */
-    getPullRequestComments: (owner: string, repo: string, number: string, params?: PullRequestCommentParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getPullRequestComments: (owner: string, repo: string, number: string, params?: PullRequestCommentParams) => Promise<{
         url: string;
         pull_request_review_id: number;
         id: number;
@@ -93,7 +93,7 @@ declare const _default: {
         };
         body_html?: string;
         body_text?: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List comments in a repository
      * By default, review comments are ordered by ascending ID.
@@ -110,7 +110,7 @@ declare const _default: {
      *
      * @return {object} Pull request comment data
      */
-    getRepositoryComments: (owner: string, repo: string, params?: PullRequestCommentParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryComments: (owner: string, repo: string, params?: PullRequestCommentParams) => Promise<{
         url: string;
         pull_request_review_id: number;
         id: number;
@@ -182,7 +182,7 @@ declare const _default: {
         };
         body_html?: string;
         body_text?: string;
-    }[], 200>>;
+    }[]>;
     /**
      * Get a single comment
      *
@@ -194,7 +194,7 @@ declare const _default: {
      *
      * @return {object} Pull request comment data
      */
-    getComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getComment: (owner: string, repo: string, id: string) => Promise<{
         url: string;
         pull_request_review_id: number;
         id: number;
@@ -266,7 +266,7 @@ declare const _default: {
         };
         body_html?: string;
         body_text?: string;
-    }, 200>>;
+    }>;
     /**
      * Create a comment
      * Alternative input: Instead of passing commit_id, path, and position, you can reply to an existing pull request comment like this:
@@ -285,7 +285,7 @@ declare const _default: {
      *
      * @return {object} Pull request comment data
      */
-    createComment: (owner: string, repo: string, number: string, body: PullRequestCommentBody) => Promise<import("@octokit/types").OctokitResponse<{
+    createComment: (owner: string, repo: string, number: string, body: PullRequestCommentBody) => Promise<{
         url: string;
         pull_request_review_id: number;
         id: number;
@@ -357,7 +357,7 @@ declare const _default: {
         };
         body_html?: string;
         body_text?: string;
-    }, 201>>;
+    }>;
     /**
      *
      *
@@ -371,7 +371,7 @@ declare const _default: {
      *
      * @return {object} Pull request comment data
      */
-    editComment: (owner: string, repo: string, id: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+    editComment: (owner: string, repo: string, id: string, body: Body) => Promise<{
         url: string;
         pull_request_review_id: number;
         id: number;
@@ -443,7 +443,7 @@ declare const _default: {
         };
         body_html?: string;
         body_text?: string;
-    }, 200>>;
+    }>;
     /**
      * Delete a comment
      *
@@ -455,6 +455,6 @@ declare const _default: {
      *
      * @return {null} 204 no content
      */
-    deleteComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    deleteComment: (owner: string, repo: string, id: string) => Promise<never>;
 };
 export default _default;

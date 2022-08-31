@@ -3,31 +3,6 @@ import { Endpoints } from "@octokit/types";
 import { Params } from "../types";
 import req from "../request-helpers";
 
-export interface IssueEvent {
-  getIssueEvents(
-    owner: string,
-    repo: string,
-    issue_number: string,
-    params?: Params
-  ): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/events"]["response"]
-  >;
-
-  getRepositoryIssueEvents(
-    owner: string,
-    repo: string,
-    params?: Params
-  ): Promise<Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]>;
-
-  getEvent(
-    owner: string,
-    repo: string,
-    id: string
-  ): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/issues/events/{event_id}"]["response"]
-  >;
-}
-
 /**
  * @module issues/events
  */
@@ -59,7 +34,7 @@ export default {
         ["page"]
       )}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/events"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/events"]["response"]["data"]
     >;
   },
 
@@ -83,7 +58,7 @@ export default {
         "page",
       ])}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]["data"]
     >;
   },
 
@@ -102,7 +77,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/issues/events/${id}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/issues/events/{event_id}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/issues/events/{event_id}"]["response"]["data"]
     >;
   },
 };

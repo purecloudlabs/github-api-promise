@@ -21,7 +21,7 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    getPullRequests: (owner: string, repo: string, params?: PullRequestParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getPullRequests: (owner: string, repo: string, params?: PullRequestParams) => Promise<{
         url: string;
         id: number;
         node_id: string;
@@ -852,7 +852,7 @@ declare const _default: {
             commit_message: string;
         };
         draft?: boolean;
-    }[], 200>>;
+    }[]>;
     /**
      * Get a single pull request
      *
@@ -864,7 +864,7 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    getPullRequest: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getPullRequest: (owner: string, repo: string, number: string) => Promise<{
         url: string;
         id: number;
         node_id: string;
@@ -1416,7 +1416,7 @@ declare const _default: {
         additions: number;
         deletions: number;
         changed_files: number;
-    }, 200>>;
+    }>;
     /**
      * Create a pull request
      *
@@ -1433,7 +1433,7 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    createPullRequest: (owner: string, repo: string, body: PullRequestBody) => Promise<import("@octokit/types").OctokitResponse<{
+    createPullRequest: (owner: string, repo: string, body: PullRequestBody) => Promise<{
         url: string;
         id: number;
         node_id: string;
@@ -1985,7 +1985,7 @@ declare const _default: {
         additions: number;
         deletions: number;
         changed_files: number;
-    }, 201>>;
+    }>;
     /**
      * Update a pull request
      *
@@ -2003,7 +2003,7 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    updatePullRequest: (owner: string, repo: string, number: string, body: PullRequestBody) => Promise<import("@octokit/types").OctokitResponse<{
+    updatePullRequest: (owner: string, repo: string, number: string, body: PullRequestBody) => Promise<{
         url: string;
         id: number;
         node_id: string;
@@ -2555,7 +2555,7 @@ declare const _default: {
         additions: number;
         deletions: number;
         changed_files: number;
-    }, 200>>;
+    }>;
     /**
      * List commits on a pull request
      *
@@ -2569,7 +2569,7 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    getPullRequestCommits: (owner: string, repo: string, number: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getPullRequestCommits: (owner: string, repo: string, number: string, params?: Params) => Promise<{
         url: string;
         sha: string;
         node_id: string;
@@ -2669,7 +2669,7 @@ declare const _default: {
             patch?: string;
             previous_filename?: string;
         }[];
-    }[], 200>>;
+    }[]>;
     /**
      * List pull requests files
      *
@@ -2683,7 +2683,7 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    getPullRequestFiles: (owner: string, repo: string, number: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getPullRequestFiles: (owner: string, repo: string, number: string, params?: Params) => Promise<{
         sha: string;
         filename: string;
         status: "added" | "removed" | "modified" | "renamed" | "copied" | "changed" | "unchanged";
@@ -2695,7 +2695,7 @@ declare const _default: {
         contents_url: string;
         patch?: string;
         previous_filename?: string;
-    }[], 200>>;
+    }[]>;
     /**
      * Get if a pull request has been merged. 204=merged, 404=not merged
      *
@@ -2707,7 +2707,7 @@ declare const _default: {
      *
      * @return {null} 204=merged / 404=not merged
      */
-    getIsMerged: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    getIsMerged: (owner: string, repo: string, number: string) => Promise<never>;
     /**
      * Merge a pull request (Merge Button)
      *
@@ -2724,10 +2724,10 @@ declare const _default: {
      *
      * @return {object} Pull request data
      */
-    merge: (owner: string, repo: string, number: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    merge: (owner: string, repo: string, number: string, params?: Params) => Promise<{
         sha: string;
         merged: boolean;
         message: string;
-    }, 200>>;
+    }>;
 };
 export default _default;

@@ -35,7 +35,9 @@ export default {
         params,
         ["state", "head", "base", "sort", "direction", "page"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/pulls"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/pulls"]["response"]["data"]
+    >;
   },
 
   /**
@@ -53,7 +55,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/pulls/${number}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}"]["response"]["data"]
     >;
   },
 
@@ -78,7 +80,9 @@ export default {
       `${config.host}/repos/${owner}/${repo}/pulls`,
       "post",
       body
-    ) as Promise<Endpoints["POST /repos/{owner}/{repo}/pulls"]["response"]>;
+    ) as Promise<
+      Endpoints["POST /repos/{owner}/{repo}/pulls"]["response"]["data"]
+    >;
   },
 
   /**
@@ -109,7 +113,7 @@ export default {
       "patch",
       body
     ) as Promise<
-      Endpoints["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"]["response"]
+      Endpoints["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"]["response"]["data"]
     >;
   },
 
@@ -140,7 +144,7 @@ export default {
         ["page"]
       )}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/commits"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/commits"]["response"]["data"]
     >;
   },
 
@@ -171,7 +175,7 @@ export default {
         ["page"]
       )}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/files"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/files"]["response"]["data"]
     >;
   },
 
@@ -190,7 +194,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/pulls/${number}/merge`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"]["data"]
     >;
   },
 
@@ -220,7 +224,7 @@ export default {
       )}`,
       "PUT"
     ) as Promise<
-      Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"]
+      Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"]["data"]
     >;
   },
 };

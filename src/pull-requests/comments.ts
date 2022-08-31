@@ -43,7 +43,7 @@ export default {
         ["sort", "direction", "since", "page"]
       )}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["response"]["data"]
     >;
   },
 
@@ -76,7 +76,7 @@ export default {
         ["sort", "direction", "since", "page"]
       )}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/comments"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/comments"]["response"]["data"]
     >;
   },
 
@@ -95,7 +95,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/pulls/comments/${id}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"]["data"]
     >;
   },
 
@@ -128,7 +128,7 @@ export default {
       "post",
       body
     ) as Promise<
-      Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["response"]
+      Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["response"]["data"]
     >;
   },
 
@@ -151,7 +151,7 @@ export default {
       "patch",
       body
     ) as Promise<
-      Endpoints["PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"]
+      Endpoints["PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"]["data"]
     >;
   },
 
@@ -171,7 +171,7 @@ export default {
       `${config.host}/repos/${owner}/${repo}/pulls/comments/${id}`,
       "delete"
     ) as Promise<
-      Endpoints["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"]
+      Endpoints["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"]["data"]
     >;
   },
 };

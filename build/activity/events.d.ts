@@ -1,4 +1,3 @@
-import { Endpoints } from "@octokit/types";
 import { Params } from "../types";
 /**
  * @module activity/events
@@ -12,7 +11,7 @@ declare const _default: {
      *
      * @return {object} Event data
      */
-    getEvents: (params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getEvents: (params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -641,7 +640,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List repository events
      * @see {@link https://developer.github.com/v3/activity/events/#list-repository-events}
@@ -652,7 +651,636 @@ declare const _default: {
      *
      * @return {object} Event data
      */
-    getRepositoryEvents: (owner: number, repo: number, params?: Params) => Promise<Endpoints["GET /repos/{owner}/{repo}/events"]["response"]>;
+    getRepositoryEvents: (owner: number, repo: number, params?: Params) => Promise<{
+        id: string;
+        type: string;
+        actor: {
+            id: number;
+            login: string;
+            display_login?: string;
+            gravatar_id: string;
+            url: string;
+            avatar_url: string;
+        };
+        repo: {
+            id: number;
+            name: string;
+            url: string;
+        };
+        org?: {
+            id: number;
+            login: string;
+            display_login?: string;
+            gravatar_id: string;
+            url: string;
+            avatar_url: string;
+        };
+        payload: {
+            action?: string;
+            issue?: {
+                id: number;
+                node_id: string;
+                url: string;
+                repository_url: string;
+                labels_url: string;
+                comments_url: string;
+                events_url: string;
+                html_url: string;
+                number: number;
+                state: string;
+                state_reason?: string;
+                title: string;
+                body?: string;
+                user: {
+                    name?: string;
+                    email?: string;
+                    login: string;
+                    id: number;
+                    node_id: string;
+                    avatar_url: string;
+                    gravatar_id: string;
+                    url: string;
+                    html_url: string;
+                    followers_url: string;
+                    following_url: string;
+                    gists_url: string;
+                    starred_url: string;
+                    subscriptions_url: string;
+                    organizations_url: string;
+                    repos_url: string;
+                    events_url: string;
+                    received_events_url: string;
+                    type: string;
+                    site_admin: boolean;
+                    starred_at?: string;
+                };
+                labels: (string | {
+                    id?: number;
+                    node_id?: string;
+                    url?: string;
+                    name?: string;
+                    description?: string;
+                    color?: string;
+                    default?: boolean;
+                })[];
+                assignee: {
+                    name?: string;
+                    email?: string;
+                    login: string;
+                    id: number;
+                    node_id: string;
+                    avatar_url: string;
+                    gravatar_id: string;
+                    url: string;
+                    html_url: string;
+                    followers_url: string;
+                    following_url: string;
+                    gists_url: string;
+                    starred_url: string;
+                    subscriptions_url: string;
+                    organizations_url: string;
+                    repos_url: string;
+                    events_url: string;
+                    received_events_url: string;
+                    type: string;
+                    site_admin: boolean;
+                    starred_at?: string;
+                };
+                assignees?: {
+                    name?: string;
+                    email?: string;
+                    login: string;
+                    id: number;
+                    node_id: string;
+                    avatar_url: string;
+                    gravatar_id: string;
+                    url: string;
+                    html_url: string;
+                    followers_url: string;
+                    following_url: string;
+                    gists_url: string;
+                    starred_url: string;
+                    subscriptions_url: string;
+                    organizations_url: string;
+                    repos_url: string;
+                    events_url: string;
+                    received_events_url: string;
+                    type: string;
+                    site_admin: boolean;
+                    starred_at?: string;
+                }[];
+                milestone: {
+                    url: string;
+                    html_url: string;
+                    labels_url: string;
+                    id: number;
+                    node_id: string;
+                    number: number;
+                    state: "open" | "closed";
+                    title: string;
+                    description: string;
+                    creator: {
+                        name?: string;
+                        email?: string;
+                        login: string;
+                        id: number;
+                        node_id: string;
+                        avatar_url: string;
+                        gravatar_id: string;
+                        url: string;
+                        html_url: string;
+                        followers_url: string;
+                        following_url: string;
+                        gists_url: string;
+                        starred_url: string;
+                        subscriptions_url: string;
+                        organizations_url: string;
+                        repos_url: string;
+                        events_url: string;
+                        received_events_url: string;
+                        type: string;
+                        site_admin: boolean;
+                        starred_at?: string;
+                    };
+                    open_issues: number;
+                    closed_issues: number;
+                    created_at: string;
+                    updated_at: string;
+                    closed_at: string;
+                    due_on: string;
+                };
+                locked: boolean;
+                active_lock_reason?: string;
+                comments: number;
+                pull_request?: {
+                    merged_at?: string;
+                    diff_url: string;
+                    html_url: string;
+                    patch_url: string;
+                    url: string;
+                };
+                closed_at: string;
+                created_at: string;
+                updated_at: string;
+                draft?: boolean;
+                closed_by?: {
+                    name?: string;
+                    email?: string;
+                    login: string;
+                    id: number;
+                    node_id: string;
+                    avatar_url: string;
+                    gravatar_id: string;
+                    url: string;
+                    html_url: string;
+                    followers_url: string;
+                    following_url: string;
+                    gists_url: string;
+                    starred_url: string;
+                    subscriptions_url: string;
+                    organizations_url: string;
+                    repos_url: string;
+                    events_url: string;
+                    received_events_url: string;
+                    type: string;
+                    site_admin: boolean;
+                    starred_at?: string;
+                };
+                body_html?: string;
+                body_text?: string;
+                timeline_url?: string;
+                repository?: {
+                    id: number;
+                    node_id: string;
+                    name: string;
+                    full_name: string;
+                    license: {
+                        key: string;
+                        name: string;
+                        url: string;
+                        spdx_id: string;
+                        node_id: string;
+                        html_url?: string;
+                    };
+                    organization?: {
+                        name?: string;
+                        email?: string;
+                        login: string;
+                        id: number;
+                        node_id: string;
+                        avatar_url: string;
+                        gravatar_id: string;
+                        url: string;
+                        html_url: string;
+                        followers_url: string;
+                        following_url: string;
+                        gists_url: string;
+                        starred_url: string;
+                        subscriptions_url: string;
+                        organizations_url: string;
+                        repos_url: string;
+                        events_url: string;
+                        received_events_url: string;
+                        type: string;
+                        site_admin: boolean;
+                        starred_at?: string;
+                    };
+                    forks: number;
+                    permissions?: {
+                        admin: boolean;
+                        pull: boolean;
+                        triage?: boolean;
+                        push: boolean;
+                        maintain?: boolean;
+                    };
+                    owner: {
+                        name?: string;
+                        email?: string;
+                        login: string;
+                        id: number;
+                        node_id: string;
+                        avatar_url: string;
+                        gravatar_id: string;
+                        url: string;
+                        html_url: string;
+                        followers_url: string;
+                        following_url: string;
+                        gists_url: string;
+                        starred_url: string;
+                        subscriptions_url: string;
+                        organizations_url: string;
+                        repos_url: string;
+                        events_url: string;
+                        received_events_url: string;
+                        type: string;
+                        site_admin: boolean;
+                        starred_at?: string;
+                    };
+                    private: boolean;
+                    html_url: string;
+                    description: string;
+                    fork: boolean;
+                    url: string;
+                    archive_url: string;
+                    assignees_url: string;
+                    blobs_url: string;
+                    branches_url: string;
+                    collaborators_url: string;
+                    comments_url: string;
+                    commits_url: string;
+                    compare_url: string;
+                    contents_url: string;
+                    contributors_url: string;
+                    deployments_url: string;
+                    downloads_url: string;
+                    events_url: string;
+                    forks_url: string;
+                    git_commits_url: string;
+                    git_refs_url: string;
+                    git_tags_url: string;
+                    git_url: string;
+                    issue_comment_url: string;
+                    issue_events_url: string;
+                    issues_url: string;
+                    keys_url: string;
+                    labels_url: string;
+                    languages_url: string;
+                    merges_url: string;
+                    milestones_url: string;
+                    notifications_url: string;
+                    pulls_url: string;
+                    releases_url: string;
+                    ssh_url: string;
+                    stargazers_url: string;
+                    statuses_url: string;
+                    subscribers_url: string;
+                    subscription_url: string;
+                    tags_url: string;
+                    teams_url: string;
+                    trees_url: string;
+                    clone_url: string;
+                    mirror_url: string;
+                    hooks_url: string;
+                    svn_url: string;
+                    homepage: string;
+                    language: string;
+                    forks_count: number;
+                    stargazers_count: number;
+                    watchers_count: number;
+                    size: number;
+                    default_branch: string;
+                    open_issues_count: number;
+                    is_template?: boolean;
+                    topics?: string[];
+                    has_issues: boolean;
+                    has_projects: boolean;
+                    has_wiki: boolean;
+                    has_pages: boolean;
+                    has_downloads: boolean;
+                    archived: boolean;
+                    disabled: boolean;
+                    visibility?: string;
+                    pushed_at: string;
+                    created_at: string;
+                    updated_at: string;
+                    allow_rebase_merge?: boolean;
+                    template_repository?: {
+                        id?: number;
+                        node_id?: string;
+                        name?: string;
+                        full_name?: string;
+                        owner?: {
+                            login?: string;
+                            id?: number;
+                            node_id?: string;
+                            avatar_url?: string;
+                            gravatar_id?: string;
+                            url?: string;
+                            html_url?: string;
+                            followers_url?: string;
+                            following_url?: string;
+                            gists_url?: string;
+                            starred_url?: string;
+                            subscriptions_url?: string;
+                            organizations_url?: string;
+                            repos_url?: string;
+                            events_url?: string;
+                            received_events_url?: string;
+                            type?: string;
+                            site_admin?: boolean;
+                        };
+                        private?: boolean;
+                        html_url?: string;
+                        description?: string;
+                        fork?: boolean;
+                        url?: string;
+                        archive_url?: string;
+                        assignees_url?: string;
+                        blobs_url?: string;
+                        branches_url?: string;
+                        collaborators_url?: string;
+                        comments_url?: string;
+                        commits_url?: string;
+                        compare_url?: string;
+                        contents_url?: string;
+                        contributors_url?: string;
+                        deployments_url?: string;
+                        downloads_url?: string;
+                        events_url?: string;
+                        forks_url?: string;
+                        git_commits_url?: string;
+                        git_refs_url?: string;
+                        git_tags_url?: string;
+                        git_url?: string;
+                        issue_comment_url?: string;
+                        issue_events_url?: string;
+                        issues_url?: string;
+                        keys_url?: string;
+                        labels_url?: string;
+                        languages_url?: string;
+                        merges_url?: string;
+                        milestones_url?: string;
+                        notifications_url?: string;
+                        pulls_url?: string;
+                        releases_url?: string;
+                        ssh_url?: string;
+                        stargazers_url?: string;
+                        statuses_url?: string;
+                        subscribers_url?: string;
+                        subscription_url?: string;
+                        tags_url?: string;
+                        teams_url?: string;
+                        trees_url?: string;
+                        clone_url?: string;
+                        mirror_url?: string;
+                        hooks_url?: string;
+                        svn_url?: string;
+                        homepage?: string;
+                        language?: string;
+                        forks_count?: number;
+                        stargazers_count?: number;
+                        watchers_count?: number;
+                        size?: number;
+                        default_branch?: string;
+                        open_issues_count?: number;
+                        is_template?: boolean;
+                        topics?: string[];
+                        has_issues?: boolean;
+                        has_projects?: boolean;
+                        has_wiki?: boolean;
+                        has_pages?: boolean;
+                        has_downloads?: boolean;
+                        archived?: boolean;
+                        disabled?: boolean;
+                        visibility?: string;
+                        pushed_at?: string;
+                        created_at?: string;
+                        updated_at?: string;
+                        permissions?: {
+                            admin?: boolean;
+                            maintain?: boolean;
+                            push?: boolean;
+                            triage?: boolean;
+                            pull?: boolean;
+                        };
+                        allow_rebase_merge?: boolean;
+                        temp_clone_token?: string;
+                        allow_squash_merge?: boolean;
+                        allow_auto_merge?: boolean;
+                        delete_branch_on_merge?: boolean;
+                        allow_update_branch?: boolean;
+                        use_squash_pr_title_as_default?: boolean;
+                        allow_merge_commit?: boolean;
+                        subscribers_count?: number;
+                        network_count?: number;
+                    };
+                    temp_clone_token?: string;
+                    allow_squash_merge?: boolean;
+                    allow_auto_merge?: boolean;
+                    delete_branch_on_merge?: boolean;
+                    allow_update_branch?: boolean;
+                    use_squash_pr_title_as_default?: boolean;
+                    allow_merge_commit?: boolean;
+                    allow_forking?: boolean;
+                    subscribers_count?: number;
+                    network_count?: number;
+                    open_issues: number;
+                    watchers: number;
+                    master_branch?: string;
+                    starred_at?: string;
+                };
+                performed_via_github_app?: {
+                    id: number;
+                    slug?: string;
+                    node_id: string;
+                    owner: {
+                        name?: string;
+                        email?: string;
+                        login: string;
+                        id: number;
+                        node_id: string;
+                        avatar_url: string;
+                        gravatar_id: string;
+                        url: string;
+                        html_url: string;
+                        followers_url: string;
+                        following_url: string;
+                        gists_url: string;
+                        starred_url: string;
+                        subscriptions_url: string;
+                        organizations_url: string;
+                        repos_url: string;
+                        events_url: string;
+                        received_events_url: string;
+                        type: string;
+                        site_admin: boolean;
+                        starred_at?: string;
+                    };
+                    name: string;
+                    description: string;
+                    external_url: string;
+                    html_url: string;
+                    created_at: string;
+                    updated_at: string;
+                    permissions: {
+                        issues?: string;
+                        checks?: string;
+                        metadata?: string;
+                        contents?: string;
+                        deployments?: string;
+                    } & {
+                        [key: string]: string;
+                    };
+                    events: string[];
+                    installations_count?: number;
+                    client_id?: string;
+                    client_secret?: string;
+                    webhook_secret?: string;
+                    pem?: string;
+                };
+                author_association: "COLLABORATOR" | "CONTRIBUTOR" | "FIRST_TIMER" | "FIRST_TIME_CONTRIBUTOR" | "MANNEQUIN" | "MEMBER" | "NONE" | "OWNER";
+                reactions?: {
+                    url: string;
+                    total_count: number;
+                    "+1": number;
+                    "-1": number;
+                    laugh: number;
+                    confused: number;
+                    heart: number;
+                    hooray: number;
+                    eyes: number;
+                    rocket: number;
+                };
+            };
+            comment?: {
+                id: number;
+                node_id: string;
+                url: string;
+                body?: string;
+                body_text?: string;
+                body_html?: string;
+                html_url: string;
+                user: {
+                    name?: string;
+                    email?: string;
+                    login: string;
+                    id: number;
+                    node_id: string;
+                    avatar_url: string;
+                    gravatar_id: string;
+                    url: string;
+                    html_url: string;
+                    followers_url: string;
+                    following_url: string;
+                    gists_url: string;
+                    starred_url: string;
+                    subscriptions_url: string;
+                    organizations_url: string;
+                    repos_url: string;
+                    events_url: string;
+                    received_events_url: string;
+                    type: string;
+                    site_admin: boolean;
+                    starred_at?: string;
+                };
+                created_at: string;
+                updated_at: string;
+                issue_url: string;
+                author_association: "COLLABORATOR" | "CONTRIBUTOR" | "FIRST_TIMER" | "FIRST_TIME_CONTRIBUTOR" | "MANNEQUIN" | "MEMBER" | "NONE" | "OWNER";
+                performed_via_github_app?: {
+                    id: number;
+                    slug?: string;
+                    node_id: string;
+                    owner: {
+                        name?: string;
+                        email?: string;
+                        login: string;
+                        id: number;
+                        node_id: string;
+                        avatar_url: string;
+                        gravatar_id: string;
+                        url: string;
+                        html_url: string;
+                        followers_url: string;
+                        following_url: string;
+                        gists_url: string;
+                        starred_url: string;
+                        subscriptions_url: string;
+                        organizations_url: string;
+                        repos_url: string;
+                        events_url: string;
+                        received_events_url: string;
+                        type: string;
+                        site_admin: boolean;
+                        starred_at?: string;
+                    };
+                    name: string;
+                    description: string;
+                    external_url: string;
+                    html_url: string;
+                    created_at: string;
+                    updated_at: string;
+                    permissions: {
+                        issues?: string;
+                        checks?: string;
+                        metadata?: string;
+                        contents?: string;
+                        deployments?: string;
+                    } & {
+                        [key: string]: string;
+                    };
+                    events: string[];
+                    installations_count?: number;
+                    client_id?: string;
+                    client_secret?: string;
+                    webhook_secret?: string;
+                    pem?: string;
+                };
+                reactions?: {
+                    url: string;
+                    total_count: number;
+                    "+1": number;
+                    "-1": number;
+                    laugh: number;
+                    confused: number;
+                    heart: number;
+                    hooray: number;
+                    eyes: number;
+                    rocket: number;
+                };
+            };
+            pages?: {
+                page_name?: string;
+                title?: string;
+                summary?: string;
+                action?: string;
+                sha?: string;
+                html_url?: string;
+            }[];
+        };
+        public: boolean;
+        created_at: string;
+    }[]>;
     /**
      * List issue events for a repository
      * Repository issue events have a different format than other events, as documented in the Issue Events API.
@@ -664,7 +1292,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getRepositoryIssueEvents: (owner: number, repo: number, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryIssueEvents: (owner: number, repo: number, params?: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -1392,7 +2020,7 @@ declare const _default: {
             webhook_secret?: string;
             pem?: string;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * List public events for a network of repositories
      * @see {@link https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories}
@@ -1403,7 +2031,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getNetworkRepositoryEvents: (owner: number, repo: number, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getNetworkRepositoryEvents: (owner: number, repo: number, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -2032,7 +2660,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List public events for an organization
      * @see {@link https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization}
@@ -2042,7 +2670,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getOrganizationEvents: (org: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getOrganizationEvents: (org: string, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -2671,7 +3299,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List events that a user has received
      * These are events that you've received by watching repos and following users. If you are authenticated as
@@ -2683,7 +3311,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getUserEventsReceived: (username: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserEventsReceived: (username: string, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -3312,7 +3940,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List public events that a user has received
      * @see {@link https://developer.github.com/v3/activity/events/#list-public-events-that-a-user-has-received}
@@ -3322,7 +3950,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getUserPublicEventsReceived: (username: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserPublicEventsReceived: (username: string, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -3951,7 +4579,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List events performed by a user
      * @see {@link https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user}
@@ -3961,7 +4589,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getUserEvents: (username: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserEvents: (username: string, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -4590,7 +5218,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List public events performed by a user
      * @see {@link https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user}
@@ -4600,7 +5228,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getUserPublicEvents: (username: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserPublicEvents: (username: string, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -5229,7 +5857,7 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List events for an organization
      * This is the user's organization dashboard. You must be authenticated as the user to view this.
@@ -5241,7 +5869,7 @@ declare const _default: {
      *
      * @return {JSON} Event data
      */
-    getUserOrganizationEvents: (username: string, org: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserOrganizationEvents: (username: string, org: string, params?: Params) => Promise<{
         id: string;
         type: string;
         actor: {
@@ -5870,6 +6498,6 @@ declare const _default: {
         };
         public: boolean;
         created_at: string;
-    }[], 200>>;
+    }[]>;
 };
 export default _default;

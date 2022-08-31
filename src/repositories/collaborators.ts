@@ -38,7 +38,7 @@ export default {
         "page",
       ])}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/collaborators"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/collaborators"]["response"]["data"]
     >;
   },
 
@@ -63,7 +63,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/collaborators/${username}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}"]["response"]["data"]
     >;
   },
 
@@ -84,7 +84,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/collaborators/${username}/permission`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}/permission"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}/permission"]["response"]["data"]
     >;
   },
 
@@ -122,7 +122,7 @@ export default {
       )}`,
       "put"
     ) as Promise<
-      Endpoints["PUT /repos/{owner}/{repo}/collaborators/{username}"]["response"]
+      Endpoints["PUT /repos/{owner}/{repo}/collaborators/{username}"]["response"]["data"]
     >;
   },
 
@@ -142,7 +142,7 @@ export default {
       `${config.host}/repos/${owner}/${repo}/collaborators/${username}`,
       "delete"
     ) as Promise<
-      Endpoints["DELETE /repos/{owner}/{repo}/collaborators/{username}"]["response"]
+      Endpoints["DELETE /repos/{owner}/{repo}/collaborators/{username}"]["response"]["data"]
     >;
   },
 };

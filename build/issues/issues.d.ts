@@ -20,7 +20,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    getIssues: (params?: IssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getIssues: (params?: IssuesParams) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -514,7 +514,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * List issues
      * List all issues across owned and member repositories assigned to the authenticated user
@@ -532,7 +532,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    getUserIssues: (params?: IssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserIssues: (params?: IssuesParams) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -1026,7 +1026,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * List issues
      * List all issues for a given organization assigned to the authenticated user
@@ -1045,7 +1045,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    getOrganizationIssues: (org: string, params?: IssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getOrganizationIssues: (org: string, params?: IssuesParams) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -1539,7 +1539,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * List issues for a repository
      *
@@ -1561,7 +1561,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    getRepositoryIssues: (owner: string, repo: string, params?: GetRepositoryIssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryIssues: (owner: string, repo: string, params?: GetRepositoryIssuesParams) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -2055,7 +2055,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * Get a single issue
      *
@@ -2067,7 +2067,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    getRepositoryIssue: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryIssue: (owner: string, repo: string, number: string) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -2561,7 +2561,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }, 200>>;
+    }>;
     /**
      * Create an issue
      * Any user with pull access to a repository can create an issue.
@@ -2580,7 +2580,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    createIssue: (owner: string, repo: string, body: IssuesBody) => Promise<import("@octokit/types").OctokitResponse<{
+    createIssue: (owner: string, repo: string, body: IssuesBody) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -3074,7 +3074,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }, 201>>;
+    }>;
     /**
      * Edit an issue
      * Issue owners and users with push access can edit an issue.
@@ -3095,7 +3095,7 @@ declare const _default: {
      *
      * @return {object} Issue data
      */
-    updateIssue: (owner: string, repo: string, number: string, body: IssuesBody) => Promise<import("@octokit/types").OctokitResponse<{
+    updateIssue: (owner: string, repo: string, number: string, body: IssuesBody) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -3589,7 +3589,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }, 200>>;
+    }>;
     /**
      * Lock an issue
      * Users with push access can lock an issue's conversation.
@@ -3602,7 +3602,7 @@ declare const _default: {
      *
      * @return {null} 204 no content
      */
-    lockIssue: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    lockIssue: (owner: string, repo: string, number: string) => Promise<never>;
     /**
      * Lock an issue
      * Users with push access can lock an issue's conversation.
@@ -3615,6 +3615,6 @@ declare const _default: {
      *
      * @return {null} 204 no content
      */
-    unlockIssue: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    unlockIssue: (owner: string, repo: string, number: string) => Promise<never>;
 };
 export default _default;

@@ -35810,7 +35810,7 @@ var _ = lodash.exports;
 let config = {
     owner: "github_username",
     repo: "repo_name",
-    token: "your_github_token",
+    token: "YourAccessToken",
     host: "https://api.github.com",
     debug: false,
 };
@@ -43745,10 +43745,7 @@ class Request {
     constructor() {
         this.requestCount = 0;
         this.request = axios.create({
-            baseURL: `https://api.github.com`,
-            headers: {
-                Authorization: `token ${config.token}`,
-            },
+            baseURL: config.host,
         });
     }
     logRequestSucess(res, message) {
@@ -43794,23 +43791,43 @@ class Request {
                 let req;
                 switch (method.toLowerCase().trim()) {
                     case "post": {
-                        req = this.request.post(url, body);
+                        req = this.request.post(url, body, {
+                            headers: {
+                                Authorization: `token ${config.token}`,
+                            },
+                        });
                         break;
                     }
                     case "patch": {
-                        req = this.request.patch(url, body);
+                        req = this.request.patch(url, body, {
+                            headers: {
+                                Authorization: `token ${config.token}`,
+                            },
+                        });
                         break;
                     }
                     case "put": {
-                        req = this.request.put(url, body);
+                        req = this.request.put(url, body, {
+                            headers: {
+                                Authorization: `token ${config.token}`,
+                            },
+                        });
                         break;
                     }
                     case "delete": {
-                        req = this.request.delete(url);
+                        req = this.request.delete(url, {
+                            headers: {
+                                Authorization: `token ${config.token}`,
+                            },
+                        });
                         break;
                     }
                     case "get": {
-                        req = this.request.get(url);
+                        req = this.request.get(url, {
+                            headers: {
+                                Authorization: `token ${config.token}`,
+                            },
+                        });
                         break;
                     }
                     default: {
@@ -43822,13 +43839,16 @@ class Request {
                 req
                     .then((res) => {
                     this.logRequestSucess(res.data);
-                    resolve(res);
+                    resolve(res.data);
                 })
                     .catch((err) => {
                     // TODO: handle rate limiting (github sends a 403, not a 429)
                     // https://developer.github.com/v3/#rate-limiting
                     log.error(err.response.data);
-                    reject(err.response);
+                    reject({
+                        status: err.response.status,
+                        errMessage: err.response.data,
+                    });
                 });
             }
             catch (err) {

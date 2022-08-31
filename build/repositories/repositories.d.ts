@@ -20,7 +20,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getMyRepos: (params?: RepoParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getMyRepos: (params?: RepoParams) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -279,7 +279,7 @@ declare const _default: {
         watchers: number;
         master_branch?: string;
         starred_at?: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List user repositories
      * List public repositories for the specified user.
@@ -293,7 +293,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getUserRepos: (username: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserRepos: (username: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -678,7 +678,7 @@ declare const _default: {
         open_issues?: number;
         watchers?: number;
         allow_forking?: boolean;
-    }[], 200>>;
+    }[]>;
     /**
      * List organization repositories
      * List repositories for the specified org.
@@ -690,7 +690,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getOrgRepos: (org: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getOrgRepos: (org: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -1075,7 +1075,7 @@ declare const _default: {
         open_issues?: number;
         watchers?: number;
         allow_forking?: boolean;
-    }[], 200>>;
+    }[]>;
     /**
      * List all public repositories
      * This provides a dump of every public repository, in the order that they were created.
@@ -1086,7 +1086,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getPublicRepositories: (params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getPublicRepositories: (params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -1471,7 +1471,7 @@ declare const _default: {
         open_issues?: number;
         watchers?: number;
         allow_forking?: boolean;
-    }[], 200>>;
+    }[]>;
     /**
      * Create
      * Create a new repository for the authenticated user.
@@ -1494,7 +1494,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    createUserRepository: (body: RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+    createUserRepository: (body: RepoBody) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -1753,7 +1753,7 @@ declare const _default: {
         watchers: number;
         master_branch?: string;
         starred_at?: string;
-    }, 201>>;
+    }>;
     /**
      * Create
      * Create a new repository in this organization. The authenticated user must be a member of the specified organization.
@@ -1777,7 +1777,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    createOrgRepository: (org: string, body: RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+    createOrgRepository: (org: string, body: RepoBody) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -2036,7 +2036,7 @@ declare const _default: {
         watchers: number;
         master_branch?: string;
         starred_at?: string;
-    }, 201>>;
+    }>;
     /**
      * Get
      * @see {@link https://developer.github.com/v3/repos/#get}
@@ -2045,7 +2045,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getRepository: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepository: (owner: string, repo: string) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -2991,7 +2991,7 @@ declare const _default: {
                 status?: "enabled" | "disabled";
             };
         };
-    }, 200>>;
+    }>;
     /**
      * Edit
      * @see {@link https://developer.github.com/v3/repos/#edit}
@@ -3012,7 +3012,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    updateRepository: (owner: string, repo: string, body: RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+    updateRepository: (owner: string, repo: string, body: RepoBody) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -3958,7 +3958,7 @@ declare const _default: {
                 status?: "enabled" | "disabled";
             };
         };
-    }, 200>>;
+    }>;
     /**
      * List all topics for a repository
      * @see {@link https://developer.github.com/v3/repos/#list-all-topics-for-a-repository}
@@ -3969,9 +3969,9 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getRepositoryTopics: (owner: string, repo: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryTopics: (owner: string, repo: string, params?: Params) => Promise<{
         names: string[];
-    }, 200>>;
+    }>;
     /**
      * Replace all topics for a repository
      * @see {@link https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository}
@@ -3982,9 +3982,9 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    updateRepositoryTopics: (owner: string, repo: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+    updateRepositoryTopics: (owner: string, repo: string, body: Body) => Promise<{
         names: string[];
-    }, 200>>;
+    }>;
     /**
      * List contributors
      * Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API v3 caches contributor data to improve performance.
@@ -3998,7 +3998,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getRepositoryContributors: (owner: string, repo: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryContributors: (owner: string, repo: string, params?: Params) => Promise<{
         login?: string;
         id?: number;
         node_id?: string;
@@ -4020,7 +4020,7 @@ declare const _default: {
         contributions: number;
         email?: string;
         name?: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List languages
      * Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.
@@ -4030,9 +4030,9 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getRepositoryLanguages: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryLanguages: (owner: string, repo: string) => Promise<{
         [key: string]: number;
-    }, 200>>;
+    }>;
     /**
      * List Teams
      * @see {@link https://developer.github.com/v3/repos/#list-teams}
@@ -4043,7 +4043,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getRepositoryTeams: (owner: string, repo: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryTeams: (owner: string, repo: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -4076,7 +4076,7 @@ declare const _default: {
             slug: string;
             ldap_dn?: string;
         };
-    }[], 200>>;
+    }[]>;
     /**
      *
      * @see {@link https://developer.github.com/v3/repos/#list-tags}
@@ -4087,7 +4087,7 @@ declare const _default: {
      *
      * @return {JSON} repo data
      */
-    getRepositoryTags: (owner: string, repo: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryTags: (owner: string, repo: string, params?: Params) => Promise<{
         name: string;
         commit: {
             sha: string;
@@ -4096,7 +4096,7 @@ declare const _default: {
         zipball_url: string;
         tarball_url: string;
         node_id: string;
-    }[], 200>>;
+    }[]>;
     /**
      *
      * @see {@link https://developer.github.com/v3/repos/#}
@@ -4105,6 +4105,6 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    deleteRepository: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    deleteRepository: (owner: string, repo: string) => Promise<never>;
 };
 export default _default;

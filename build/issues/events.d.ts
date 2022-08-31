@@ -1,10 +1,4 @@
-import { Endpoints } from "@octokit/types";
 import { Params } from "../types";
-export interface IssueEvent {
-    getIssueEvents(owner: string, repo: string, issue_number: string, params?: Params): Promise<Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/events"]["response"]>;
-    getRepositoryIssueEvents(owner: string, repo: string, params?: Params): Promise<Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]>;
-    getEvent(owner: string, repo: string, id: string): Promise<Endpoints["GET /repos/{owner}/{repo}/issues/events/{event_id}"]["response"]>;
-}
 /**
  * @module issues/events
  */
@@ -22,7 +16,7 @@ declare const _default: {
      *
      * @return {object} Event data
      */
-    getIssueEvents: (owner: string, repo: string, issue_number: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<(Partial<{
+    getIssueEvents: (owner: string, repo: string, issue_number: string, params?: Params) => Promise<(Partial<{
         id: number;
         node_id: string;
         url: string;
@@ -1531,7 +1525,7 @@ declare const _default: {
             column_name: string;
             previous_column_name?: string;
         };
-    }>)[], 200>>;
+    }>)[]>;
     /**
      * List events for a repository
      *
@@ -1544,7 +1538,7 @@ declare const _default: {
      *
      * @return {object} Event data
      */
-    getRepositoryIssueEvents: (owner: string, repo: string, params: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryIssueEvents: (owner: string, repo: string, params: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -2272,7 +2266,7 @@ declare const _default: {
             webhook_secret?: string;
             pem?: string;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * Get a single event
      *
@@ -2284,7 +2278,7 @@ declare const _default: {
      *
      * @return {object} Event data
      */
-    getEvent: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getEvent: (owner: string, repo: string, id: string) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -3012,6 +3006,6 @@ declare const _default: {
             webhook_secret?: string;
             pem?: string;
         };
-    }, 200>>;
+    }>;
 };
 export default _default;

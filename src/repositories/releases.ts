@@ -55,7 +55,7 @@ export default {
    * @return {JSON}			A list of release data
    */
   getRepositoryReleases: function (): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/releases"]["response"]
+    Endpoints["GET /repos/{owner}/{repo}/releases"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -91,7 +91,7 @@ export default {
   getRepositoryRelease: function (
     releaseId: string
   ): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}"]["response"]
+    Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -125,7 +125,7 @@ export default {
    * @return {JSON}           	The release data
    */
   getLatestRepositoryRelease: function (): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/releases/latest"]["response"]
+    Endpoints["GET /repos/{owner}/{repo}/releases/latest"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -161,7 +161,7 @@ export default {
   getRepositoryReleaseByTagName: function (
     tag: string
   ): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/releases/tags/{tag}"]["response"]
+    Endpoints["GET /repos/{owner}/{repo}/releases/tags/{tag}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -196,7 +196,9 @@ export default {
    */
   createRelease: function (
     body: any
-  ): Promise<Endpoints["POST /repos/{owner}/{repo}/releases"]["response"]> {
+  ): Promise<
+    Endpoints["POST /repos/{owner}/{repo}/releases"]["response"]["data"]
+  > {
     return new Promise((resolve, reject) => {
       try {
         axios
@@ -234,7 +236,7 @@ export default {
     releaseId: string,
     body: any
   ): Promise<
-    Endpoints["PATCH /repos/{owner}/{repo}/releases/{release_id}"]["response"]
+    Endpoints["PATCH /repos/{owner}/{repo}/releases/{release_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -271,7 +273,7 @@ export default {
   deleteRelease: function (
     releaseId: string
   ): Promise<
-    Endpoints["DELETE /repos/{owner}/{repo}/releases/{release_id}"]["response"]
+    Endpoints["DELETE /repos/{owner}/{repo}/releases/{release_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -307,7 +309,7 @@ export default {
   getReleaseAssets: function (
     releaseId: string
   ): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]
+    Endpoints["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -351,7 +353,7 @@ export default {
     localFilePath: string,
     contentType: string
   ): Promise<
-    Endpoints["POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}"]["response"]
+    Endpoints["POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -419,7 +421,7 @@ export default {
   getReleaseAssetData: function (
     assetId: string
   ): Promise<
-    Endpoints["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]
+    Endpoints["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -457,7 +459,7 @@ export default {
     assetId: string,
     body: any
   ): Promise<
-    Endpoints["PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]
+    Endpoints["PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {
@@ -494,7 +496,7 @@ export default {
   deleteReleaseAsset: function (
     assetId: string
   ): Promise<
-    Endpoints["DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]
+    Endpoints["DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"]["data"]
   > {
     return new Promise((resolve, reject) => {
       try {

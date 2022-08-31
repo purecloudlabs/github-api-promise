@@ -34,7 +34,7 @@ export default {
         "direction",
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /user/repos"]["response"]>;
+    ) as Promise<Endpoints["GET /user/repos"]["response"]["data"]>;
   },
 
   /**
@@ -56,7 +56,7 @@ export default {
         params,
         ["type", "sort", "direction", "page"]
       )}`
-    ) as Promise<Endpoints["GET /users/{username}/repos"]["response"]>;
+    ) as Promise<Endpoints["GET /users/{username}/repos"]["response"]["data"]>;
   },
 
   /**
@@ -76,7 +76,7 @@ export default {
         "type",
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /orgs/{org}/repos"]["response"]>;
+    ) as Promise<Endpoints["GET /orgs/{org}/repos"]["response"]["data"]>;
   },
 
   /**
@@ -94,7 +94,7 @@ export default {
       `${config.host}/repositories?${req.assembleQueryParams(params, [
         "since",
       ])}`
-    ) as Promise<Endpoints["GET /repositories"]["response"]>;
+    ) as Promise<Endpoints["GET /repositories"]["response"]["data"]>;
   },
 
   /**
@@ -124,7 +124,7 @@ export default {
       `${config.host}/user/repos`,
       "post",
       body
-    ) as Promise<Endpoints["POST /user/repos"]["response"]>;
+    ) as Promise<Endpoints["POST /user/repos"]["response"]["data"]>;
   },
 
   /**
@@ -155,7 +155,7 @@ export default {
       `${config.host}/orgs/${org}/repos`,
       "post",
       body
-    ) as Promise<Endpoints["POST /orgs/{org}/repos"]["response"]>;
+    ) as Promise<Endpoints["POST /orgs/{org}/repos"]["response"]["data"]>;
   },
 
   /**
@@ -169,7 +169,7 @@ export default {
   getRepository: function (owner: string, repo: string) {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}"]["response"]>;
+    ) as Promise<Endpoints["GET /repos/{owner}/{repo}"]["response"]["data"]>;
   },
 
   /**
@@ -197,7 +197,7 @@ export default {
       `${config.host}/repos/${owner}/${repo}`,
       "patch",
       body
-    ) as Promise<Endpoints["PATCH /repos/{owner}/{repo}"]["response"]>;
+    ) as Promise<Endpoints["PATCH /repos/{owner}/{repo}"]["response"]["data"]>;
   },
 
   /**
@@ -216,7 +216,9 @@ export default {
         params,
         ["since"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/topics"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/topics"]["response"]["data"]
+    >;
   },
 
   /**
@@ -234,7 +236,9 @@ export default {
       `${config.host}/repos/${owner}/${repo}/topics?`,
       "put",
       body
-    ) as Promise<Endpoints["PUT /repos/{owner}/{repo}/topics"]["response"]>;
+    ) as Promise<
+      Endpoints["PUT /repos/{owner}/{repo}/topics"]["response"]["data"]
+    >;
   },
 
   /**
@@ -263,7 +267,7 @@ export default {
         "page",
       ])}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/contributors"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/contributors"]["response"]["data"]
     >;
   },
 
@@ -279,7 +283,9 @@ export default {
   getRepositoryLanguages: function (owner: string, repo: string) {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/languages`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/languages"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/languages"]["response"]["data"]
+    >;
   },
 
   /**
@@ -298,7 +304,9 @@ export default {
         params,
         ["page"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/teams"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/teams"]["response"]["data"]
+    >;
   },
 
   /**
@@ -317,7 +325,9 @@ export default {
         params,
         ["page"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/tags"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/tags"]["response"]["data"]
+    >;
   },
 
   /**
@@ -332,6 +342,6 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}`,
       "delete"
-    ) as Promise<Endpoints["DELETE /repos/{owner}/{repo}"]["response"]>;
+    ) as Promise<Endpoints["DELETE /repos/{owner}/{repo}"]["response"]["data"]>;
   },
 };

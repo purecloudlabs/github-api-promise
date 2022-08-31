@@ -35,7 +35,7 @@ export default {
         "since",
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /issues"]["response"]>;
+    ) as Promise<Endpoints["GET /issues"]["response"]["data"]>;
   },
 
   /**
@@ -66,7 +66,7 @@ export default {
         "since",
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /user/issues"]["response"]>;
+    ) as Promise<Endpoints["GET /user/issues"]["response"]["data"]>;
   },
 
   /**
@@ -98,7 +98,7 @@ export default {
         "since",
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /orgs/{org}/issues"]["response"]>;
+    ) as Promise<Endpoints["GET /orgs/{org}/issues"]["response"]["data"]>;
   },
 
   /**
@@ -143,7 +143,9 @@ export default {
           "page",
         ]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/issues"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/issues"]["response"]["data"]
+    >;
   },
 
   /**
@@ -161,7 +163,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/issues/${number}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}"]["response"]["data"]
     >;
   },
 
@@ -188,7 +190,9 @@ export default {
       `${config.host}/repos/${owner}/${repo}/issues`,
       "post",
       body
-    ) as Promise<Endpoints["POST /repos/{owner}/{repo}/issues"]["response"]>;
+    ) as Promise<
+      Endpoints["POST /repos/{owner}/{repo}/issues"]["response"]["data"]
+    >;
   },
 
   /**
@@ -222,7 +226,7 @@ export default {
       "patch",
       body
     ) as Promise<
-      Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}"]["response"]
+      Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}"]["response"]["data"]
     >;
   },
 
@@ -243,7 +247,7 @@ export default {
       `${config.host}/repos/${owner}/${repo}/issues/${number}/lock`,
       "put"
     ) as Promise<
-      Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"]
+      Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"]["data"]
     >;
   },
 
@@ -264,7 +268,7 @@ export default {
       `${config.host}/repos/${owner}/${repo}/issues/${number}/lock`,
       "delete"
     ) as Promise<
-      Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"]
+      Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"]["data"]
     >;
   },
 };

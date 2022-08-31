@@ -17,7 +17,7 @@ declare const _default: {
      *
      * @return {object} Comment data
      */
-    getIssueComments: (owner: string, repo: string, number: number, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getIssueComments: (owner: string, repo: string, number: number, params?: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -113,7 +113,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * List comments in a repository
      * By default, Issue Comments are ordered by ascending ID.
@@ -129,7 +129,7 @@ declare const _default: {
      *
      * @return {object} Comment data
      */
-    getRepositoryComments: (owner: string, repo: string, params?: GetRepositoryCommentsParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getRepositoryComments: (owner: string, repo: string, params?: GetRepositoryCommentsParams) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -225,7 +225,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * Get a single comment
      *
@@ -237,7 +237,7 @@ declare const _default: {
      *
      * @return {object} Comment data
      */
-    getComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getComment: (owner: string, repo: string, id: string) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -333,7 +333,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }, 200>>;
+    }>;
     /**
      * Create a comment
      *
@@ -347,7 +347,7 @@ declare const _default: {
      *
      * @return {object} Comment data
      */
-    createComment: (owner: string, repo: string, number: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+    createComment: (owner: string, repo: string, number: string, body: Body) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -443,7 +443,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }, 201>>;
+    }>;
     /**
      * Edit a comment
      *
@@ -457,7 +457,7 @@ declare const _default: {
      *
      * @return {object} Comment data
      */
-    editComment: (owner: string, repo: string, id: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+    editComment: (owner: string, repo: string, id: string, body: Body) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -553,7 +553,7 @@ declare const _default: {
             eyes: number;
             rocket: number;
         };
-    }, 200>>;
+    }>;
     /**
      * Delete a comment
      *
@@ -565,6 +565,6 @@ declare const _default: {
      *
      * @return {null} 204 no content
      */
-    deleteComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    deleteComment: (owner: string, repo: string, id: string) => Promise<never>;
 };
 export default _default;

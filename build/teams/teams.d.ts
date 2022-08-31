@@ -18,7 +18,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    getTeams: (org: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getTeams: (org: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -51,7 +51,7 @@ declare const _default: {
             slug: string;
             ldap_dn?: string;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * Get team
      *
@@ -61,7 +61,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    getTeam: (id: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getTeam: (id: string) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -147,7 +147,7 @@ declare const _default: {
             updated_at: string;
         };
         ldap_dn?: string;
-    }, 200>>;
+    }>;
     /**
      * Create team
      *
@@ -187,7 +187,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    createTeam: (org: string, body: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    createTeam: (org: string, body: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -273,7 +273,7 @@ declare const _default: {
             updated_at: string;
         };
         ldap_dn?: string;
-    }, 201>>;
+    }>;
     /**
      * Edit team
      *
@@ -303,7 +303,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    editTeam: (id: string, body: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    editTeam: (id: string, body: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -389,93 +389,7 @@ declare const _default: {
             updated_at: string;
         };
         ldap_dn?: string;
-    }, 200> | import("@octokit/types").OctokitResponse<{
-        id: number;
-        node_id: string;
-        url: string;
-        html_url: string;
-        name: string;
-        slug: string;
-        description: string;
-        privacy?: "closed" | "secret";
-        permission: string;
-        members_url: string;
-        repositories_url: string;
-        parent?: {
-            id: number;
-            node_id: string;
-            url: string;
-            members_url: string;
-            name: string;
-            description: string;
-            permission: string;
-            privacy?: string;
-            html_url: string;
-            repositories_url: string;
-            slug: string;
-            ldap_dn?: string;
-        };
-        members_count: number;
-        repos_count: number;
-        created_at: string;
-        updated_at: string;
-        organization: {
-            login: string;
-            id: number;
-            node_id: string;
-            url: string;
-            repos_url: string;
-            events_url: string;
-            hooks_url: string;
-            issues_url: string;
-            members_url: string;
-            public_members_url: string;
-            avatar_url: string;
-            description: string;
-            name?: string;
-            company?: string;
-            blog?: string;
-            location?: string;
-            email?: string;
-            twitter_username?: string;
-            is_verified?: boolean;
-            has_organization_projects: boolean;
-            has_repository_projects: boolean;
-            public_repos: number;
-            public_gists: number;
-            followers: number;
-            following: number;
-            html_url: string;
-            created_at: string;
-            type: string;
-            total_private_repos?: number;
-            owned_private_repos?: number;
-            private_gists?: number;
-            disk_usage?: number;
-            collaborators?: number;
-            billing_email?: string;
-            plan?: {
-                name: string;
-                space: number;
-                private_repos: number;
-                filled_seats?: number;
-                seats?: number;
-            };
-            default_repository_permission?: string;
-            members_can_create_repositories?: boolean;
-            two_factor_requirement_enabled?: boolean;
-            members_allowed_repository_creation_type?: string;
-            members_can_create_public_repositories?: boolean;
-            members_can_create_private_repositories?: boolean;
-            members_can_create_internal_repositories?: boolean;
-            members_can_create_pages?: boolean;
-            members_can_create_public_pages?: boolean;
-            members_can_create_private_pages?: boolean;
-            members_can_fork_private_repositories?: boolean;
-            updated_at: string;
-        };
-        ldap_dn?: string;
-    }, 201>>;
+    }>;
     /**
      * Delete team
      *
@@ -487,7 +401,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    deleteTeam: (id: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    deleteTeam: (id: string) => Promise<never>;
     /**
      * List child teams
      *
@@ -501,7 +415,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    getChildTeams: (id: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getChildTeams: (id: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -534,7 +448,7 @@ declare const _default: {
             slug: string;
             ldap_dn?: string;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * List team repos
      *
@@ -548,7 +462,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    getTeamRepos: (id: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getTeamRepos: (id: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -933,7 +847,7 @@ declare const _default: {
         open_issues?: number;
         watchers?: number;
         allow_forking?: boolean;
-    }[], 200>>;
+    }[]>;
     /**
      * Check if a team manages a repository
      *
@@ -947,7 +861,7 @@ declare const _default: {
      *
      * @return {nothing} 204 if is managed, 404 if not
      */
-    getIsRepoManagedByTeam: (id: string, owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getIsRepoManagedByTeam: (id: string, owner: string, repo: string) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -1331,7 +1245,7 @@ declare const _default: {
         open_issues: number;
         watchers: number;
         master_branch?: string;
-    }, 200>>;
+    }>;
     /**
      * Add or update team repository
      *
@@ -1354,7 +1268,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    updateTeamRepository: (id: string, owner: string, repo: string, body?: any) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    updateTeamRepository: (id: string, owner: string, repo: string, body?: any) => Promise<never>;
     /**
      * Remove team repository
      *
@@ -1368,7 +1282,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    removeTeamRepository: (id: string, owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    removeTeamRepository: (id: string, owner: string, repo: string) => Promise<never>;
     /**
      * List user teams
      *
@@ -1381,7 +1295,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    getUserTeams: (params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserTeams: (params?: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -1467,7 +1381,7 @@ declare const _default: {
             updated_at: string;
         };
         ldap_dn?: string;
-    }[], 200>>;
+    }[]>;
     /**
      * List team projects
      *
@@ -1481,7 +1395,7 @@ declare const _default: {
      *
      * @return {object} project data
      */
-    getTeamProjects: (id: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getTeamProjects: (id: string, params?: Params) => Promise<{
         owner_url: string;
         url: string;
         html_url: string;
@@ -1524,7 +1438,7 @@ declare const _default: {
             write: boolean;
             admin: boolean;
         };
-    }[], 200>>;
+    }[]>;
     /**
      * Review a team project
      *
@@ -1537,7 +1451,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    getTeamProject: (id: string, projectId: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getTeamProject: (id: string, projectId: string) => Promise<{
         owner_url: string;
         url: string;
         html_url: string;
@@ -1580,7 +1494,7 @@ declare const _default: {
             write: boolean;
             admin: boolean;
         };
-    }, 200>>;
+    }>;
     /**
      * Add or update team project
      *
@@ -1602,7 +1516,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    updateTeamProject: (id: string, projectId: string, body: Params) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    updateTeamProject: (id: string, projectId: string, body: Params) => Promise<never>;
     /**
      * Remove team project
      *
@@ -1615,6 +1529,6 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    removeTeamProject: (id: string, projectId: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    removeTeamProject: (id: string, projectId: string) => Promise<never>;
 };
 export default _default;

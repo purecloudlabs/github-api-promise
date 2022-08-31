@@ -31,7 +31,9 @@ export default {
         params,
         ["sha", "path", "author", "since", "until", "page"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/commits"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/commits"]["response"]["data"]
+    >;
   },
 
   /**
@@ -49,7 +51,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/commits/${sha}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/commits/{ref}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/commits/{ref}"]["response"]["data"]
     >;
   },
 
@@ -99,7 +101,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/compare/${base}...${head}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"]["data"]
     >;
   },
 
@@ -118,7 +120,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/commits/${sha}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/git/commits/{commit_sha}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/git/commits/{commit_sha}"]["response"]["data"]
     >;
   },
 };

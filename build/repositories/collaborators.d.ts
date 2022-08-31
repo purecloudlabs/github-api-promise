@@ -21,7 +21,7 @@ declare const _default: {
      *
      * @return {object} Collaborator data
      */
-    getCollaborators: (owner: string, repo: string, params?: RepoCollaboratorsParams) => Promise<import("@octokit/types").OctokitResponse<{
+    getCollaborators: (owner: string, repo: string, params?: RepoCollaboratorsParams) => Promise<{
         login: string;
         id: number;
         email?: string;
@@ -50,7 +50,7 @@ declare const _default: {
             admin: boolean;
         };
         role_name: string;
-    }[], 200>>;
+    }[]>;
     /**
      * Check if a user is a collaborator
      *
@@ -68,7 +68,7 @@ declare const _default: {
      *
      * @return {null} Returns 204 if user is a collaborator, otherwise returns 404.
      */
-    getUserIsCollaborator: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    getUserIsCollaborator: (owner: string, repo: string, username: string) => Promise<never>;
     /**
      * Review a user's permission level
      *
@@ -82,7 +82,7 @@ declare const _default: {
      *
      * @return {object} Collaborator data
      */
-    getUserPermissionLevel: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getUserPermissionLevel: (owner: string, repo: string, username: string) => Promise<{
         permission: string;
         role_name: string;
         user: {
@@ -115,7 +115,7 @@ declare const _default: {
             };
             role_name: string;
         };
-    }, 200>>;
+    }>;
     /**
      * Add user as a collaborator
      *
@@ -135,7 +135,7 @@ declare const _default: {
      *
      * @return {null} Returns 201 with data or 204
      */
-    putUserCollaborator: (owner: string, repo: string, username: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    putUserCollaborator: (owner: string, repo: string, username: string, params?: Params) => Promise<{
         id: number;
         repository: {
             id: number;
@@ -575,7 +575,7 @@ declare const _default: {
         url: string;
         html_url: string;
         node_id: string;
-    }, 201>>;
+    }>;
     /**
      * Remove user as a collaborator
      *
@@ -587,6 +587,6 @@ declare const _default: {
      *
      * @return {object} Collaborator data
      */
-    deleteUserCollaborator: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+    deleteUserCollaborator: (owner: string, repo: string, username: string) => Promise<never>;
 };
 export default _default;

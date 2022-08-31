@@ -26,7 +26,9 @@ export default {
         params,
         ["ref"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/readme"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/readme"]["response"]["data"]
+    >;
   },
 
   /**
@@ -56,7 +58,7 @@ export default {
         ["ref"]
       )}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/contents/{path}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/contents/{path}"]["response"]["data"]
     >;
   },
 
@@ -93,7 +95,7 @@ export default {
       "put",
       body
     ) as Promise<
-      Endpoints["PUT /repos/{owner}/{repo}/contents/{path}"]["response"]
+      Endpoints["PUT /repos/{owner}/{repo}/contents/{path}"]["response"]["data"]
     >;
   },
 
@@ -129,7 +131,7 @@ export default {
       "delete",
       body
     ) as Promise<
-      Endpoints["DELETE /repos/{owner}/{repo}/contents/{path}"]["response"]
+      Endpoints["DELETE /repos/{owner}/{repo}/contents/{path}"]["response"]["data"]
     >;
   },
 
@@ -154,7 +156,7 @@ export default {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/${archiveFormat}/${ref}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/zipball/{ref}"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/zipball/{ref}"]["response"]["data"]
     >;
   },
 };

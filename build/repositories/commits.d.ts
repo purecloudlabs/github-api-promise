@@ -21,7 +21,7 @@ declare const _default: {
      *
      * @return {object} Commit data
      */
-    getCommits: (owner: string, repo: string, params?: Params) => Promise<import("@octokit/types").OctokitResponse<{
+    getCommits: (owner: string, repo: string, params?: Params) => Promise<{
         url: string;
         sha: string;
         node_id: string;
@@ -121,7 +121,7 @@ declare const _default: {
             patch?: string;
             previous_filename?: string;
         }[];
-    }[], 200>>;
+    }[]>;
     /**
      * Get a single commit
      *
@@ -133,7 +133,7 @@ declare const _default: {
      *
      * @return {object} Commit data
      */
-    getCommit: (owner: string, repo: string, sha: string) => Promise<import("@octokit/types").OctokitResponse<{
+    getCommit: (owner: string, repo: string, sha: string) => Promise<{
         url: string;
         sha: string;
         node_id: string;
@@ -233,7 +233,7 @@ declare const _default: {
             patch?: string;
             previous_filename?: string;
         }[];
-    }, 200>>;
+    }>;
     /**
      * ***NOT IMPLEMENTED***
      * Get the SHA-1 of a commit reference
@@ -261,7 +261,7 @@ declare const _default: {
      *
      * @return {object} comparison data
      */
-    compareCommits: (owner: string, repo: string, base: string, head: string) => Promise<import("@octokit/types").OctokitResponse<{
+    compareCommits: (owner: string, repo: string, base: string, head: string) => Promise<{
         url: string;
         html_url: string;
         permalink_url: string;
@@ -587,7 +587,7 @@ declare const _default: {
             patch?: string;
             previous_filename?: string;
         }[];
-    }, 200>>;
+    }>;
     /**
      * Commit signature verification
      *
@@ -599,7 +599,7 @@ declare const _default: {
      *
      * @return {object} Commit data
      */
-    verifySignature: (owner: string, repo: string, sha: string) => Promise<import("@octokit/types").OctokitResponse<{
+    verifySignature: (owner: string, repo: string, sha: string) => Promise<{
         sha: string;
         node_id: string;
         url: string;
@@ -630,6 +630,6 @@ declare const _default: {
             payload: string;
         };
         html_url: string;
-    }, 200>>;
+    }>;
 };
 export default _default;

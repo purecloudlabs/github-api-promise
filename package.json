@@ -4,6 +4,7 @@
   "description": "A node module for interfacing with the Github API using promises",
   "main": "build/app.js",
   "module": "build/app.js",
+  "type": "module",
   "author": "Tim Smith",
   "license": "MIT",
   "repository": {

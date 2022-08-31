@@ -18,7 +18,7 @@ export default {
   getEvents: (params?: Params) => {
     return req.standardRequest(
       `${config.host}/events?${req.assembleQueryParams(params, ["page"])}`
-    ) as Promise<Endpoints["GET /events"]["response"]>;
+    ) as Promise<Endpoints["GET /events"]["response"]["data"]>;
   },
 
   /**
@@ -31,17 +31,15 @@ export default {
    *
    * @return {object} Event data
    */
-  getRepositoryEvents: (
-    owner: number,
-    repo: number,
-    params?: Params
-  ): Promise<Endpoints["GET /repos/{owner}/{repo}/events"]["response"]> => {
+  getRepositoryEvents: (owner: number, repo: number, params?: Params) => {
     return req.standardRequest(
       `${config.host}/repos/${owner}/${repo}/events?${req.assembleQueryParams(
         params,
         ["page"]
       )}`
-    ) as Promise<Endpoints["GET /repos/{owner}/{repo}/events"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /repos/{owner}/{repo}/events"]["response"]["data"]
+    >;
   },
 
   /**
@@ -63,7 +61,7 @@ export default {
         "page",
       ])}`
     ) as Promise<
-      Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]
+      Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"]["data"]
     >;
   },
 
@@ -88,7 +86,9 @@ export default {
       }/networks/${owner}/${repo}/events?${req.assembleQueryParams(params, [
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /networks/{owner}/{repo}/events"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /networks/{owner}/{repo}/events"]["response"]["data"]
+    >;
   },
 
   /**
@@ -105,7 +105,7 @@ export default {
       `${config.host}/orgs/${org}/events?${req.assembleQueryParams(params, [
         "page",
       ])}`
-    ) as Promise<Endpoints["GET /orgs/{org}/events"]["response"]>;
+    ) as Promise<Endpoints["GET /orgs/{org}/events"]["response"]["data"]>;
   },
 
   /**
@@ -127,7 +127,7 @@ export default {
         "page",
       ])}`
     ) as Promise<
-      Endpoints["GET /users/{username}/received_events"]["response"]
+      Endpoints["GET /users/{username}/received_events"]["response"]["data"]
     >;
   },
 
@@ -148,7 +148,9 @@ export default {
         params,
         ["page"]
       )}`
-    ) as Promise<Endpoints["GET /users/{username}/events/public"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /users/{username}/events/public"]["response"]["data"]
+    >;
   },
 
   /**
@@ -166,7 +168,7 @@ export default {
         params,
         ["page"]
       )}`
-    ) as Promise<Endpoints["GET /users/{username}/events"]["response"]>;
+    ) as Promise<Endpoints["GET /users/{username}/events"]["response"]["data"]>;
   },
 
   /**
@@ -184,7 +186,9 @@ export default {
         params,
         ["page"]
       )}`
-    ) as Promise<Endpoints["GET /users/{username}/events/public"]["response"]>;
+    ) as Promise<
+      Endpoints["GET /users/{username}/events/public"]["response"]["data"]
+    >;
   },
 
   /**
@@ -210,7 +214,7 @@ export default {
         "page",
       ])}`
     ) as Promise<
-      Endpoints["GET /users/{username}/events/orgs/{org}"]["response"]
+      Endpoints["GET /users/{username}/events/orgs/{org}"]["response"]["data"]
     >;
   },
 };
