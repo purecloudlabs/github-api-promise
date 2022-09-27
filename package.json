@@ -1,28 +1,43 @@
 {
   "name": "github-api-promise",
-  "version": "1.13.5",
+  "version": "1.13.6",
   "description": "A node module for interfacing with the Github API using promises",
-  "main": "src/app.js",
+  "main": "build/app.js",
+  "module": "build/app.js",
+  "type": "module",
   "author": "Tim Smith",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/princenebulon/github-api-promise.git"
+    "url": "https://github.com/purecloudlabs/github-api-promise.git"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
+    "axios": "^0.27.2",
     "lodash": "^4.17.10",
-    "lognext": "0.0.4",
-    "q": "^1.5.1",
-    "superagent": "^3.8.3",
-    "superagent-bluebird-promise": "^4.2.0",
-    "urlencode": "^1.1.0"
+    "log4js": "^6.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/purecloudlabs/github-api-promise/issues"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "docdash": "^0.4.0",
-    "jsdoc": "^3.6.3"
+    "jsdoc": "^3.6.3",
+    "rollup": "^2.78.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "octokit": "^2.0.5"
   },
   "scripts": {
+    "build": "rm -rf build && rollup -c rollup.config.js",
     "generate-docs": "node ./node_modules/jsdoc/jsdoc.js -r -c jsdoc.json -R README.md"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }
