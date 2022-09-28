@@ -4,7 +4,6 @@ export interface Params {
 }
 
 export interface Body {
-  body: string;
   [param: string]: string | number | boolean | string[] | undefined;
 }
 
