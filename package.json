@@ -1,6 +1,6 @@
 {
   "name": "github-api-promise",
-  "version": "1.13.6",
+  "version": "1.13.7",
   "description": "A node module for interfacing with the Github API using promises",
   "main": "build/app.js",
   "module": "build/app.js",
@@ -35,7 +35,8 @@
   },
   "scripts": {
     "build": "rm -rf build && rollup -c rollup.config.js",
-    "generate-docs": "node ./node_modules/jsdoc/jsdoc.js -r -c jsdoc.json -R README.md"
+    "generate-docs": "node ./node_modules/jsdoc/jsdoc.js -r -c jsdoc.json -R README.md",
+    "test": "echo \"0/0 tests passed. That's technically a perfect score. Keep up the great work!\""
   },
   "files": [
     "build"
