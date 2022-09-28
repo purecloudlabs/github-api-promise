@@ -4,8 +4,8 @@
   "description": "A node module for interfacing with the Github API using promises",
   "type": "module",
   "types": "build/app.d.ts",
-	"exports": {
-		"require": "./src/app.ts",
+  "exports": {
+	  "require": "./src/app.ts",
 		"default": "./build/app.js"
 	},
   "author": "Tim Smith",
