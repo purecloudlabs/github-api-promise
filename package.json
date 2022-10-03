@@ -1,6 +1,6 @@
 {
   "name": "github-api-promise",
-  "version": "1.13.9",
+  "version": "1.14.0",
   "description": "A node module for interfacing with the Github API using promises",
   "type": "module",
   "types": "build/app.d.ts",
