@@ -1,7 +1,7 @@
 import config from "../config";
 import { Endpoints } from "@octokit/types";
 import req from "../request-helpers";
-import { Params, GetRepositoryCommentsParams } from "../types";
+import { Params, GetRepositoryCommentsParams, Body } from "../types";
 
 /**
  * @module issues/comments
@@ -28,8 +28,7 @@ export default {
     params?: Params
   ) => {
     return req.standardRequest(
-      `${
-        config.host
+      `${config.host
       }/repos/${owner}/${repo}/issues/${number}/comments?${req.assembleQueryParams(
         params,
         ["page"]
@@ -60,8 +59,7 @@ export default {
     params?: GetRepositoryCommentsParams
   ) => {
     return req.standardRequest(
-      `${
-        config.host
+      `${config.host
       }/repos/${owner}/${repo}/issues/comments?${req.assembleQueryParams(
         params,
         ["sort", "direction", "since"]
