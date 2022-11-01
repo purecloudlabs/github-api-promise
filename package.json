@@ -1,13 +1,13 @@
 {
   "name": "github-api-promise",
-  "version": "1.14.0",
-  "description": "A node module for interfacing with the Github API using promises",
+  "version": "1.15.0",
+  "description": "A node module for interfacing with the Github API",
   "type": "module",
   "types": "build/app.d.ts",
   "exports": {
-	  "require": "./src/app.ts",
-		"default": "./build/app.js"
-	},
+    "require": "./src/app.ts",
+    "default": "./build/app.js"
+  },
   "author": "Tim Smith",
   "license": "MIT",
   "repository": {
@@ -42,7 +42,7 @@
     "test": "echo \"0/0 tests passed. That's technically a perfect score. Keep up the great work!\""
   },
   "files": [
-		"build",
-		"src"
-	]
+    "build",
+    "src"
+  ]
 }
