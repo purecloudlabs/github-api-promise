@@ -7,12 +7,12 @@ import json from "@rollup/plugin-json";
 const packageJson = require("./package.json");
 
 export default {
-  input: "src/app.ts",
+  input: packageJson.exports.require,
   output: [
     {
-      file: packageJson.module,
+      file: packageJson.exports.default,
       format: "esm",
-      sourcemap: 'inline',
+      sourcemap: true,
     },
   ],
   plugins: [

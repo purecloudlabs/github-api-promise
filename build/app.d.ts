@@ -7,7 +7,7 @@ declare let githubApi: {
     config: import("./config").Config;
     activity: {
         events: {
-            getEvents: (params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getEvents: (params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -636,8 +636,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getRepositoryEvents: (owner: number, repo: number, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryEvents: (owner: number, repo: number, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -1266,8 +1266,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getRepositoryIssueEvents: (owner: number, repo: number, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryIssueEvents: (owner: number, repo: number, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -1995,8 +1995,8 @@ declare let githubApi: {
                     webhook_secret?: string;
                     pem?: string;
                 };
-            }[], 200>>;
-            getNetworkRepositoryEvents: (owner: number, repo: number, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getNetworkRepositoryEvents: (owner: number, repo: number, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -2625,8 +2625,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getOrganizationEvents: (org: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getOrganizationEvents: (org: string, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -3255,8 +3255,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getUserEventsReceived: (username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserEventsReceived: (username: string, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -3885,8 +3885,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getUserPublicEventsReceived: (username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserPublicEventsReceived: (username: string, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -4515,8 +4515,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getUserEvents: (username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserEvents: (username: string, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -5145,8 +5145,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getUserPublicEvents: (username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserPublicEvents: (username: string, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -5775,8 +5775,8 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
-            getUserOrganizationEvents: (username: string, org: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserOrganizationEvents: (username: string, org: string, params?: import("./types").Params) => Promise<{
                 id: string;
                 type: string;
                 actor: {
@@ -6405,12 +6405,12 @@ declare let githubApi: {
                 };
                 public: boolean;
                 created_at: string;
-            }[], 200>>;
+            }[]>;
         };
     };
     issues: {
         comments: {
-            getIssueComments: (owner: string, repo: string, number: number, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getIssueComments: (owner: string, repo: string, number: number, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -6506,8 +6506,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getRepositoryComments: (owner: string, repo: string, params?: import("./types").GetRepositoryCommentsParams) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryComments: (owner: string, repo: string, params?: import("./types").GetRepositoryCommentsParams) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -6603,8 +6603,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getComment: (owner: string, repo: string, id: string) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -6700,8 +6700,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            createComment: (owner: string, repo: string, number: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createComment: (owner: string, repo: string, number: string, body: import("./types").Body) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -6797,8 +6797,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 201>>;
-            editComment: (owner: string, repo: string, id: string, body: Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            editComment: (owner: string, repo: string, id: string, body: import("./types").Body) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -6894,11 +6894,11 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            deleteComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            deleteComment: (owner: string, repo: string, id: string) => Promise<never>;
         };
         events: {
-            getIssueEvents: (owner: string, repo: string, issue_number: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<(Partial<{
+            getIssueEvents: (owner: string, repo: string, issue_number: string, params?: import("./types").Params) => Promise<(Partial<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -8407,8 +8407,8 @@ declare let githubApi: {
                     column_name: string;
                     previous_column_name?: string;
                 };
-            }>)[], 200>>;
-            getRepositoryIssueEvents: (owner: string, repo: string, params: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>)[]>;
+            getRepositoryIssueEvents: (owner: string, repo: string, params: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -9136,8 +9136,8 @@ declare let githubApi: {
                     webhook_secret?: string;
                     pem?: string;
                 };
-            }[], 200>>;
-            getEvent: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getEvent: (owner: string, repo: string, id: string) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -9865,10 +9865,10 @@ declare let githubApi: {
                     webhook_secret?: string;
                     pem?: string;
                 };
-            }, 200>>;
+            }>;
         };
         issues: {
-            getIssues: (params?: import("./types").IssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getIssues: (params?: import("./types").IssuesParams) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -10362,8 +10362,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getUserIssues: (params?: import("./types").IssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserIssues: (params?: import("./types").IssuesParams) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -10857,8 +10857,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getOrganizationIssues: (org: string, params?: import("./types").IssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getOrganizationIssues: (org: string, params?: import("./types").IssuesParams) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -11352,8 +11352,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getRepositoryIssues: (owner: string, repo: string, params?: import("./types").GetRepositoryIssuesParams) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryIssues: (owner: string, repo: string, params?: import("./types").GetRepositoryIssuesParams) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -11847,8 +11847,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getRepositoryIssue: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryIssue: (owner: string, repo: string, number: string) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -12342,8 +12342,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            createIssue: (owner: string, repo: string, body: import("./types").IssuesBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createIssue: (owner: string, repo: string, body: import("./types").IssuesBody) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -12837,8 +12837,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 201>>;
-            updateIssue: (owner: string, repo: string, number: string, body: import("./types").IssuesBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateIssue: (owner: string, repo: string, number: string, body: import("./types").IssuesBody) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -13332,14 +13332,14 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            lockIssue: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            unlockIssue: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            lockIssue: (owner: string, repo: string, number: string) => Promise<never>;
+            unlockIssue: (owner: string, repo: string, number: string) => Promise<never>;
         };
     };
     pullRequests: {
         comments: {
-            getPullRequestComments: (owner: string, repo: string, number: string, params?: import("./types").PullRequestCommentParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getPullRequestComments: (owner: string, repo: string, number: string, params?: import("./types").PullRequestCommentParams) => Promise<{
                 url: string;
                 pull_request_review_id: number;
                 id: number;
@@ -13411,8 +13411,8 @@ declare let githubApi: {
                 };
                 body_html?: string;
                 body_text?: string;
-            }[], 200>>;
-            getRepositoryComments: (owner: string, repo: string, params?: import("./types").PullRequestCommentParams) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryComments: (owner: string, repo: string, params?: import("./types").PullRequestCommentParams) => Promise<{
                 url: string;
                 pull_request_review_id: number;
                 id: number;
@@ -13484,8 +13484,8 @@ declare let githubApi: {
                 };
                 body_html?: string;
                 body_text?: string;
-            }[], 200>>;
-            getComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getComment: (owner: string, repo: string, id: string) => Promise<{
                 url: string;
                 pull_request_review_id: number;
                 id: number;
@@ -13557,8 +13557,8 @@ declare let githubApi: {
                 };
                 body_html?: string;
                 body_text?: string;
-            }, 200>>;
-            createComment: (owner: string, repo: string, number: string, body: import("./types").PullRequestCommentBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createComment: (owner: string, repo: string, number: string, body: import("./types").PullRequestCommentBody) => Promise<{
                 url: string;
                 pull_request_review_id: number;
                 id: number;
@@ -13630,8 +13630,8 @@ declare let githubApi: {
                 };
                 body_html?: string;
                 body_text?: string;
-            }, 201>>;
-            editComment: (owner: string, repo: string, id: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            editComment: (owner: string, repo: string, id: string, body: import("./types").Body) => Promise<{
                 url: string;
                 pull_request_review_id: number;
                 id: number;
@@ -13703,11 +13703,11 @@ declare let githubApi: {
                 };
                 body_html?: string;
                 body_text?: string;
-            }, 200>>;
-            deleteComment: (owner: string, repo: string, id: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            deleteComment: (owner: string, repo: string, id: string) => Promise<never>;
         };
         pullRequests: {
-            getPullRequests: (owner: string, repo: string, params?: import("./types").PullRequestParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getPullRequests: (owner: string, repo: string, params?: import("./types").PullRequestParams) => Promise<{
                 url: string;
                 id: number;
                 node_id: string;
@@ -14538,8 +14538,8 @@ declare let githubApi: {
                     commit_message: string;
                 };
                 draft?: boolean;
-            }[], 200>>;
-            getPullRequest: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getPullRequest: (owner: string, repo: string, number: string) => Promise<{
                 url: string;
                 id: number;
                 node_id: string;
@@ -15091,8 +15091,8 @@ declare let githubApi: {
                 additions: number;
                 deletions: number;
                 changed_files: number;
-            }, 200>>;
-            createPullRequest: (owner: string, repo: string, body: import("./types").PullRequestBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createPullRequest: (owner: string, repo: string, body: import("./types").PullRequestBody) => Promise<{
                 url: string;
                 id: number;
                 node_id: string;
@@ -15644,8 +15644,8 @@ declare let githubApi: {
                 additions: number;
                 deletions: number;
                 changed_files: number;
-            }, 201>>;
-            updatePullRequest: (owner: string, repo: string, number: string, body: import("./types").PullRequestBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updatePullRequest: (owner: string, repo: string, number: string, body: import("./types").PullRequestBody) => Promise<{
                 url: string;
                 id: number;
                 node_id: string;
@@ -16197,8 +16197,8 @@ declare let githubApi: {
                 additions: number;
                 deletions: number;
                 changed_files: number;
-            }, 200>>;
-            getPullRequestCommits: (owner: string, repo: string, number: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getPullRequestCommits: (owner: string, repo: string, number: string, params?: import("./types").Params) => Promise<{
                 url: string;
                 sha: string;
                 node_id: string;
@@ -16298,8 +16298,8 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }[], 200>>;
-            getPullRequestFiles: (owner: string, repo: string, number: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getPullRequestFiles: (owner: string, repo: string, number: string, params?: import("./types").Params) => Promise<{
                 sha: string;
                 filename: string;
                 status: "added" | "removed" | "modified" | "renamed" | "copied" | "changed" | "unchanged";
@@ -16311,18 +16311,18 @@ declare let githubApi: {
                 contents_url: string;
                 patch?: string;
                 previous_filename?: string;
-            }[], 200>>;
-            getIsMerged: (owner: string, repo: string, number: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            merge: (owner: string, repo: string, number: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getIsMerged: (owner: string, repo: string, number: string) => Promise<never>;
+            merge: (owner: string, repo: string, number: string, params?: import("./types").Params) => Promise<{
                 sha: string;
                 merged: boolean;
                 message: string;
-            }, 200>>;
+            }>;
         };
     };
     repositories: {
         collaborators: {
-            getCollaborators: (owner: string, repo: string, params?: import("./types").RepoCollaboratorsParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getCollaborators: (owner: string, repo: string, params?: import("./types").RepoCollaboratorsParams) => Promise<{
                 login: string;
                 id: number;
                 email?: string;
@@ -16351,9 +16351,9 @@ declare let githubApi: {
                     admin: boolean;
                 };
                 role_name: string;
-            }[], 200>>;
-            getUserIsCollaborator: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            getUserPermissionLevel: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserIsCollaborator: (owner: string, repo: string, username: string) => Promise<never>;
+            getUserPermissionLevel: (owner: string, repo: string, username: string) => Promise<{
                 permission: string;
                 role_name: string;
                 user: {
@@ -16386,8 +16386,8 @@ declare let githubApi: {
                     };
                     role_name: string;
                 };
-            }, 200>>;
-            putUserCollaborator: (owner: string, repo: string, username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            putUserCollaborator: (owner: string, repo: string, username: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 repository: {
                     id: number;
@@ -16827,11 +16827,11 @@ declare let githubApi: {
                 url: string;
                 html_url: string;
                 node_id: string;
-            }, 201>>;
-            deleteUserCollaborator: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            deleteUserCollaborator: (owner: string, repo: string, username: string) => Promise<never>;
         };
         commits: {
-            getCommits: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getCommits: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 url: string;
                 sha: string;
                 node_id: string;
@@ -16931,8 +16931,8 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }[], 200>>;
-            getCommit: (owner: string, repo: string, sha: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getCommit: (owner: string, repo: string, sha: string) => Promise<{
                 url: string;
                 sha: string;
                 node_id: string;
@@ -17032,9 +17032,9 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }, 200>>;
+            }>;
             getSha1: (owner: string, repo: string, ref: string) => never;
-            compareCommits: (owner: string, repo: string, base: string, head: string) => Promise<import("@octokit/types").OctokitResponse<{
+            compareCommits: (owner: string, repo: string, base: string, head: string) => Promise<{
                 url: string;
                 html_url: string;
                 permalink_url: string;
@@ -17360,8 +17360,8 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }, 200>>;
-            verifySignature: (owner: string, repo: string, sha: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            verifySignature: (owner: string, repo: string, sha: string) => Promise<{
                 sha: string;
                 node_id: string;
                 url: string;
@@ -17392,10 +17392,10 @@ declare let githubApi: {
                     payload: string;
                 };
                 html_url: string;
-            }, 200>>;
+            }>;
         };
         contents: {
-            getReadme: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getReadme: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 type: "file";
                 encoding: string;
                 size: number;
@@ -17414,8 +17414,8 @@ declare let githubApi: {
                 };
                 target?: string;
                 submodule_git_url?: string;
-            }, 200>>;
-            getContents: (owner: string, repo: string, path: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getContents: (owner: string, repo: string, path: string, params?: import("./types").Params) => Promise<{
                 type: "file";
                 encoding: string;
                 size: number;
@@ -17482,8 +17482,8 @@ declare let githubApi: {
                     html: string;
                     self: string;
                 };
-            }, 200>>;
-            putContents: (owner: string, repo: string, path: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            putContents: (owner: string, repo: string, path: string, body: import("./types").Body) => Promise<{
                 content: {
                     name?: string;
                     path?: string;
@@ -17532,7 +17532,8 @@ declare let githubApi: {
                         payload?: string;
                     };
                 };
-            }, 200> | import("@octokit/types").OctokitResponse<{
+            }>;
+            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: import("./types").Body) => Promise<{
                 content: {
                     name?: string;
                     path?: string;
@@ -17581,61 +17582,11 @@ declare let githubApi: {
                         payload?: string;
                     };
                 };
-            }, 201>>;
-            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
-                content: {
-                    name?: string;
-                    path?: string;
-                    sha?: string;
-                    size?: number;
-                    url?: string;
-                    html_url?: string;
-                    git_url?: string;
-                    download_url?: string;
-                    type?: string;
-                    _links?: {
-                        self?: string;
-                        git?: string;
-                        html?: string;
-                    };
-                };
-                commit: {
-                    sha?: string;
-                    node_id?: string;
-                    url?: string;
-                    html_url?: string;
-                    author?: {
-                        date?: string;
-                        name?: string;
-                        email?: string;
-                    };
-                    committer?: {
-                        date?: string;
-                        name?: string;
-                        email?: string;
-                    };
-                    message?: string;
-                    tree?: {
-                        url?: string;
-                        sha?: string;
-                    };
-                    parents?: {
-                        url?: string;
-                        html_url?: string;
-                        sha?: string;
-                    }[];
-                    verification?: {
-                        verified?: boolean;
-                        reason?: string;
-                        signature?: string;
-                        payload?: string;
-                    };
-                };
-            }, 200>>;
-            getArchiveLink: (owner: string, repo: string, archiveFormat: string, ref: string) => Promise<import("@octokit/types").OctokitResponse<unknown, 302>>;
+            }>;
+            getArchiveLink: (owner: string, repo: string, archiveFormat: string, ref: string) => Promise<unknown>;
         };
         releases: {
-            getRepositoryReleases: () => Promise<import("@octokit/types").OctokitResponse<{
+            getRepositoryReleases: () => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -17728,8 +17679,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getRepositoryRelease: (releaseId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryRelease: (releaseId: string) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -17822,8 +17773,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            getLatestRepositoryRelease: () => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getLatestRepositoryRelease: () => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -17916,8 +17867,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            getRepositoryReleaseByTagName: (tag: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryReleaseByTagName: (tag: string) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -18010,8 +17961,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            createRelease: (body: any) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createRelease: (body: any) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -18104,8 +18055,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 201>>;
-            updateRelease: (releaseId: string, body: any) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateRelease: (releaseId: string, body: any) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -18198,9 +18149,9 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            deleteRelease: (releaseId: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            getReleaseAssets: (releaseId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            deleteRelease: (releaseId: string) => Promise<never>;
+            getReleaseAssets: (releaseId: string) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -18236,8 +18187,8 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 200>>;
-            uploadReleaseAsset: (uploadUrl: string, assetName: string, assetLabel: string, localFilePath: string, contentType: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            uploadReleaseAsset: (uploadUrl: string, assetName: string, assetLabel: string, localFilePath: string, contentType: string) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -18273,8 +18224,8 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 201>>;
-            getReleaseAssetData: (assetId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getReleaseAssetData: (assetId: string) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -18310,8 +18261,8 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 200>>;
-            updateReleaseAsset: (assetId: string, body: any) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateReleaseAsset: (assetId: string, body: any) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -18347,11 +18298,11 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 200>>;
-            deleteReleaseAsset: (assetId: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            deleteReleaseAsset: (assetId: string) => Promise<never>;
         };
         repositories: {
-            getMyRepos: (params?: import("./types").RepoParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getMyRepos: (params?: import("./types").RepoParams) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -18610,8 +18561,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
-            }[], 200>>;
-            getUserRepos: (username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserRepos: (username: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -18996,8 +18947,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            getOrgRepos: (org: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getOrgRepos: (org: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -19382,8 +19333,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            getPublicRepositories: (params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getPublicRepositories: (params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -19768,8 +19719,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            createUserRepository: (body: import("./types").RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            createUserRepository: (body: import("./types").RepoBody) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -20028,8 +19979,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
-            }, 201>>;
-            createOrgRepository: (org: string, body: import("./types").RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createOrgRepository: (org: string, body: import("./types").RepoBody) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -20288,8 +20239,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
-            }, 201>>;
-            getRepository: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepository: (owner: string, repo: string) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -21235,8 +21186,8 @@ declare let githubApi: {
                         status?: "enabled" | "disabled";
                     };
                 };
-            }, 200>>;
-            updateRepository: (owner: string, repo: string, body: import("./types").RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateRepository: (owner: string, repo: string, body: import("./types").RepoBody) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -22182,14 +22133,14 @@ declare let githubApi: {
                         status?: "enabled" | "disabled";
                     };
                 };
-            }, 200>>;
-            getRepositoryTopics: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryTopics: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 names: string[];
-            }, 200>>;
-            updateRepositoryTopics: (owner: string, repo: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateRepositoryTopics: (owner: string, repo: string, body: import("./types").Body) => Promise<{
                 names: string[];
-            }, 200>>;
-            getRepositoryContributors: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryContributors: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 login?: string;
                 id?: number;
                 node_id?: string;
@@ -22211,11 +22162,11 @@ declare let githubApi: {
                 contributions: number;
                 email?: string;
                 name?: string;
-            }[], 200>>;
-            getRepositoryLanguages: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryLanguages: (owner: string, repo: string) => Promise<{
                 [key: string]: number;
-            }, 200>>;
-            getRepositoryTeams: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryTeams: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -22248,8 +22199,8 @@ declare let githubApi: {
                     slug: string;
                     ldap_dn?: string;
                 };
-            }[], 200>>;
-            getRepositoryTags: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryTags: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 name: string;
                 commit: {
                     sha: string;
@@ -22258,13 +22209,13 @@ declare let githubApi: {
                 zipball_url: string;
                 tarball_url: string;
                 node_id: string;
-            }[], 200>>;
-            deleteRepository: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }[]>;
+            deleteRepository: (owner: string, repo: string) => Promise<never>;
         };
     };
     repos: {
         collaborators: {
-            getCollaborators: (owner: string, repo: string, params?: import("./types").RepoCollaboratorsParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getCollaborators: (owner: string, repo: string, params?: import("./types").RepoCollaboratorsParams) => Promise<{
                 login: string;
                 id: number;
                 email?: string;
@@ -22293,9 +22244,9 @@ declare let githubApi: {
                     admin: boolean;
                 };
                 role_name: string;
-            }[], 200>>;
-            getUserIsCollaborator: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            getUserPermissionLevel: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserIsCollaborator: (owner: string, repo: string, username: string) => Promise<never>;
+            getUserPermissionLevel: (owner: string, repo: string, username: string) => Promise<{
                 permission: string;
                 role_name: string;
                 user: {
@@ -22328,8 +22279,8 @@ declare let githubApi: {
                     };
                     role_name: string;
                 };
-            }, 200>>;
-            putUserCollaborator: (owner: string, repo: string, username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            putUserCollaborator: (owner: string, repo: string, username: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 repository: {
                     id: number;
@@ -22769,11 +22720,11 @@ declare let githubApi: {
                 url: string;
                 html_url: string;
                 node_id: string;
-            }, 201>>;
-            deleteUserCollaborator: (owner: string, repo: string, username: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            deleteUserCollaborator: (owner: string, repo: string, username: string) => Promise<never>;
         };
         commits: {
-            getCommits: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getCommits: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 url: string;
                 sha: string;
                 node_id: string;
@@ -22873,8 +22824,8 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }[], 200>>;
-            getCommit: (owner: string, repo: string, sha: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getCommit: (owner: string, repo: string, sha: string) => Promise<{
                 url: string;
                 sha: string;
                 node_id: string;
@@ -22974,9 +22925,9 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }, 200>>;
+            }>;
             getSha1: (owner: string, repo: string, ref: string) => never;
-            compareCommits: (owner: string, repo: string, base: string, head: string) => Promise<import("@octokit/types").OctokitResponse<{
+            compareCommits: (owner: string, repo: string, base: string, head: string) => Promise<{
                 url: string;
                 html_url: string;
                 permalink_url: string;
@@ -23302,8 +23253,8 @@ declare let githubApi: {
                     patch?: string;
                     previous_filename?: string;
                 }[];
-            }, 200>>;
-            verifySignature: (owner: string, repo: string, sha: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            verifySignature: (owner: string, repo: string, sha: string) => Promise<{
                 sha: string;
                 node_id: string;
                 url: string;
@@ -23334,10 +23285,10 @@ declare let githubApi: {
                     payload: string;
                 };
                 html_url: string;
-            }, 200>>;
+            }>;
         };
         contents: {
-            getReadme: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getReadme: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 type: "file";
                 encoding: string;
                 size: number;
@@ -23356,8 +23307,8 @@ declare let githubApi: {
                 };
                 target?: string;
                 submodule_git_url?: string;
-            }, 200>>;
-            getContents: (owner: string, repo: string, path: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getContents: (owner: string, repo: string, path: string, params?: import("./types").Params) => Promise<{
                 type: "file";
                 encoding: string;
                 size: number;
@@ -23424,8 +23375,8 @@ declare let githubApi: {
                     html: string;
                     self: string;
                 };
-            }, 200>>;
-            putContents: (owner: string, repo: string, path: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            putContents: (owner: string, repo: string, path: string, body: import("./types").Body) => Promise<{
                 content: {
                     name?: string;
                     path?: string;
@@ -23474,7 +23425,8 @@ declare let githubApi: {
                         payload?: string;
                     };
                 };
-            }, 200> | import("@octokit/types").OctokitResponse<{
+            }>;
+            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: import("./types").Body) => Promise<{
                 content: {
                     name?: string;
                     path?: string;
@@ -23523,61 +23475,11 @@ declare let githubApi: {
                         payload?: string;
                     };
                 };
-            }, 201>>;
-            deleteContents: (owner: string, repo: string, path: import("./types").Params, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
-                content: {
-                    name?: string;
-                    path?: string;
-                    sha?: string;
-                    size?: number;
-                    url?: string;
-                    html_url?: string;
-                    git_url?: string;
-                    download_url?: string;
-                    type?: string;
-                    _links?: {
-                        self?: string;
-                        git?: string;
-                        html?: string;
-                    };
-                };
-                commit: {
-                    sha?: string;
-                    node_id?: string;
-                    url?: string;
-                    html_url?: string;
-                    author?: {
-                        date?: string;
-                        name?: string;
-                        email?: string;
-                    };
-                    committer?: {
-                        date?: string;
-                        name?: string;
-                        email?: string;
-                    };
-                    message?: string;
-                    tree?: {
-                        url?: string;
-                        sha?: string;
-                    };
-                    parents?: {
-                        url?: string;
-                        html_url?: string;
-                        sha?: string;
-                    }[];
-                    verification?: {
-                        verified?: boolean;
-                        reason?: string;
-                        signature?: string;
-                        payload?: string;
-                    };
-                };
-            }, 200>>;
-            getArchiveLink: (owner: string, repo: string, archiveFormat: string, ref: string) => Promise<import("@octokit/types").OctokitResponse<unknown, 302>>;
+            }>;
+            getArchiveLink: (owner: string, repo: string, archiveFormat: string, ref: string) => Promise<unknown>;
         };
         releases: {
-            getRepositoryReleases: () => Promise<import("@octokit/types").OctokitResponse<{
+            getRepositoryReleases: () => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -23670,8 +23572,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }[], 200>>;
-            getRepositoryRelease: (releaseId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryRelease: (releaseId: string) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -23764,8 +23666,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            getLatestRepositoryRelease: () => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getLatestRepositoryRelease: () => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -23858,8 +23760,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            getRepositoryReleaseByTagName: (tag: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryReleaseByTagName: (tag: string) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -23952,8 +23854,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            createRelease: (body: any) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createRelease: (body: any) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -24046,8 +23948,8 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 201>>;
-            updateRelease: (releaseId: string, body: any) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateRelease: (releaseId: string, body: any) => Promise<{
                 url: string;
                 html_url: string;
                 assets_url: string;
@@ -24140,9 +24042,9 @@ declare let githubApi: {
                     eyes: number;
                     rocket: number;
                 };
-            }, 200>>;
-            deleteRelease: (releaseId: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            getReleaseAssets: (releaseId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            deleteRelease: (releaseId: string) => Promise<never>;
+            getReleaseAssets: (releaseId: string) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -24178,8 +24080,8 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 200>>;
-            uploadReleaseAsset: (uploadUrl: string, assetName: string, assetLabel: string, localFilePath: string, contentType: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            uploadReleaseAsset: (uploadUrl: string, assetName: string, assetLabel: string, localFilePath: string, contentType: string) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -24215,8 +24117,8 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 201>>;
-            getReleaseAssetData: (assetId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getReleaseAssetData: (assetId: string) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -24252,8 +24154,8 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 200>>;
-            updateReleaseAsset: (assetId: string, body: any) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateReleaseAsset: (assetId: string, body: any) => Promise<{
                 url: string;
                 browser_download_url: string;
                 id: number;
@@ -24289,11 +24191,11 @@ declare let githubApi: {
                     site_admin: boolean;
                     starred_at?: string;
                 };
-            }, 200>>;
-            deleteReleaseAsset: (assetId: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            deleteReleaseAsset: (assetId: string) => Promise<never>;
         };
         repositories: {
-            getMyRepos: (params?: import("./types").RepoParams) => Promise<import("@octokit/types").OctokitResponse<{
+            getMyRepos: (params?: import("./types").RepoParams) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -24552,8 +24454,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
-            }[], 200>>;
-            getUserRepos: (username: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getUserRepos: (username: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -24938,8 +24840,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            getOrgRepos: (org: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getOrgRepos: (org: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -25324,8 +25226,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            getPublicRepositories: (params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getPublicRepositories: (params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -25710,8 +25612,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            createUserRepository: (body: import("./types").RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            createUserRepository: (body: import("./types").RepoBody) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -25970,8 +25872,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
-            }, 201>>;
-            createOrgRepository: (org: string, body: import("./types").RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createOrgRepository: (org: string, body: import("./types").RepoBody) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -26230,8 +26132,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
-            }, 201>>;
-            getRepository: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepository: (owner: string, repo: string) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -27177,8 +27079,8 @@ declare let githubApi: {
                         status?: "enabled" | "disabled";
                     };
                 };
-            }, 200>>;
-            updateRepository: (owner: string, repo: string, body: import("./types").RepoBody) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateRepository: (owner: string, repo: string, body: import("./types").RepoBody) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -28124,14 +28026,14 @@ declare let githubApi: {
                         status?: "enabled" | "disabled";
                     };
                 };
-            }, 200>>;
-            getRepositoryTopics: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryTopics: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 names: string[];
-            }, 200>>;
-            updateRepositoryTopics: (owner: string, repo: string, body: import("./types").Body) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateRepositoryTopics: (owner: string, repo: string, body: import("./types").Body) => Promise<{
                 names: string[];
-            }, 200>>;
-            getRepositoryContributors: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryContributors: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 login?: string;
                 id?: number;
                 node_id?: string;
@@ -28153,11 +28055,11 @@ declare let githubApi: {
                 contributions: number;
                 email?: string;
                 name?: string;
-            }[], 200>>;
-            getRepositoryLanguages: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryLanguages: (owner: string, repo: string) => Promise<{
                 [key: string]: number;
-            }, 200>>;
-            getRepositoryTeams: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            getRepositoryTeams: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -28190,8 +28092,8 @@ declare let githubApi: {
                     slug: string;
                     ldap_dn?: string;
                 };
-            }[], 200>>;
-            getRepositoryTags: (owner: string, repo: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getRepositoryTags: (owner: string, repo: string, params?: import("./types").Params) => Promise<{
                 name: string;
                 commit: {
                     sha: string;
@@ -28200,13 +28102,13 @@ declare let githubApi: {
                 zipball_url: string;
                 tarball_url: string;
                 node_id: string;
-            }[], 200>>;
-            deleteRepository: (owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }[]>;
+            deleteRepository: (owner: string, repo: string) => Promise<never>;
         };
     };
     teams: {
         teams: {
-            getTeams: (org: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            getTeams: (org: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -28239,8 +28141,8 @@ declare let githubApi: {
                     slug: string;
                     ldap_dn?: string;
                 };
-            }[], 200>>;
-            getTeam: (id: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getTeam: (id: string) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -28326,8 +28228,8 @@ declare let githubApi: {
                     updated_at: string;
                 };
                 ldap_dn?: string;
-            }, 200>>;
-            createTeam: (org: string, body: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            createTeam: (org: string, body: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -28413,8 +28315,8 @@ declare let githubApi: {
                     updated_at: string;
                 };
                 ldap_dn?: string;
-            }, 201>>;
-            editTeam: (id: string, body: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            editTeam: (id: string, body: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -28500,95 +28402,9 @@ declare let githubApi: {
                     updated_at: string;
                 };
                 ldap_dn?: string;
-            }, 200> | import("@octokit/types").OctokitResponse<{
-                id: number;
-                node_id: string;
-                url: string;
-                html_url: string;
-                name: string;
-                slug: string;
-                description: string;
-                privacy?: "closed" | "secret";
-                permission: string;
-                members_url: string;
-                repositories_url: string;
-                parent?: {
-                    id: number;
-                    node_id: string;
-                    url: string;
-                    members_url: string;
-                    name: string;
-                    description: string;
-                    permission: string;
-                    privacy?: string;
-                    html_url: string;
-                    repositories_url: string;
-                    slug: string;
-                    ldap_dn?: string;
-                };
-                members_count: number;
-                repos_count: number;
-                created_at: string;
-                updated_at: string;
-                organization: {
-                    login: string;
-                    id: number;
-                    node_id: string;
-                    url: string;
-                    repos_url: string;
-                    events_url: string;
-                    hooks_url: string;
-                    issues_url: string;
-                    members_url: string;
-                    public_members_url: string;
-                    avatar_url: string;
-                    description: string;
-                    name?: string;
-                    company?: string;
-                    blog?: string;
-                    location?: string;
-                    email?: string;
-                    twitter_username?: string;
-                    is_verified?: boolean;
-                    has_organization_projects: boolean;
-                    has_repository_projects: boolean;
-                    public_repos: number;
-                    public_gists: number;
-                    followers: number;
-                    following: number;
-                    html_url: string;
-                    created_at: string;
-                    type: string;
-                    total_private_repos?: number;
-                    owned_private_repos?: number;
-                    private_gists?: number;
-                    disk_usage?: number;
-                    collaborators?: number;
-                    billing_email?: string;
-                    plan?: {
-                        name: string;
-                        space: number;
-                        private_repos: number;
-                        filled_seats?: number;
-                        seats?: number;
-                    };
-                    default_repository_permission?: string;
-                    members_can_create_repositories?: boolean;
-                    two_factor_requirement_enabled?: boolean;
-                    members_allowed_repository_creation_type?: string;
-                    members_can_create_public_repositories?: boolean;
-                    members_can_create_private_repositories?: boolean;
-                    members_can_create_internal_repositories?: boolean;
-                    members_can_create_pages?: boolean;
-                    members_can_create_public_pages?: boolean;
-                    members_can_create_private_pages?: boolean;
-                    members_can_fork_private_repositories?: boolean;
-                    updated_at: string;
-                };
-                ldap_dn?: string;
-            }, 201>>;
-            deleteTeam: (id: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            getChildTeams: (id: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            deleteTeam: (id: string) => Promise<never>;
+            getChildTeams: (id: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -28621,8 +28437,8 @@ declare let githubApi: {
                     slug: string;
                     ldap_dn?: string;
                 };
-            }[], 200>>;
-            getTeamRepos: (id: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getTeamRepos: (id: string, params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -29007,8 +28823,8 @@ declare let githubApi: {
                 open_issues?: number;
                 watchers?: number;
                 allow_forking?: boolean;
-            }[], 200>>;
-            getIsRepoManagedByTeam: (id: string, owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getIsRepoManagedByTeam: (id: string, owner: string, repo: string) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -29392,10 +29208,10 @@ declare let githubApi: {
                 open_issues: number;
                 watchers: number;
                 master_branch?: string;
-            }, 200>>;
-            updateTeamRepository: (id: string, owner: string, repo: string, body?: any) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            removeTeamRepository: (id: string, owner: string, repo: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            getUserTeams: (params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }>;
+            updateTeamRepository: (id: string, owner: string, repo: string, body?: any) => Promise<never>;
+            removeTeamRepository: (id: string, owner: string, repo: string) => Promise<never>;
+            getUserTeams: (params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;
                 url: string;
@@ -29481,8 +29297,8 @@ declare let githubApi: {
                     updated_at: string;
                 };
                 ldap_dn?: string;
-            }[], 200>>;
-            getTeamProjects: (id: string, params?: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getTeamProjects: (id: string, params?: import("./types").Params) => Promise<{
                 owner_url: string;
                 url: string;
                 html_url: string;
@@ -29525,8 +29341,8 @@ declare let githubApi: {
                     write: boolean;
                     admin: boolean;
                 };
-            }[], 200>>;
-            getTeamProject: (id: string, projectId: string) => Promise<import("@octokit/types").OctokitResponse<{
+            }[]>;
+            getTeamProject: (id: string, projectId: string) => Promise<{
                 owner_url: string;
                 url: string;
                 html_url: string;
@@ -29569,9 +29385,9 @@ declare let githubApi: {
                     write: boolean;
                     admin: boolean;
                 };
-            }, 200>>;
-            updateTeamProject: (id: string, projectId: string, body: import("./types").Params) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
-            removeTeamProject: (id: string, projectId: string) => Promise<import("@octokit/types").OctokitResponse<never, 204>>;
+            }>;
+            updateTeamProject: (id: string, projectId: string, body: import("./types").Params) => Promise<never>;
+            removeTeamProject: (id: string, projectId: string) => Promise<never>;
         };
     };
     getRequestCount: () => number;

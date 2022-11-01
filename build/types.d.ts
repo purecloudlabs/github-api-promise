@@ -3,7 +3,6 @@ export interface Params {
     [param: string]: string | number | boolean | undefined;
 }
 export interface Body {
-    body: string;
     [param: string]: string | number | boolean | string[] | undefined;
 }
 export interface IssuesBody extends Body {
@@ -74,7 +73,7 @@ export interface RepoBody extends Body {
     has_issues?: boolean;
     has_projects?: boolean;
     has_wiki?: boolean;
-    default_branch: string;
+    default_branch?: string;
     allow_squash_merge?: boolean;
     allow_merge_commit?: boolean;
     allow_rebase_merge?: boolean;

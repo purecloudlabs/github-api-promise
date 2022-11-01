@@ -35810,7 +35810,7 @@ var _ = lodash.exports;
 let config = {
     owner: "github_username",
     repo: "repo_name",
-    token: "YourAccessToken",
+    token: "your_github_token",
     host: "https://api.github.com",
     debug: false,
 };

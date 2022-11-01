@@ -1,4 +1,4 @@
-import { Params, GetRepositoryCommentsParams } from "../types";
+import { Params, GetRepositoryCommentsParams, Body } from "../types";
 /**
  * @module issues/comments
  */
