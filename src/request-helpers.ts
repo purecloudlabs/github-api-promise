@@ -24,9 +24,9 @@ class Request {
         res.statusCode +
         "]" +
         "[" +
-        res.req.method +
+        res.method +
         " " +
-        res.req.path +
+        res.path +
         "] " +
         (message ? message : "")
     );
