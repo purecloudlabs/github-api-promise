@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>teams/teams.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-issues_events.html">issues/events</a><ul class='methods'><li data-type='method'><a href="module-issues_events.html#.getEvent">getEvent</a></li><li data-type='method'><a href="module-issues_events.html#.getIssueEvents">getIssueEvents</a></li><li data-type='method'><a href="module-issues_events.html#.getRepositoryIssueEvents">getRepositoryIssueEvents</a></li></ul></li><li><a href="module-issues_issues.html">issues/issues</a><ul class='methods'><li data-type='method'><a href="module-issues_issues.html#.createIssue">createIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getIssues">getIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getOrganizationIssues">getOrganizationIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssue">getRepositoryIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssues">getRepositoryIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getUserIssues">getUserIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.lockIssue">lockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.unlockIssue">unlockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.updateIssue">updateIssue</a></li></ul></li><li><a href="module-pullRequests_comments.html">pullRequests/comments</a><ul class='methods'><li data-type='method'><a href="module-pullRequests_comments.html#.createComment">createComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.deleteComment">deleteComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.editComment">editComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.getComment">getComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.getPullRequestComments">getPullRequestComments</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.getRepositoryComments">getRepositoryComments</a></li></ul></li><li><a href="module-pullRequests_pullRequests.html">pullRequests/pullRequests</a><ul class='methods'><li data-type='method'><a href="module-pullRequests_pullRequests.html#.createPullRequest">createPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getIsMerged">getIsMerged</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequest">getPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestCommits">getPullRequestCommits</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestFiles">getPullRequestFiles</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequests">getPullRequests</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.merge">merge</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.updatePullRequest">updatePullRequest</a></li></ul></li><li><a href="module-repositories_collaborators.html">repositories/collaborators</a><ul class='methods'><li data-type='method'><a href="module-repositories_collaborators.html#.deleteUserCollaborator">deleteUserCollaborator</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.getCollaborators">getCollaborators</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.getUserIsCollaborator">getUserIsCollaborator</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.getUserPermissionLevel">getUserPermissionLevel</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.putUserCollaborator">putUserCollaborator</a></li></ul></li><li><a href="module-repositories_commits.html">repositories/commits</a><ul class='methods'><li data-type='method'><a href="module-repositories_commits.html#.compareCommits">compareCommits</a></li><li data-type='method'><a href="module-repositories_commits.html#.getCommit">getCommit</a></li><li data-type='method'><a href="module-repositories_commits.html#.getCommits">getCommits</a></li><li data-type='method'><a href="module-repositories_commits.html#.getSha1">getSha1</a></li><li data-type='method'><a href="module-repositories_commits.html#.verifySignature">verifySignature</a></li></ul></li><li><a href="module-repositories_contents.html">repositories/contents</a><ul class='methods'><li data-type='method'><a href="module-repositories_contents.html#.deleteContents">deleteContents</a></li><li data-type='method'><a href="module-repositories_contents.html#.getArchiveLink">getArchiveLink</a></li><li data-type='method'><a href="module-repositories_contents.html#.getContents">getContents</a></li><li data-type='method'><a href="module-repositories_contents.html#.getReadme">getReadme</a></li><li data-type='method'><a href="module-repositories_contents.html#.putContents">putContents</a></li></ul></li><li><a href="module-repositories_releases.html">repositories/releases</a><ul class='methods'><li data-type='method'><a href="module-repositories_releases.html#.createRelease">createRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteRelease">deleteRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteReleaseAsset">deleteReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.getLatestRepositoryRelease">getLatestRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssetData">getReleaseAssetData</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssets">getReleaseAssets</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryRelease">getRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleaseByTagName">getRepositoryReleaseByTagName</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleases">getRepositoryReleases</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateRelease">updateRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateReleaseAsset">updateReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.uploadReleaseAsset">uploadReleaseAsset</a></li></ul></li><li><a href="module-repositories_repositories.html">repositories/repositories</a><ul class='methods'><li data-type='method'><a href="module-repositories_repositories.html#.createOrgRepository">createOrgRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.createUserRepository">createUserRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.deleteRepository">deleteRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getMyRepos">getMyRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getOrgRepos">getOrgRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getPublicRepositories">getPublicRepositories</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepository">getRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryContributors">getRepositoryContributors</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryLanguages">getRepositoryLanguages</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTags">getRepositoryTags</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTeams">getRepositoryTeams</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTopics">getRepositoryTopics</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getUserRepos">getUserRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepository">updateRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepositoryTopics">updateRepositoryTopics</a></li></ul></li><li><a href="module-teams_teams.html">teams/teams</a><ul class='methods'><li data-type='method'><a href="module-teams_teams.html#.createTeam">createTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.deleteTeam">deleteTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.editTeam">editTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.getChildTeams">getChildTeams</a></li><li data-type='method'><a href="module-teams_teams.html#.getIsRepoManagedByTeam">getIsRepoManagedByTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeam">getTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeamProject">getTeamProject</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeamProjects">getTeamProjects</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeamRepos">getTeamRepos</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeams">getTeams</a></li><li data-type='method'><a href="module-teams_teams.html#.getUserTeams">getUserTeams</a></li><li data-type='method'><a href="module-teams_teams.html#.removeTeamProject">removeTeamProject</a></li><li data-type='method'><a href="module-teams_teams.html#.removeTeamRepository">removeTeamRepository</a></li><li data-type='method'><a href="module-teams_teams.html#.updateTeamProject">updateTeamProject</a></li><li data-type='method'><a href="module-teams_teams.html#.updateTeamRepository">updateTeamRepository</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">teams/teams.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const config = require('../config');
+const req = require('../request-helpers');
+
+
+/**
+ * Teams module
+ * 
+ * This API is only available to authenticated members of the team's organization. OAuth access tokens require the read:org scope.
+ * 
+ * @module teams/teams
+ */
+module.exports = {
+
+	/**
+	 * List teams
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#list-teams}
+	 * 
+	 * @param {string} org         - The organization
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} team data
+	 */
+	getTeams: function(org, params) {
+		return req.standardRequest(`${config.host}/orgs/${org}/teams?${req.assembleQueryParams(params,
+			['page'])}`);
+	},
+
+	/**
+	 * Get team
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#get-team}
+	 * 
+	 * @param {string} id - The team id
+	 *
+	 * @return {object} team data
+	 */
+	getTeam: function(id, params) {
+		return req.standardRequest(`${config.host}/teams/${id}`);
+	},
+
+	/**
+	 * Create team
+	 * 
+	 * To create a team, the authenticated user must be a member of :org.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#create-team}
+	 * 
+	 * @param {string}   org                 - The organization
+	 * @param {object}   body                - The request body
+	 * @param {string}   body.name           - Required. The name of the team.
+	 * @param {string}   body.description    - The description of the team.
+	 * @param {string[]} body.maintainers    - The logins of organization members to add as maintainers of the team.
+	 * @param {string[]} body.repo_names     - The full name (e.g., "organization-name/repository-name") of repositories to add the team to.
+	 * @param {string}   body.privacy        - The level of privacy this team should have. The options are:
+	 * 
+	 * **For a non-nested team:**
+	 * * `secret` - only visible to organization owners and members of this team. 
+	 * * `closed` - visible to all members of this organization. 
+	 * 
+	 * Default: `secret` 
+	 * 
+	 * **For a `parent` or child team:**
+	 * * `closed` - visible to all members of this organization. 
+	 * 
+	 * Default for child team: `closed` 
+	 * 
+	 * Note: You must pass the hellcat-preview media type to set privacy default to `closed` for child teams. 
+	 * 
+	 * @param {string}   body.permission     - **Deprecated.** The permission that new repositories will be added to the team with when none is specified. Can be one of:
+	 * * `pull` - team members can pull, but not push to or administer newly-added repositories.
+	 * * `push` - team members can pull and push, but not administer newly-added repositories.
+	 * * `admin` - team members can pull, push and administer newly-added repositories.
+	 * 
+	 * Default: `pull`
+	 * 
+	 * @param {int}      body.parent_team_id - The ID of a team to set as the parent team. Note: You must pass the hellcat-preview media type to use this parameter.
+	 *
+	 * @return {object} team data
+	 */
+	createTeam: function(org, body) {
+		return req.standardRequest(`${config.host}/orgs/${org}/teams`, 'post', body);
+	},
+
+	/**
+	 * Edit team
+	 * 
+	 * To edit a team, the authenticated user must either be an owner of the org that the team is associated with, or a maintainer of the team.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#edit-team}
+	 * 
+	 * @param {string}   id                  - The team ID
+	 * @param {object}   body                - The request body
+	 * @param {string}   body.name           - Required. The name of the team.
+	 * @param {string}   body.description    - The description of the team.
+	 * @param {string}   body.privacy        - The level of privacy this team should have. The options are:
+	 * 
+	 * **For a non-nested team:**
+	 * * `secret` - only visible to organization owners and members of this team. 
+	 * * `closed` - visible to all members of this organization. 
+	 * 
+	 * **For a `parent` or child team:**
+	 * * `closed` - visible to all members of this organization. 
+	 * @param {string}   body.permission     - **Deprecated.** The permission that new repositories will be added to the team with when none is specified. Can be one of:
+	 * * `pull` - team members can pull, but not push to or administer newly-added repositories.
+	 * * `push` - team members can pull and push, but not administer newly-added repositories.
+	 * * `admin` - team members can pull, push and administer newly-added repositories.
+	 * 
+	 * Default: `pull`
+	 * @param {int}      body.parent_team_id - The ID of a team to set as the parent team. Note: You must pass the hellcat-preview media type to use this parameter.
+	 *
+	 * @return {object} team data
+	 */
+	editTeam: function(id, body) {
+		return req.standardRequest(`${config.host}/teams/${id}`, 'patch', body);
+	},
+
+	/**
+	 * Delete team
+	 * 
+	 * To delete a team, the authenticated user must be a team maintainer or an owner of the org associated with the team. If you are an organization owner and you pass the hellcat-preview media type, deleting a parent team will delete all of its child teams as well.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#delete-team}
+	 * 
+	 * @param {string} id - The team ID
+	 *
+	 * @return {nothing}
+	 */
+	deleteTeam: function(id) {
+		return req.standardRequest(`${config.host}/teams/${id}`, 'delete');
+	},
+
+	/**
+	 * List child teams
+	 * 
+	 * At this time, the hellcat-preview media type is required to use this endpoint.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#list-child-teams}
+	 * 
+	 * @param {string} id          - The team ID
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} team data
+	 */
+	getChildTeams: function(id, params) {
+		return req.standardRequest(`${config.host}/teams/${id}/teams?${req.assembleQueryParams(params,
+			['page'])}`);
+	},
+
+	/**
+	 * List team repos
+	 * 
+	 * Note: If you pass the hellcat-preview media type, the response will include any repositories inherited through a parent team.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#list-team-repos}
+	 * 
+	 * @param {string} id          - The team ID
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} team data
+	 */
+	getTeamRepos: function(id, params) {
+		return req.standardRequest(`${config.host}/teams/${id}/repos?${req.assembleQueryParams(params,
+			['page'])}`);
+	},
+
+	/**
+	 * Check if a team manages a repository
+	 * 
+	 * Note: If you pass the hellcat-preview media type, repositories inherited through a parent team will be checked.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository}
+	 * 
+	 * @param {string} id    - The team ID
+	 * @param {string} owner - The owner name
+	 * @param {string} repo  - The repo name
+	 *
+	 * @return {nothing} 204 if is managed, 404 if not
+	 */
+	getIsRepoManagedByTeam: function(id, owner, repo) {
+		return req.standardRequest(`${config.host}/teams/${id}/repos/${owner}/${repo}`);
+	},
+
+	/**
+	 * Add or update team repository
+	 * 
+	 * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. If you pass the hellcat-preview media type, you can modify repository permissions of child teams.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-repository}
+	 * 
+	 * @param {string} id              - The team ID
+	 * @param {string} owner           - The owner name
+	 * @param {string} repo            - The repo name
+	 * @param {object} body            - The request body
+	 * @param {string} body.permission - The permission to grant the team on this repository. Can be one of:
+	 * * `pull` - team members can pull, but not push to or administer this repository.
+	 * * `push` - team members can pull and push, but not administer this repository.
+	 * * `admin` - team members can pull, push and administer this repository.
+	 * 
+	 * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
+	 * 
+	 * **Note**: If you pass the `hellcat-preview` media type, you can promote—but not demote—a `permission` attribute inherited through a parent team.
+	 *
+	 * @return {nothing}
+	 */
+	updateTeamRepository: function(id, owner, repo, body) {
+		return req.standardRequest(`${config.host}/teams/${id}/repos/${owner}/${repo}`, 'put', body);
+	},
+
+	/**
+	 * Remove team repository
+	 * 
+	 * If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#remove-team-repository}
+	 * 
+	 * @param {string} id    - The team ID
+	 * @param {string} owner - The owner name
+	 * @param {string} repo  - The repo name
+	 *
+	 * @return {nothing}
+	 */
+	removeTeamRepository: function(id, owner, repo) {
+		return req.standardRequest(`${config.host}/teams/${id}/repos/${owner}/${repo}`, 'delete');
+	},
+
+	/**
+	 * List user teams
+	 * 
+	 * List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user, repo, or read:org scope when authenticating via OAuth.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#}
+	 * 
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} team data
+	 */
+	getUserTeams: function(params) {
+		return req.standardRequest(`${config.host}/user/teams?${req.assembleQueryParams(params,
+			['page'])}`);
+	},
+
+	/**
+	 * List team projects
+	 * 
+	 * Lists the organization projects for a team. If you pass the hellcat-preview media type, the response will include projects inherited from a parent team.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#list-team-projects}
+	 * 
+	 * @param {string} id          - The team ID
+	 * @param {object} params      - An object of parameters for the request
+	 * @param {int}    params.page - The page of results to retrieve
+	 *
+	 * @return {object} project data
+	 */
+	getTeamProjects: function(id, params) {
+		return req.standardRequest(`${config.host}/teams/${id}/projects?${req.assembleQueryParams(params,
+			['page'])}`);
+	},
+
+	/**
+	 * Review a team project
+	 * 
+	 * Checks whether a team has read, write, or admin permissions for an organization project. If you pass the hellcat-preview media type, the response will include projects inherited from a parent team.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#review-a-team-project}
+	 * 
+	 * @param {string} id        - The team ID
+	 * @param {string} projectId - The project ID
+	 *
+	 * @return {object} team data
+	 */
+	getTeamProject: function(id, projectId) {
+		return req.standardRequest(`${config.host}/teams/${id}/projects/${projectId}`);
+	},
+
+	/**
+	 * Add or update team project
+	 * 
+	 * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have admin permissions for the project. The project and team must be part of the same organization.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-project}
+	 * 
+	 * @param {string} id              - The team ID
+	 * @param {string} projectId       - The project ID
+	 * @param {object} body            - The request body
+	 * @param {string} body.permission - The permission to grant to the team for this project. Can be one of:
+	 * * `read` - team members can read, but not write to or administer this project.
+	 * * `write` - team members can read and write, but not administer this project.
+	 * * `admin` - team members can read, write and administer this project.
+	 * 
+	 * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "HTTP verbs."
+	 * 
+	 * **Note**: If you pass the `hellcat-preview` media type, you can promote—but not demote—a `permission` attribute inherited from a parent team.
+	 *
+	 * @return {nothing}
+	 */
+	updateTeamProject: function(id, projectId, body) {
+		return req.standardRequest(`${config.host}/teams/${id}/projects/${projectId}`, 'put', body);
+	},
+
+	/**
+	 * Remove team project
+	 * 
+	 * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have read access to both the team and project, or admin access to the team or project. Note: This endpoint removes the project from the team, but does not delete it.
+	 * 
+	 * @see {@link https://developer.github.com/v3/teams/#remove-team-project}
+	 * 
+	 * @param {string} id        - The team ID
+	 * @param {string} projectId - The project ID
+	 *
+	 * @return {nothing}
+	 */
+	removeTeamProject: function(id, projectId) {
+		return req.standardRequest(`${config.host}/teams/${id}/projects/${projectId}`, 'delete');
+	},
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Mon Aug 15 2022 15:25:23 GMT-0400 (Eastern Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pull-requests/comments.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-issues_events.html">issues/events</a><ul class='methods'><li data-type='method'><a href="module-issues_events.html#.getEvent">getEvent</a></li><li data-type='method'><a href="module-issues_events.html#.getIssueEvents">getIssueEvents</a></li><li data-type='method'><a href="module-issues_events.html#.getRepositoryIssueEvents">getRepositoryIssueEvents</a></li></ul></li><li><a href="module-issues_issues.html">issues/issues</a><ul class='methods'><li data-type='method'><a href="module-issues_issues.html#.createIssue">createIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getIssues">getIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getOrganizationIssues">getOrganizationIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssue">getRepositoryIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.getRepositoryIssues">getRepositoryIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.getUserIssues">getUserIssues</a></li><li data-type='method'><a href="module-issues_issues.html#.lockIssue">lockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.unlockIssue">unlockIssue</a></li><li data-type='method'><a href="module-issues_issues.html#.updateIssue">updateIssue</a></li></ul></li><li><a href="module-pullRequests_comments.html">pullRequests/comments</a><ul class='methods'><li data-type='method'><a href="module-pullRequests_comments.html#.createComment">createComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.deleteComment">deleteComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.editComment">editComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.getComment">getComment</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.getPullRequestComments">getPullRequestComments</a></li><li data-type='method'><a href="module-pullRequests_comments.html#.getRepositoryComments">getRepositoryComments</a></li></ul></li><li><a href="module-pullRequests_pullRequests.html">pullRequests/pullRequests</a><ul class='methods'><li data-type='method'><a href="module-pullRequests_pullRequests.html#.createPullRequest">createPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getIsMerged">getIsMerged</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequest">getPullRequest</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestCommits">getPullRequestCommits</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequestFiles">getPullRequestFiles</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.getPullRequests">getPullRequests</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.merge">merge</a></li><li data-type='method'><a href="module-pullRequests_pullRequests.html#.updatePullRequest">updatePullRequest</a></li></ul></li><li><a href="module-repositories_collaborators.html">repositories/collaborators</a><ul class='methods'><li data-type='method'><a href="module-repositories_collaborators.html#.deleteUserCollaborator">deleteUserCollaborator</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.getCollaborators">getCollaborators</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.getUserIsCollaborator">getUserIsCollaborator</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.getUserPermissionLevel">getUserPermissionLevel</a></li><li data-type='method'><a href="module-repositories_collaborators.html#.putUserCollaborator">putUserCollaborator</a></li></ul></li><li><a href="module-repositories_commits.html">repositories/commits</a><ul class='methods'><li data-type='method'><a href="module-repositories_commits.html#.compareCommits">compareCommits</a></li><li data-type='method'><a href="module-repositories_commits.html#.getCommit">getCommit</a></li><li data-type='method'><a href="module-repositories_commits.html#.getCommits">getCommits</a></li><li data-type='method'><a href="module-repositories_commits.html#.getSha1">getSha1</a></li><li data-type='method'><a href="module-repositories_commits.html#.verifySignature">verifySignature</a></li></ul></li><li><a href="module-repositories_contents.html">repositories/contents</a><ul class='methods'><li data-type='method'><a href="module-repositories_contents.html#.deleteContents">deleteContents</a></li><li data-type='method'><a href="module-repositories_contents.html#.getArchiveLink">getArchiveLink</a></li><li data-type='method'><a href="module-repositories_contents.html#.getContents">getContents</a></li><li data-type='method'><a href="module-repositories_contents.html#.getReadme">getReadme</a></li><li data-type='method'><a href="module-repositories_contents.html#.putContents">putContents</a></li></ul></li><li><a href="module-repositories_releases.html">repositories/releases</a><ul class='methods'><li data-type='method'><a href="module-repositories_releases.html#.createRelease">createRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteRelease">deleteRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.deleteReleaseAsset">deleteReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.getLatestRepositoryRelease">getLatestRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssetData">getReleaseAssetData</a></li><li data-type='method'><a href="module-repositories_releases.html#.getReleaseAssets">getReleaseAssets</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryRelease">getRepositoryRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleaseByTagName">getRepositoryReleaseByTagName</a></li><li data-type='method'><a href="module-repositories_releases.html#.getRepositoryReleases">getRepositoryReleases</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateRelease">updateRelease</a></li><li data-type='method'><a href="module-repositories_releases.html#.updateReleaseAsset">updateReleaseAsset</a></li><li data-type='method'><a href="module-repositories_releases.html#.uploadReleaseAsset">uploadReleaseAsset</a></li></ul></li><li><a href="module-repositories_repositories.html">repositories/repositories</a><ul class='methods'><li data-type='method'><a href="module-repositories_repositories.html#.createOrgRepository">createOrgRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.createUserRepository">createUserRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.deleteRepository">deleteRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getMyRepos">getMyRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getOrgRepos">getOrgRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getPublicRepositories">getPublicRepositories</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepository">getRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryContributors">getRepositoryContributors</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryLanguages">getRepositoryLanguages</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTags">getRepositoryTags</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTeams">getRepositoryTeams</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getRepositoryTopics">getRepositoryTopics</a></li><li data-type='method'><a href="module-repositories_repositories.html#.getUserRepos">getUserRepos</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepository">updateRepository</a></li><li data-type='method'><a href="module-repositories_repositories.html#.updateRepositoryTopics">updateRepositoryTopics</a></li></ul></li><li><a href="module-teams_teams.html">teams/teams</a><ul class='methods'><li data-type='method'><a href="module-teams_teams.html#.createTeam">createTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.deleteTeam">deleteTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.editTeam">editTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.getChildTeams">getChildTeams</a></li><li data-type='method'><a href="module-teams_teams.html#.getIsRepoManagedByTeam">getIsRepoManagedByTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeam">getTeam</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeamProject">getTeamProject</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeamProjects">getTeamProjects</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeamRepos">getTeamRepos</a></li><li data-type='method'><a href="module-teams_teams.html#.getTeams">getTeams</a></li><li data-type='method'><a href="module-teams_teams.html#.getUserTeams">getUserTeams</a></li><li data-type='method'><a href="module-teams_teams.html#.removeTeamProject">removeTeamProject</a></li><li data-type='method'><a href="module-teams_teams.html#.removeTeamRepository">removeTeamRepository</a></li><li data-type='method'><a href="module-teams_teams.html#.updateTeamProject">updateTeamProject</a></li><li data-type='method'><a href="module-teams_teams.html#.updateTeamRepository">updateTeamRepository</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">pull-requests/comments.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const config = require('../config');
+const req = require('../request-helpers');
+
+
+/**
+ * Comments module
+ * @module pullRequests/comments
+ */
+module.exports = {
+
+	/**
+	 * List comments on a pull request
+	 * By default, review comments are ordered by ascending ID.
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request}
+	 * 
+	 * @param {string} owner            - The repo's owner
+	 * @param {string} repo             - The repo's name
+	 * @param {string} number           - The pull request number
+	 * @param {object} params           - An object of parameters for the request
+	 * @param {string} params.sort      - Can be either created or updated comments. Default: created
+	 * @param {string} params.direction - Can be either asc or desc. Ignored without sort parameter.
+	 * @param {string} params.since     - This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only returns comments updated at or after this time.
+	 * @param {int}    params.page      - The page of results to retrieve
+	 *
+	 * @return {object} Pull request comment data
+	 */
+	getPullRequestComments: function(owner, repo, number, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}/comments?${req.assembleQueryParams(params,
+			['sort', 'direction', 'since', 'page'])}`);
+	},
+
+	/**
+	 * List comments in a repository
+	 * By default, review comments are ordered by ascending ID.
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository}
+	 * 
+	 * @param {string} owner            - The repo's owner
+	 * @param {string} repo             - The repo's name
+	 * @param {string} number           - The pull request number
+	 * @param {object} params           - An object of parameters for the request
+	 * @param {string} params.sort      - Can be either created or updated comments. Default: created
+	 * @param {string} params.direction - Can be either asc or desc. Ignored without sort parameter.
+	 * @param {string} params.since     - This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only returns comments updated at or after this time.
+	 * @param {int}    params.page      - The page of results to retrieve
+	 *
+	 * @return {object} Pull request comment data
+	 */
+	getRepositoryComments: function(owner, repo, params) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/comments?${req.assembleQueryParams(params,
+			['sort', 'direction', 'since', 'page'])}`);
+	},
+
+	/**
+	 * Get a single comment
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls/comments/#get-a-single-comment}
+	 * 
+	 * @param {string} owner - The repo's owner
+	 * @param {string} repo  - The repo's name
+	 * @param {string} id    - The comment's id
+	 *
+	 * @return {object} Pull request comment data
+	 */
+	getComment: function(owner, repo, id) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/comments/${id}`);
+	},
+
+	/**
+	 * Create a comment
+	 * Alternative input: Instead of passing commit_id, path, and position, you can reply to an existing pull request comment like this:
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls/comments/#create-a-comment}
+	 * 
+	 * @param {string}  owner            - The repo's owner
+	 * @param {string}  repo             - The repo's name
+	 * @param {string}  number           - The pull request number
+	 * @param {object}  body             - The request body
+	 * @param {string}  body.body        - Required. The text of the comment.
+	 * @param {string}  body.commit_id   - Required. The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the position.
+	 * @param {string}  body.path        - Required. The relative path to the file that necessitates a comment.
+	 * @param {integer} body.position    - Required. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+	 * @param {integer} body.in_reply_to - Required. The comment ID to reply to. Note: This must be the ID of a top-level comment, not a reply to that comment. Replies to replies are not supported.
+	 *
+	 * @return {object} Pull request comment data
+	 */
+	createComment: function(owner, repo, number, body) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/${number}/comments`, 'post', body);
+	},
+
+	/**
+	 * 
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls/comments/#edit-a-comment}
+	 * 
+	 * @param {string} owner     - The repo's owner
+	 * @param {string} repo      - The repo's name
+	 * @param {string} id        - The comment's id
+	 * @param {object} body      - The request body
+	 * @param {string} body.body - Required. The text of the comment.
+	 *
+	 * @return {object} Pull request comment data
+	 */
+	editComment: function(owner, repo, id, body) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/comments/${id}`, 'patch', body);
+	},
+
+	/**
+	 * Delete a comment
+	 * 
+	 * @see {@link https://developer.github.com/v3/pulls/comments/#delete-a-comment}
+	 * 
+	 * @param {string} owner - The repo's owner
+	 * @param {string} repo  - The repo's name
+	 * @param {string} id    - The comment's id
+	 *
+	 * @return {null} 204 no content
+	 */
+	deleteComment: function(owner, repo, id) {
+		return req.standardRequest(`${config.host}/repos/${owner}/${repo}/pulls/comments/${id}`, 'delete');
+	}
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Mon Aug 15 2022 15:25:23 GMT-0400 (Eastern Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
