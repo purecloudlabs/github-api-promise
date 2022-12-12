@@ -28824,7 +28824,7 @@ declare let githubApi: {
                 watchers?: number;
                 allow_forking?: boolean;
             }[]>;
-            getIsRepoManagedByTeam: (id: string, owner: string, repo: string) => Promise<{
+            getIsRepoManagedByTeam: (id: string, org_id: string, owner: string, repo: string) => Promise<{
                 id: number;
                 node_id: string;
                 name: string;
@@ -29209,8 +29209,8 @@ declare let githubApi: {
                 watchers: number;
                 master_branch?: string;
             }>;
-            updateTeamRepository: (id: string, owner: string, repo: string, body?: any) => Promise<never>;
-            removeTeamRepository: (id: string, owner: string, repo: string) => Promise<never>;
+            updateTeamRepository: (teamId: string, orgId: string, owner: string, repo: string, body?: any) => Promise<never>;
+            removeTeamRepository: (id: string, org_id: string, owner: string, repo: string) => Promise<never>;
             getUserTeams: (params?: import("./types").Params) => Promise<{
                 id: number;
                 node_id: string;

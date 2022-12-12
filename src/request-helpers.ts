@@ -1,5 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse, AxiosError } from "axios";
-import _ from "lodash";
+import axios, { AxiosInstance, AxiosResponse } from "axios";
 import config from "./config";
 import { getLogger } from "log4js";
 const log = getLogger();
@@ -24,9 +23,9 @@ class Request {
         res.statusCode +
         "]" +
         "[" +
-        res.req.method +
+        res.method +
         " " +
-        res.req.path +
+        res.path +
         "] " +
         (message ? message : "")
     );
@@ -45,8 +44,8 @@ class Request {
       if (params[paramName])
         s += `&${paramName}=${encodeURIComponent(params[paramName])}`;
     });
-
-    return _.trimStart(s, "&");
+    //remove leading `&`
+    return s.slice(1);
   }
 
   // Returns only the response body
@@ -63,82 +62,79 @@ class Request {
   }
 
   // Returns an object with additional information about the request/response
-  public extendedRequest(
+  public async extendedRequest(
     url: string,
     method = "get",
     body: any = undefined
   ): Promise<unknown> {
-    return new Promise((resolve, reject) => {
-      try {
-        let req: Promise<AxiosResponse>;
-        switch (method.toLowerCase().trim()) {
-          case "post": {
-            req = this.request.post(url, body, {
-              headers: {
-                Authorization: `token ${config.token}`,
-              },
-            });
-            break;
-          }
-          case "patch": {
-            req = this.request.patch(url, body, {
-              headers: {
-                Authorization: `token ${config.token}`,
-              },
-            });
-            break;
-          }
-          case "put": {
-            req = this.request.put(url, body, {
-              headers: {
-                Authorization: `token ${config.token}`,
-              },
-            });
-            break;
-          }
-          case "delete": {
-            req = this.request.delete(url, {
-              headers: {
-                Authorization: `token ${config.token}`,
-              },
-            });
-            break;
-          }
-          case "get": {
-            req = this.request.get(url, {
-              headers: {
-                Authorization: `token ${config.token}`,
-              },
-            });
-            break;
-          }
-          default: {
-            throw new Error(`Unsupported HTTP verb: ${method}`);
-          }
-        }
-
-        this.requestCount++;
-
-        // Set standard stuff and handle response
-        req
-          .then((res) => {
-            this.logRequestSucess(res.data);
-            resolve(res.data);
-          })
-          .catch((err: AxiosError) => {
-            // TODO: handle rate limiting (github sends a 403, not a 429)
-            // https://developer.github.com/v3/#rate-limiting
-            log.error(err.response.data);
-            reject({
-              status: err.response.status,
-              errMessage: err.response.data,
-            });
+    try {
+      let req: Promise<AxiosResponse>;
+      switch (method.toLowerCase().trim()) {
+        case "post": {
+          req = this.request.post(url, body, {
+            headers: {
+              Authorization: `token ${config.token}`,
+            },
           });
-      } catch (err) {
-        log.error(err);
-        reject(err);
+          break;
+        }
+        case "patch": {
+          req = this.request.patch(url, body, {
+            headers: {
+              Authorization: `token ${config.token}`,
+            },
+          });
+          break;
+        }
+        case "put": {
+          req = this.request.put(url, body, {
+            headers: {
+              Authorization: `token ${config.token}`,
+            },
+          });
+          break;
+        }
+        case "delete": {
+          req = this.request.delete(url, {
+            headers: {
+              Authorization: `token ${config.token}`,
+            },
+          });
+          break;
+        }
+        case "get": {
+          req = this.request.get(url, {
+            headers: {
+              Authorization: `token ${config.token}`,
+            },
+          });
+          break;
+        }
+        default: {
+          throw new Error(`Unsupported HTTP verb: ${method}`);
+        }
       }
-    });
+
+      this.requestCount++;
+
+      // Set standard stuff and handle response
+      try {
+        const res = await req;
+        this.logRequestSucess(res.data);
+        return res.data;
+      } catch (err) {
+        // TODO: handle rate limiting (github sends a 403, not a 429)
+        // https://developer.github.com/v3/#rate-limiting
+        log.error(err.response.data);
+        throw {
+          status: err.response.status,
+          errMessage: err.response.data,
+        };
+      }
+    } catch (err) {
+      log.error(err);
+      throw err;
+    }
   }
 }
 

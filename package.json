@@ -1,6 +1,6 @@
 {
   "name": "github-api-promise",
-  "version": "1.15.0",
+  "version": "1.18.0",
   "description": "A node module for interfacing with the Github API",
   "type": "module",
   "types": "build/app.d.ts",
@@ -8,7 +8,7 @@
     "require": "./src/app.ts",
     "default": "./build/app.js"
   },
-  "author": "Tim Smith",
+  "author": "Genesys",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "lodash": "^4.17.10",
     "log4js": "^6.6.1"
   },
   "bugs": {
@@ -27,7 +26,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "docdash": "^0.4.0",
-    "jsdoc": "^3.6.3",
+    "jsdoc": "^3.6.11",
     "rollup": "^2.78.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.31.1",
