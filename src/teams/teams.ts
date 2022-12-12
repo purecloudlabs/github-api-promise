@@ -217,7 +217,8 @@ export default {
    *
    * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-repository}
    *
-   * @param {string} id              - The team ID
+   * @param {string} teamId          - The team ID
+   * @param {string} orgId           - The organization ID
    * @param {string} owner           - The owner name
    * @param {string} repo            - The repo name
    * @param {object} body            - The request body
@@ -233,17 +234,18 @@ export default {
    * @return {nothing}
    */
   updateTeamRepository: function (
-    id: string,
+    teamId: string,
+    orgId: string,
     owner: string,
     repo: string,
     body?: any
   ) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/repos/${owner}/${repo}`,
+      `${config.host}/organizations/${orgId}/team/${teamId}/repos/${owner}/${repo}`,
       "put",
       body
     ) as Promise<
-      Endpoints["PUT /teams/{team_id}/repos/{owner}/{repo}"]["response"]["data"]
+      Endpoints["PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"]["data"]
     >;
   },
 

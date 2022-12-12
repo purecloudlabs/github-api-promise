@@ -1253,7 +1253,8 @@ declare const _default: {
      *
      * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-repository}
      *
-     * @param {string} id              - The team ID
+     * @param {string} teamId          - The team ID
+     * @param {string} orgId           - The organization ID
      * @param {string} owner           - The owner name
      * @param {string} repo            - The repo name
      * @param {object} body            - The request body
@@ -1268,7 +1269,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    updateTeamRepository: (id: string, owner: string, repo: string, body?: any) => Promise<never>;
+    updateTeamRepository: (teamId: string, orgId: string, owner: string, repo: string, body?: any) => Promise<never>;
     /**
      * Remove team repository
      *

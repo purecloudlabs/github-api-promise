@@ -1,6 +1,6 @@
 {
   "name": "github-api-promise",
-  "version": "1.16.0",
+  "version": "1.18.0",
   "description": "A node module for interfacing with the Github API",
   "type": "module",
   "types": "build/app.d.ts",
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "lodash": "^4.17.10",
     "log4js": "^6.6.1"
   },
   "bugs": {
