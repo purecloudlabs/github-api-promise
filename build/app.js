@@ -28435,12 +28435,13 @@ var teams = {
      *
      * @see {@link https://developer.github.com/v3/teams/#get-team}
      *
-     * @param {string} id - The team id
+     * @param {string} id     - The team id
+     * @param {string} org_id - The org id
      *
      * @return {object} team data
      */
-    getTeam: function (id) {
-        return req.standardRequest(`${config.host}/teams/${id}`);
+    getTeam: function (id, org_id) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}`);
     },
     /**
      * Create team
@@ -28492,6 +28493,7 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#edit-team}
      *
      * @param {string}   id                  - The team ID
+     * @param {string}   org_id              - The org ID
      * @param {object}   body                - The request body
      * @param {string}   body.name           - Required. The name of the team.
      * @param {string}   body.description    - The description of the team.
@@ -28513,8 +28515,8 @@ var teams = {
      *
      * @return {object} team data
      */
-    editTeam: function (id, body) {
-        return req.standardRequest(`${config.host}/teams/${id}`, "patch", body);
+    editTeam: function (id, org_id, body) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}`, "patch", body);
     },
     /**
      * Delete team
@@ -28523,12 +28525,12 @@ var teams = {
      *
      * @see {@link https://developer.github.com/v3/teams/#delete-team}
      *
-     * @param {string} id - The team ID
-     *
+     * @param {string} id     - The team ID
+     * @param {string} org_id - The org ID
      * @return {nothing}
      */
-    deleteTeam: function (id) {
-        return req.standardRequest(`${config.host}/teams/${id}`, "delete");
+    deleteTeam: function (id, org_id) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}`, "delete");
     },
     /**
      * List child teams
@@ -28538,15 +28540,14 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#list-child-teams}
      *
      * @param {string} id          - The team ID
+     * @param {string} org_id      - The org ID
      * @param {object} params      - An object of parameters for the request
      * @param {int}    params.page - The page of results to retrieve
      *
      * @return {object} team data
      */
-    getChildTeams: function (id, params) {
-        return req.standardRequest(`${config.host}/teams/${id}/teams?${req.assembleQueryParams(params, [
-            "page",
-        ])}`);
+    getChildTeams: function (id, org_id, params) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/teams?${req.assembleQueryParams(params, ["page"])}`);
     },
     /**
      * List team repos
@@ -28556,15 +28557,14 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#list-team-repos}
      *
      * @param {string} id          - The team ID
+     * @param {string} org_id      - The org ID
      * @param {object} params      - An object of parameters for the request
      * @param {int}    params.page - The page of results to retrieve
      *
      * @return {object} team data
      */
-    getTeamRepos: function (id, params) {
-        return req.standardRequest(`${config.host}/teams/${id}/repos?${req.assembleQueryParams(params, [
-            "page",
-        ])}`);
+    getTeamRepos: function (id, org_id, params) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/repos?${req.assembleQueryParams(params, ["page"])}`);
     },
     /**
      * Check if a team manages a repository
@@ -28573,14 +28573,16 @@ var teams = {
      *
      * @see {@link https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository}
      *
-     * @param {string} id    - The team ID
-     * @param {string} owner - The owner name
-     * @param {string} repo  - The repo name
+     *
+     * @param {string} id     - The team ID
+     * @param {string} org_id - The org ID
+     * @param {string} owner  - The owner name
+     * @param {string} repo   - The repo name
      *
      * @return {nothing} 204 if is managed, 404 if not
      */
-    getIsRepoManagedByTeam: function (id, owner, repo) {
-        return req.standardRequest(`${config.host}/teams/${id}/repos/${owner}/${repo}`);
+    getIsRepoManagedByTeam: function (id, org_id, owner, repo) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/repos/${owner}/${repo}`);
     },
     /**
      * Add or update team repository
@@ -28589,8 +28591,8 @@ var teams = {
      *
      * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-repository}
      *
-     * @param {string} teamId          - The team ID
-     * @param {string} orgId           - The organization ID
+     * @param {string} id              - The team ID
+     * @param {string} org_id          - The organization ID
      * @param {string} owner           - The owner name
      * @param {string} repo            - The repo name
      * @param {object} body            - The request body
@@ -28605,8 +28607,8 @@ var teams = {
      *
      * @return {nothing}
      */
-    updateTeamRepository: function (teamId, orgId, owner, repo, body) {
-        return req.standardRequest(`${config.host}/organizations/${orgId}/team/${teamId}/repos/${owner}/${repo}`, "put", body);
+    updateTeamRepository: function (id, org_id, owner, repo, body) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/repos/${owner}/${repo}`, "put", body);
     },
     /**
      * Remove team repository
@@ -28615,14 +28617,15 @@ var teams = {
      *
      * @see {@link https://developer.github.com/v3/teams/#remove-team-repository}
      *
-     * @param {string} id    - The team ID
-     * @param {string} owner - The owner name
-     * @param {string} repo  - The repo name
+     * @param {string} id        - The team ID
+     * @param {string} org_id    - The org ID
+     * @param {string} owner     - The owner name
+     * @param {string} repo      - The repo name
      *
      * @return {nothing}
      */
-    removeTeamRepository: function (id, owner, repo) {
-        return req.standardRequest(`${config.host}/teams/${id}/repos/${owner}/${repo}`, "delete");
+    removeTeamRepository: function (id, org_id, owner, repo) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/repos/${owner}/${repo}`, "delete");
     },
     /**
      * List user teams
@@ -28647,15 +28650,14 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#list-team-projects}
      *
      * @param {string} id          - The team ID
+     * @param {string} org_id      - The org ID
      * @param {object} params      - An object of parameters for the request
      * @param {int}    params.page - The page of results to retrieve
      *
      * @return {object} project data
      */
-    getTeamProjects: function (id, params) {
-        return req.standardRequest(`${config.host}/teams/${id}/projects?${req.assembleQueryParams(params, [
-            "page",
-        ])}`);
+    getTeamProjects: function (id, org_id, params) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/projects?${req.assembleQueryParams(params, ["page"])}`);
     },
     /**
      * Review a team project
@@ -28665,12 +28667,13 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#review-a-team-project}
      *
      * @param {string} id        - The team ID
+     * @param {string} org_id    - The org ID
      * @param {string} projectId - The project ID
      *
      * @return {object} team data
      */
-    getTeamProject: function (id, projectId) {
-        return req.standardRequest(`${config.host}/teams/${id}/projects/${projectId}`);
+    getTeamProject: function (id, org_id, projectId) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/projects/${projectId}`);
     },
     /**
      * Add or update team project
@@ -28680,6 +28683,7 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-project}
      *
      * @param {string} id              - The team ID
+     * @param {string} org_id          - The org ID
      * @param {string} projectId       - The project ID
      * @param {object} body            - The request body
      * @param {string} body.permission - The permission to grant to the team for this project. Can be one of:
@@ -28693,8 +28697,8 @@ var teams = {
      *
      * @return {nothing}
      */
-    updateTeamProject: function (id, projectId, body) {
-        return req.standardRequest(`${config.host}/teams/${id}/projects/${projectId}`, "put", body);
+    updateTeamProject: function (id, org_id, projectId, body) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/projects/${projectId}`, "put", body);
     },
     /**
      * Remove team project
@@ -28704,12 +28708,13 @@ var teams = {
      * @see {@link https://developer.github.com/v3/teams/#remove-team-project}
      *
      * @param {string} id        - The team ID
+     * @param {string} org_id    - The org ID
      * @param {string} projectId - The project ID
      *
      * @return {nothing}
      */
-    removeTeamProject: function (id, projectId) {
-        return req.standardRequest(`${config.host}/teams/${id}/projects/${projectId}`, "delete");
+    removeTeamProject: function (id, org_id, projectId) {
+        return req.standardRequest(`${config.host}/organizations/${org_id}/team/${id}/projects/${projectId}`, "delete");
     },
 };
 

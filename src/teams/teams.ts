@@ -35,13 +35,16 @@ export default {
    *
    * @see {@link https://developer.github.com/v3/teams/#get-team}
    *
-   * @param {string} id - The team id
+   * @param {string} id     - The team id
+   * @param {string} org_id - The org id
    *
    * @return {object} team data
    */
-  getTeam: function (id: string) {
-    return req.standardRequest(`${config.host}/teams/${id}`) as Promise<
-      Endpoints["GET /teams/{team_id}"]["response"]["data"]
+  getTeam: function (id: string, org_id: string) {
+    return req.standardRequest(
+      `${config.host}/organizations/${org_id}/team/${id}`
+    ) as Promise<
+      Endpoints["GET /orgs/{org}/teams/{team_slug}"]["response"]["data"]
     >;
   },
 
@@ -100,6 +103,7 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#edit-team}
    *
    * @param {string}   id                  - The team ID
+   * @param {string}   org_id              - The org ID
    * @param {object}   body                - The request body
    * @param {string}   body.name           - Required. The name of the team.
    * @param {string}   body.description    - The description of the team.
@@ -121,12 +125,14 @@ export default {
    *
    * @return {object} team data
    */
-  editTeam: function (id: string, body: Params) {
+  editTeam: function (id: string, org_id: string, body: Params) {
     return req.standardRequest(
-      `${config.host}/teams/${id}`,
+      `${config.host}/organizations/${org_id}/team/${id}`,
       "patch",
       body
-    ) as Promise<Endpoints["PATCH /teams/{team_id}"]["response"]["data"]>;
+    ) as Promise<
+      Endpoints["PATCH /orgs/{org}/teams/{team_slug}"]["response"]["data"]
+    >;
   },
 
   /**
@@ -136,15 +142,17 @@ export default {
    *
    * @see {@link https://developer.github.com/v3/teams/#delete-team}
    *
-   * @param {string} id - The team ID
-   *
+   * @param {string} id     - The team ID
+   * @param {string} org_id - The org ID
    * @return {nothing}
    */
-  deleteTeam: function (id: string) {
+  deleteTeam: function (id: string, org_id: string) {
     return req.standardRequest(
-      `${config.host}/teams/${id}`,
+      `${config.host}/organizations/${org_id}/team/${id}`,
       "delete"
-    ) as Promise<Endpoints["DELETE /teams/{team_id}"]["response"]["data"]>;
+    ) as Promise<
+      Endpoints["DELETE /orgs/{org}/teams/{team_slug}"]["response"]["data"]
+    >;
   },
 
   /**
@@ -155,17 +163,23 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#list-child-teams}
    *
    * @param {string} id          - The team ID
+   * @param {string} org_id      - The org ID
    * @param {object} params      - An object of parameters for the request
    * @param {int}    params.page - The page of results to retrieve
    *
    * @return {object} team data
    */
-  getChildTeams: function (id: string, params?: Params) {
+  getChildTeams: function (id: string, org_id: string, params?: Params) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/teams?${req.assembleQueryParams(params, [
-        "page",
-      ])}`
-    ) as Promise<Endpoints["GET /teams/{team_id}/teams"]["response"]["data"]>;
+      `${
+        config.host
+      }/organizations/${org_id}/team/${id}/teams?${req.assembleQueryParams(
+        params,
+        ["page"]
+      )}`
+    ) as Promise<
+      Endpoints["GET /orgs/{org}/teams/{team_slug}/teams"]["response"]["data"]
+    >;
   },
 
   /**
@@ -176,17 +190,23 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#list-team-repos}
    *
    * @param {string} id          - The team ID
+   * @param {string} org_id      - The org ID
    * @param {object} params      - An object of parameters for the request
    * @param {int}    params.page - The page of results to retrieve
    *
    * @return {object} team data
    */
-  getTeamRepos: function (id: string, params?: Params) {
+  getTeamRepos: function (id: string, org_id: string, params?: Params) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/repos?${req.assembleQueryParams(params, [
-        "page",
-      ])}`
-    ) as Promise<Endpoints["GET /teams/{team_id}/repos"]["response"]["data"]>;
+      `${
+        config.host
+      }/organizations/${org_id}/team/${id}/repos?${req.assembleQueryParams(
+        params,
+        ["page"]
+      )}`
+    ) as Promise<
+      Endpoints["GET /orgs/{org}/teams/{team_slug}/repos"]["response"]["data"]
+    >;
   },
 
   /**
@@ -196,17 +216,24 @@ export default {
    *
    * @see {@link https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository}
    *
-   * @param {string} id    - The team ID
-   * @param {string} owner - The owner name
-   * @param {string} repo  - The repo name
+   *
+   * @param {string} id     - The team ID
+   * @param {string} org_id - The org ID
+   * @param {string} owner  - The owner name
+   * @param {string} repo   - The repo name
    *
    * @return {nothing} 204 if is managed, 404 if not
    */
-  getIsRepoManagedByTeam: function (id: string, owner: string, repo: string) {
+  getIsRepoManagedByTeam: function (
+    id: string,
+    org_id: string,
+    owner: string,
+    repo: string
+  ) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/repos/${owner}/${repo}`
+      `${config.host}/organizations/${org_id}/team/${id}/repos/${owner}/${repo}`
     ) as Promise<
-      Endpoints["GET /teams/{team_id}/repos/{owner}/{repo}"]["response"]["data"]
+      Endpoints["GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"]["data"]
     >;
   },
 
@@ -217,8 +244,8 @@ export default {
    *
    * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-repository}
    *
-   * @param {string} teamId          - The team ID
-   * @param {string} orgId           - The organization ID
+   * @param {string} id              - The team ID
+   * @param {string} org_id          - The organization ID
    * @param {string} owner           - The owner name
    * @param {string} repo            - The repo name
    * @param {object} body            - The request body
@@ -234,14 +261,14 @@ export default {
    * @return {nothing}
    */
   updateTeamRepository: function (
-    teamId: string,
-    orgId: string,
+    id: string,
+    org_id: string,
     owner: string,
     repo: string,
     body?: any
   ) {
     return req.standardRequest(
-      `${config.host}/organizations/${orgId}/team/${teamId}/repos/${owner}/${repo}`,
+      `${config.host}/organizations/${org_id}/team/${id}/repos/${owner}/${repo}`,
       "put",
       body
     ) as Promise<
@@ -256,18 +283,24 @@ export default {
    *
    * @see {@link https://developer.github.com/v3/teams/#remove-team-repository}
    *
-   * @param {string} id    - The team ID
-   * @param {string} owner - The owner name
-   * @param {string} repo  - The repo name
+   * @param {string} id        - The team ID
+   * @param {string} org_id    - The org ID
+   * @param {string} owner     - The owner name
+   * @param {string} repo      - The repo name
    *
    * @return {nothing}
    */
-  removeTeamRepository: function (id: string, owner: string, repo: string) {
+  removeTeamRepository: function (
+    id: string,
+    org_id: string,
+    owner: string,
+    repo: string
+  ) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/repos/${owner}/${repo}`,
+      `${config.host}/organizations/${org_id}/team/${id}/repos/${owner}/${repo}`,
       "delete"
     ) as Promise<
-      Endpoints["DELETE /teams/{team_id}/repos/{owner}/{repo}"]["response"]["data"]
+      Endpoints["DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"]["data"]
     >;
   },
 
@@ -297,18 +330,22 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#list-team-projects}
    *
    * @param {string} id          - The team ID
+   * @param {string} org_id      - The org ID
    * @param {object} params      - An object of parameters for the request
    * @param {int}    params.page - The page of results to retrieve
    *
    * @return {object} project data
    */
-  getTeamProjects: function (id: string, params?: Params) {
+  getTeamProjects: function (id: string, org_id: string, params?: Params) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/projects?${req.assembleQueryParams(params, [
-        "page",
-      ])}`
+      `${
+        config.host
+      }/organizations/${org_id}/team/${id}/projects?${req.assembleQueryParams(
+        params,
+        ["page"]
+      )}`
     ) as Promise<
-      Endpoints["GET /teams/{team_id}/projects"]["response"]["data"]
+      Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["response"]["data"]
     >;
   },
 
@@ -320,13 +357,14 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#review-a-team-project}
    *
    * @param {string} id        - The team ID
+   * @param {string} org_id    - The org ID
    * @param {string} projectId - The project ID
    *
    * @return {object} team data
    */
-  getTeamProject: function (id: string, projectId: string) {
+  getTeamProject: function (id: string, org_id: string, projectId: string) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/projects/${projectId}`
+      `${config.host}/organizations/${org_id}/team/${id}/projects/${projectId}`
     ) as Promise<
       Endpoints["GET /teams/{team_id}/projects/{project_id}"]["response"]["data"]
     >;
@@ -340,6 +378,7 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-project}
    *
    * @param {string} id              - The team ID
+   * @param {string} org_id          - The org ID
    * @param {string} projectId       - The project ID
    * @param {object} body            - The request body
    * @param {string} body.permission - The permission to grant to the team for this project. Can be one of:
@@ -353,13 +392,18 @@ export default {
    *
    * @return {nothing}
    */
-  updateTeamProject: function (id: string, projectId: string, body: Params) {
+  updateTeamProject: function (
+    id: string,
+    org_id: string,
+    projectId: string,
+    body: Params
+  ) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/projects/${projectId}`,
+      `${config.host}/organizations/${org_id}/team/${id}/projects/${projectId}`,
       "put",
       body
     ) as Promise<
-      Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["response"]["data"]
+      Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"]["data"]
     >;
   },
 
@@ -371,13 +415,14 @@ export default {
    * @see {@link https://developer.github.com/v3/teams/#remove-team-project}
    *
    * @param {string} id        - The team ID
+   * @param {string} org_id    - The org ID
    * @param {string} projectId - The project ID
    *
    * @return {nothing}
    */
-  removeTeamProject: function (id: string, projectId: string) {
+  removeTeamProject: function (id: string, org_id: string, projectId: string) {
     return req.standardRequest(
-      `${config.host}/teams/${id}/projects/${projectId}`,
+      `${config.host}/organizations/${org_id}/team/${id}/projects/${projectId}`,
       "delete"
     ) as Promise<
       Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["response"]["data"]

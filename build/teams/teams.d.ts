@@ -57,11 +57,12 @@ declare const _default: {
      *
      * @see {@link https://developer.github.com/v3/teams/#get-team}
      *
-     * @param {string} id - The team id
+     * @param {string} id     - The team id
+     * @param {string} org_id - The org id
      *
      * @return {object} team data
      */
-    getTeam: (id: string) => Promise<{
+    getTeam: (id: string, org_id: string) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -282,6 +283,7 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#edit-team}
      *
      * @param {string}   id                  - The team ID
+     * @param {string}   org_id              - The org ID
      * @param {object}   body                - The request body
      * @param {string}   body.name           - Required. The name of the team.
      * @param {string}   body.description    - The description of the team.
@@ -303,7 +305,7 @@ declare const _default: {
      *
      * @return {object} team data
      */
-    editTeam: (id: string, body: Params) => Promise<{
+    editTeam: (id: string, org_id: string, body: Params) => Promise<{
         id: number;
         node_id: string;
         url: string;
@@ -397,11 +399,11 @@ declare const _default: {
      *
      * @see {@link https://developer.github.com/v3/teams/#delete-team}
      *
-     * @param {string} id - The team ID
-     *
+     * @param {string} id     - The team ID
+     * @param {string} org_id - The org ID
      * @return {nothing}
      */
-    deleteTeam: (id: string) => Promise<never>;
+    deleteTeam: (id: string, org_id: string) => Promise<never>;
     /**
      * List child teams
      *
@@ -410,12 +412,13 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#list-child-teams}
      *
      * @param {string} id          - The team ID
+     * @param {string} org_id      - The org ID
      * @param {object} params      - An object of parameters for the request
      * @param {int}    params.page - The page of results to retrieve
      *
      * @return {object} team data
      */
-    getChildTeams: (id: string, params?: Params) => Promise<{
+    getChildTeams: (id: string, org_id: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -457,12 +460,13 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#list-team-repos}
      *
      * @param {string} id          - The team ID
+     * @param {string} org_id      - The org ID
      * @param {object} params      - An object of parameters for the request
      * @param {int}    params.page - The page of results to retrieve
      *
      * @return {object} team data
      */
-    getTeamRepos: (id: string, params?: Params) => Promise<{
+    getTeamRepos: (id: string, org_id: string, params?: Params) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -855,13 +859,15 @@ declare const _default: {
      *
      * @see {@link https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository}
      *
-     * @param {string} id    - The team ID
-     * @param {string} owner - The owner name
-     * @param {string} repo  - The repo name
+     *
+     * @param {string} id     - The team ID
+     * @param {string} org_id - The org ID
+     * @param {string} owner  - The owner name
+     * @param {string} repo   - The repo name
      *
      * @return {nothing} 204 if is managed, 404 if not
      */
-    getIsRepoManagedByTeam: (id: string, owner: string, repo: string) => Promise<{
+    getIsRepoManagedByTeam: (id: string, org_id: string, owner: string, repo: string) => Promise<{
         id: number;
         node_id: string;
         name: string;
@@ -1253,8 +1259,8 @@ declare const _default: {
      *
      * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-repository}
      *
-     * @param {string} teamId          - The team ID
-     * @param {string} orgId           - The organization ID
+     * @param {string} id              - The team ID
+     * @param {string} org_id          - The organization ID
      * @param {string} owner           - The owner name
      * @param {string} repo            - The repo name
      * @param {object} body            - The request body
@@ -1269,7 +1275,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    updateTeamRepository: (teamId: string, orgId: string, owner: string, repo: string, body?: any) => Promise<never>;
+    updateTeamRepository: (id: string, org_id: string, owner: string, repo: string, body?: any) => Promise<never>;
     /**
      * Remove team repository
      *
@@ -1277,13 +1283,14 @@ declare const _default: {
      *
      * @see {@link https://developer.github.com/v3/teams/#remove-team-repository}
      *
-     * @param {string} id    - The team ID
-     * @param {string} owner - The owner name
-     * @param {string} repo  - The repo name
+     * @param {string} id        - The team ID
+     * @param {string} org_id    - The org ID
+     * @param {string} owner     - The owner name
+     * @param {string} repo      - The repo name
      *
      * @return {nothing}
      */
-    removeTeamRepository: (id: string, owner: string, repo: string) => Promise<never>;
+    removeTeamRepository: (id: string, org_id: string, owner: string, repo: string) => Promise<never>;
     /**
      * List user teams
      *
@@ -1391,12 +1398,13 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#list-team-projects}
      *
      * @param {string} id          - The team ID
+     * @param {string} org_id      - The org ID
      * @param {object} params      - An object of parameters for the request
      * @param {int}    params.page - The page of results to retrieve
      *
      * @return {object} project data
      */
-    getTeamProjects: (id: string, params?: Params) => Promise<{
+    getTeamProjects: (id: string, org_id: string, params?: Params) => Promise<{
         owner_url: string;
         url: string;
         html_url: string;
@@ -1448,11 +1456,12 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#review-a-team-project}
      *
      * @param {string} id        - The team ID
+     * @param {string} org_id    - The org ID
      * @param {string} projectId - The project ID
      *
      * @return {object} team data
      */
-    getTeamProject: (id: string, projectId: string) => Promise<{
+    getTeamProject: (id: string, org_id: string, projectId: string) => Promise<{
         owner_url: string;
         url: string;
         html_url: string;
@@ -1504,6 +1513,7 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#add-or-update-team-project}
      *
      * @param {string} id              - The team ID
+     * @param {string} org_id          - The org ID
      * @param {string} projectId       - The project ID
      * @param {object} body            - The request body
      * @param {string} body.permission - The permission to grant to the team for this project. Can be one of:
@@ -1517,7 +1527,7 @@ declare const _default: {
      *
      * @return {nothing}
      */
-    updateTeamProject: (id: string, projectId: string, body: Params) => Promise<never>;
+    updateTeamProject: (id: string, org_id: string, projectId: string, body: Params) => Promise<never>;
     /**
      * Remove team project
      *
@@ -1526,10 +1536,11 @@ declare const _default: {
      * @see {@link https://developer.github.com/v3/teams/#remove-team-project}
      *
      * @param {string} id        - The team ID
+     * @param {string} org_id    - The org ID
      * @param {string} projectId - The project ID
      *
      * @return {nothing}
      */
-    removeTeamProject: (id: string, projectId: string) => Promise<never>;
+    removeTeamProject: (id: string, org_id: string, projectId: string) => Promise<never>;
 };
 export default _default;

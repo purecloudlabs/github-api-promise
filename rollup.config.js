@@ -19,7 +19,7 @@ export default {
     peerDepsExternal(),
     nodeResolve({ preferBuiltins: false }),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript(),
     json(),
   ],
 };
