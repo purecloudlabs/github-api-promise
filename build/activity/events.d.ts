@@ -48,7 +48,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -337,6 +337,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -450,6 +451,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -460,14 +465,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -688,7 +699,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -977,6 +988,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -1090,6 +1102,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -1100,14 +1116,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -1334,7 +1356,7 @@ declare const _default: {
             html_url: string;
             number: number;
             state: string;
-            state_reason?: string;
+            state_reason?: "completed" | "reopened" | "not_planned";
             title: string;
             body?: string;
             user: {
@@ -1623,6 +1645,7 @@ declare const _default: {
                 has_wiki: boolean;
                 has_pages: boolean;
                 has_downloads: boolean;
+                has_discussions?: boolean;
                 archived: boolean;
                 disabled: boolean;
                 visibility?: string;
@@ -1736,6 +1759,10 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
@@ -1746,14 +1773,20 @@ declare const _default: {
                 delete_branch_on_merge?: boolean;
                 allow_update_branch?: boolean;
                 use_squash_pr_title_as_default?: boolean;
+                squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                 allow_merge_commit?: boolean;
                 allow_forking?: boolean;
+                web_commit_signoff_required?: boolean;
                 subscribers_count?: number;
                 network_count?: number;
                 open_issues: number;
                 watchers: number;
                 master_branch?: string;
                 starred_at?: string;
+                anonymous_access_enabled?: boolean;
             };
             performed_via_github_app?: {
                 id: number;
@@ -2068,7 +2101,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -2357,6 +2390,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -2470,6 +2504,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -2480,14 +2518,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -2707,7 +2751,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -2996,6 +3040,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -3109,6 +3154,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -3119,14 +3168,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -3348,7 +3403,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -3637,6 +3692,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -3750,6 +3806,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -3760,14 +3820,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -3987,7 +4053,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -4276,6 +4342,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -4389,6 +4456,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -4399,14 +4470,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -4626,7 +4703,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -4915,6 +4992,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -5028,6 +5106,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -5038,14 +5120,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -5265,7 +5353,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -5554,6 +5642,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -5667,6 +5756,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -5677,14 +5770,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
@@ -5906,7 +6005,7 @@ declare const _default: {
                 html_url: string;
                 number: number;
                 state: string;
-                state_reason?: string;
+                state_reason?: "completed" | "reopened" | "not_planned";
                 title: string;
                 body?: string;
                 user: {
@@ -6195,6 +6294,7 @@ declare const _default: {
                     has_wiki: boolean;
                     has_pages: boolean;
                     has_downloads: boolean;
+                    has_discussions?: boolean;
                     archived: boolean;
                     disabled: boolean;
                     visibility?: string;
@@ -6308,6 +6408,10 @@ declare const _default: {
                         delete_branch_on_merge?: boolean;
                         allow_update_branch?: boolean;
                         use_squash_pr_title_as_default?: boolean;
+                        squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                        squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                        merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                        merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                         allow_merge_commit?: boolean;
                         subscribers_count?: number;
                         network_count?: number;
@@ -6318,14 +6422,20 @@ declare const _default: {
                     delete_branch_on_merge?: boolean;
                     allow_update_branch?: boolean;
                     use_squash_pr_title_as_default?: boolean;
+                    squash_merge_commit_title?: "PR_TITLE" | "COMMIT_OR_PR_TITLE";
+                    squash_merge_commit_message?: "PR_BODY" | "COMMIT_MESSAGES" | "BLANK";
+                    merge_commit_title?: "PR_TITLE" | "MERGE_MESSAGE";
+                    merge_commit_message?: "PR_TITLE" | "PR_BODY" | "BLANK";
                     allow_merge_commit?: boolean;
                     allow_forking?: boolean;
+                    web_commit_signoff_required?: boolean;
                     subscribers_count?: number;
                     network_count?: number;
                     open_issues: number;
                     watchers: number;
                     master_branch?: string;
                     starred_at?: string;
+                    anonymous_access_enabled?: boolean;
                 };
                 performed_via_github_app?: {
                     id: number;
