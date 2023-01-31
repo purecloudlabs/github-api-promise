@@ -1,6 +1,6 @@
 {
   "name": "github-api-promise",
-  "version": "1.18.0",
+  "version": "1.19.0",
   "description": "A node module for interfacing with the Github API",
   "type": "module",
   "types": "build/app.d.ts",
@@ -26,7 +26,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "docdash": "^0.4.0",
-    "jsdoc": "^3.6.11",
+    "jsdoc": "^4.0.0",
     "rollup": "^2.78.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.31.1",
