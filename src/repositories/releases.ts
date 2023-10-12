@@ -29,19 +29,24 @@ function logRequestSuccess(res: any, message?: string) {
 }
 
 function logRequestError(err: any) {
-  console.log(
-    "[ERROR]" +
-      "[" +
-      err.res.statusCode +
-      "]" +
-      "[" +
-      err.res.req.method +
-      " " +
-      err.res.req.path +
-      "] " +
-      err.message
-  );
+  if (err) {
+    console.log(
+      "[ERROR]" +
+        "[" +
+        (err.res ? err.res.statusCode : "Unknown Status Code") +
+        "]" +
+        "[" +
+        (err.res && err.res.req ? err.res.req.method : "Unknown Method") +
+        " " +
+        (err.res && err.res.req ? err.res.req.path : "Unknown Path") +
+        "] " +
+        (err.message ? err.message : "Unknown Error Message")
+    );
+  } else {
+    console.log("[ERROR] Unknown Error");
+  }
 }
+
 
 /**
  * @module repositories/releases
